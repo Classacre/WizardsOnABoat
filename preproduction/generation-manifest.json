@@ -1,0 +1,349 @@
+{
+  "status": "Concept proposals awaiting user review",
+  "date": "2026-09-16",
+  "selectedBoards": [
+    {
+      "id": "00-voyage",
+      "title": "A world worth sailing",
+      "file": "art/00-voyage.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/00-voyage.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png",
+        "art/01-wizard.png",
+        "art/03-boat.png",
+        "art/15-tidebell.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ba1ac1ef-4d5d-4291-b842-92ab4a7fcec9.png"
+    },
+    {
+      "id": "01-wizard",
+      "title": "The seafaring wizard",
+      "file": "art/01-wizard.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/01-wizard.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-faee822f-fa96-4b56-9fe9-76ff0cc87332.png"
+    },
+    {
+      "id": "02-shopkeeper",
+      "title": "Mara, the harbour keeper",
+      "file": "art/02-shopkeeper.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/02-shopkeeper.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f2916e0f-3eb7-429a-85ac-6a48a30e88c0.png"
+    },
+    {
+      "id": "03-boat",
+      "title": "The spellwake sloop",
+      "file": "art/03-boat.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/03-boat.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f24510c7-878d-414c-8f91-741d6174c3ac.png"
+    },
+    {
+      "id": "04-starter-island",
+      "title": "Hearthharbour starter island",
+      "file": "art/04-starter-island.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/04-starter-island.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-1813b274-01c2-45a1-bed9-c419e15e3e51.png"
+    },
+    {
+      "id": "05-buildings",
+      "title": "Coastal buildings & modular pieces",
+      "file": "art/05-buildings-v2.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/05-buildings.txt",
+        "prompts/05-buildings-correction.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "editTarget": "art/05-buildings.png",
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-760dbba8-dc9b-4aff-9dea-b8594a8a59e5.png"
+    },
+    {
+      "id": "06-sea-biomes",
+      "title": "Sea biomes",
+      "file": "art/06-sea-biomes.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/06-sea-biomes.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-9741f90b-3149-4cf9-952c-9f129cd28ac8.png"
+    },
+    {
+      "id": "07-land-biomes",
+      "title": "Land biomes",
+      "file": "art/07-land-biomes.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/07-land-biomes.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f9d24c26-b032-4bda-b7d8-38eec70cd126.png"
+    },
+    {
+      "id": "08-sky-biomes",
+      "title": "Sky island biomes",
+      "file": "art/08-sky-biomes.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/08-sky-biomes.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-62b32757-0ed6-4ba3-95ec-138fefd386b2.png"
+    },
+    {
+      "id": "09-tide-vault",
+      "title": "Dungeon: The Tide Vault",
+      "file": "art/09-tide-vault.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/09-tide-vault.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ab510201-adb5-4a96-a912-fdc427e9ae63.png"
+    },
+    {
+      "id": "10-root-archive",
+      "title": "Dungeon: The Root Archive",
+      "file": "art/10-root-archive.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/10-root-archive.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-35e2175d-5d63-4174-8b27-e5cd0cbfea73.png"
+    },
+    {
+      "id": "11-storm-observatory",
+      "title": "Dungeon: The Storm Observatory",
+      "file": "art/11-storm-observatory.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/11-storm-observatory.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-faf3d2d8-7834-4041-9b95-388ec24be319.png"
+    },
+    {
+      "id": "12-ribbonwake",
+      "title": "Ribbonwake Glider",
+      "file": "art/12-ribbonwake.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/12-ribbonwake.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ae860426-bf99-496f-97fc-c2c45e5134ad.png"
+    },
+    {
+      "id": "13-kettleback",
+      "title": "Kettleback Crab",
+      "file": "art/13-kettleback.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/13-kettleback.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-aa988905-4301-426c-8aa6-52f398cb7f20.png"
+    },
+    {
+      "id": "14-lanternjaw",
+      "title": "Lanternjaw Skulker",
+      "file": "art/14-lanternjaw.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/14-lanternjaw.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-d886ca29-937c-4fec-9664-428b79d1060a.png"
+    },
+    {
+      "id": "15-tidebell",
+      "title": "Tidebell Colossus",
+      "file": "art/15-tidebell.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/15-tidebell.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-cbabd56a-1cb6-4f4d-9405-3e5877ae10d3.png"
+    },
+    {
+      "id": "16-brinecap",
+      "title": "Brinecap Browser",
+      "file": "art/16-brinecap.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/16-brinecap.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-3c606ce4-9a4f-432f-bee1-5f2a7464b2bb.png"
+    },
+    {
+      "id": "17-basalt",
+      "title": "Basalt Knuckler",
+      "file": "art/17-basalt.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/17-basalt.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-529733a8-65be-4de8-a6eb-423848e7336a.png"
+    },
+    {
+      "id": "18-orchard",
+      "title": "Orchard Reliquary",
+      "file": "art/18-orchard.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/18-orchard.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-4f3c3a4d-f655-4b74-9526-697499301a4d.png"
+    },
+    {
+      "id": "19-threadwing",
+      "title": "Threadwing Skater",
+      "file": "art/19-threadwing.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/19-threadwing.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-7c85685c-42bd-4d26-ac22-10c740d1d1ac.png"
+    },
+    {
+      "id": "20-cumulus",
+      "title": "Cumulus Grazer",
+      "file": "art/20-cumulus.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/20-cumulus.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-861b372c-ee8d-42c7-bb58-7270e91d26e8.png"
+    },
+    {
+      "id": "21-stormglass",
+      "title": "Stormglass Roc",
+      "file": "art/21-stormglass.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/21-stormglass.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-6a7be124-756e-4375-8f62-91548ed91149.png"
+    },
+    {
+      "id": "22-equipment",
+      "title": "Gear, loot & trade",
+      "file": "art/22-equipment.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/22-equipment.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ac62719f-6f8c-4a5f-b6b2-2fb0effa7b62.png"
+    },
+    {
+      "id": "23-spellbook",
+      "title": "Spellbook & crafting grammar",
+      "file": "art/23-spellbook.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/23-spellbook.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-0d62c294-bc04-429e-9fd9-26c31e944ab3.png"
+    },
+    {
+      "id": "24-spell-physics",
+      "title": "Spells that move the world",
+      "file": "art/24-spell-physics.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/24-spell-physics.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-11fc7bbf-3176-4178-bef9-e3caac2d62f7.png"
+    },
+    {
+      "id": "25-island-paths",
+      "title": "Island scale & connected paths",
+      "file": "art/25-island-paths.png",
+      "tool": "built-in image_gen",
+      "promptFiles": [
+        "prompts/25-island-paths.txt"
+      ],
+      "references": [
+        "references/great-sea-style-board.png"
+      ],
+      "generatedOriginal": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-b6bd0e4f-7c6e-443c-8ffa-95e4d52cecfa.png"
+    }
+  ]
+}

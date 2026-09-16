@@ -1,0 +1,64 @@
+{
+  "authorship": "Original scripted Blender geometry from approved concept sheets; generated style-atlas texture reused with cropped UVs. No external models.",
+  "units": "metres",
+  "forward": "Godot -Z",
+  "assets": {
+    "ribbonwake": {
+      "file": "ribbonwake.glb",
+      "mesh_objects": 1,
+      "source_components": 14,
+      "polygons": 1716,
+      "blender_bounds": [
+        [
+          -2.0799999237060547,
+          -2.7139999866485596,
+          -0.5699999928474426
+        ],
+        [
+          2.0799999237060547,
+          1.0850000381469727,
+          0.8507204651832581
+        ]
+      ],
+      "origin": "body center"
+    },
+    "lanternjaw": {
+      "file": "lanternjaw.glb",
+      "mesh_objects": 1,
+      "source_components": 23,
+      "polygons": 2256,
+      "blender_bounds": [
+        [
+          -1.090000033378601,
+          -2.25,
+          -0.8872519731521606
+        ],
+        [
+          1.090000033378601,
+          1.6959999799728394,
+          0.8399999737739563
+        ]
+      ],
+      "origin": "body center"
+    },
+    "tidebell": {
+      "file": "tidebell.glb",
+      "mesh_objects": 1,
+      "source_components": 134,
+      "polygons": 6029,
+      "blender_bounds": [
+        [
+          -6.48721170425415,
+          -7.11305570602417,
+          -4.802265167236328
+        ],
+        [
+          6.48721170425415,
+          7.11305570602417,
+          7.054989337921143
+        ]
+      ],
+      "origin": "mantle waterline"
+    }
+  }
+}

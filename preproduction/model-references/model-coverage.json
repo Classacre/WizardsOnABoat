@@ -1,0 +1,185 @@
+{
+  "existing_models_covered": 30,
+  "models": [
+    {
+      "model": "assets/models/aquatic/lanternjaw.glb",
+      "reference": "lanternjaw.png",
+      "generation_group": "lanternjaw",
+      "rig_requirements": "aquatic; spine, jaw, throat sac, flippers, tail"
+    },
+    {
+      "model": "assets/models/aquatic/ribbonwake.glb",
+      "reference": "ribbonwake.png",
+      "generation_group": "ribbonwake",
+      "rig_requirements": "aquatic; body, four petal fins, ribbon tail, feeding fan"
+    },
+    {
+      "model": "assets/models/aquatic/tidebell.glb",
+      "reference": "tidebell.png",
+      "generation_group": "tidebell",
+      "rig_requirements": "custom aquatic; six arms, mantle pulse, shell root"
+    },
+    {
+      "model": "assets/models/barrel.glb",
+      "reference": "barrel.png",
+      "generation_group": "barrel",
+      "rig_requirements": "rigid root"
+    },
+    {
+      "model": "assets/models/boat.glb",
+      "reference": "boat.png",
+      "generation_group": "boat",
+      "rig_requirements": "rigid hull root; helm and rudder controls; attachment sockets"
+    },
+    {
+      "model": "assets/models/boat_sail.glb",
+      "reference": "boat.png",
+      "generation_group": "boat",
+      "rig_requirements": "mast attachment; boom rotation; sail deformation bones"
+    },
+    {
+      "model": "assets/models/crab.glb",
+      "reference": "crab.png",
+      "generation_group": "crab",
+      "rig_requirements": "six walking legs plus claws; body and pressure vent controls"
+    },
+    {
+      "model": "assets/models/dock.glb",
+      "reference": "dock.png",
+      "generation_group": "dock",
+      "rig_requirements": "rigid root and attachment points"
+    },
+    {
+      "model": "assets/models/glider.glb",
+      "reference": "glider.png",
+      "generation_group": "glider",
+      "rig_requirements": "body, two gripping legs, four wings and split tail articulation; follow the approved Threadwing sheet"
+    },
+    {
+      "model": "assets/models/hearthstone.glb",
+      "reference": "hearthstone.png",
+      "generation_group": "hearthstone",
+      "rig_requirements": "rigid root; rounded carved stone"
+    },
+    {
+      "model": "assets/models/lighthouse.glb",
+      "reference": "lighthouse.png",
+      "generation_group": "lighthouse",
+      "rig_requirements": "rigid root; door hinge and lantern rotation"
+    },
+    {
+      "model": "assets/models/loot_chest.glb",
+      "reference": "loot_chest.png",
+      "generation_group": "loot_chest",
+      "rig_requirements": "rigid body root; lid hinge and latch"
+    },
+    {
+      "model": "assets/models/nature/amber_coral.glb",
+      "reference": "amber_coral.png",
+      "generation_group": "amber_coral",
+      "rig_requirements": "rigid coral root"
+    },
+    {
+      "model": "assets/models/nature/coastal_crag_0.glb",
+      "reference": "coastal_crag_0.png",
+      "generation_group": "coastal_crag_0",
+      "rig_requirements": "rigid root"
+    },
+    {
+      "model": "assets/models/nature/coastal_crag_1.glb",
+      "reference": "coastal_crag_1.png",
+      "generation_group": "coastal_crag_1",
+      "rig_requirements": "rigid root"
+    },
+    {
+      "model": "assets/models/nature/coastal_crag_2.glb",
+      "reference": "coastal_crag_2.png",
+      "generation_group": "coastal_crag_2",
+      "rig_requirements": "rigid root"
+    },
+    {
+      "model": "assets/models/nature/kelp_fan.glb",
+      "reference": "kelp_fan.png",
+      "generation_group": "kelp_fan",
+      "rig_requirements": "anchored root and kelp blade sway chains"
+    },
+    {
+      "model": "assets/models/nature/mangrove.glb",
+      "reference": "mangrove.png",
+      "generation_group": "mangrove",
+      "rig_requirements": "root, trunk and branch wind deformation"
+    },
+    {
+      "model": "assets/models/nature/shoal_seagrass.glb",
+      "reference": "shoal_seagrass.png",
+      "generation_group": "shoal_seagrass",
+      "rig_requirements": "anchored roots and blade sway chains"
+    },
+    {
+      "model": "assets/models/nature/wind_tree.glb",
+      "reference": "wind_tree.png",
+      "generation_group": "wind_tree",
+      "rig_requirements": "root, trunk and branch wind deformation"
+    },
+    {
+      "model": "assets/models/ruin_arch.glb",
+      "reference": "ruin_arch.png",
+      "generation_group": "ruin_arch",
+      "rig_requirements": "rigid root"
+    },
+    {
+      "model": "assets/models/shop.glb",
+      "reference": "shop.png",
+      "generation_group": "shop",
+      "rig_requirements": "rigid root; door and shutters; sign swing"
+    },
+    {
+      "model": "assets/models/shopkeeper.glb",
+      "reference": "shopkeeper.png",
+      "generation_group": "shopkeeper",
+      "rig_requirements": "biped; hands, head, spine, legs, arms; apron deformation"
+    },
+    {
+      "model": "assets/models/staff.glb",
+      "reference": "staff.png",
+      "generation_group": "staff",
+      "rig_requirements": "rigid root; grip and spell-tip sockets"
+    },
+    {
+      "model": "assets/models/tree.glb",
+      "reference": "tree.png",
+      "generation_group": "tree",
+      "rig_requirements": "root, trunk and branch wind deformation"
+    },
+    {
+      "model": "assets/models/wizard.glb",
+      "reference": "wizard.png",
+      "generation_group": "wizard",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket"
+    },
+    {
+      "model": "assets/models/wizard_cast.glb",
+      "reference": "wizard.png",
+      "generation_group": "wizard",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket"
+    },
+    {
+      "model": "assets/models/wizard_green.glb",
+      "reference": "wizard.png",
+      "generation_group": "wizard",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket"
+    },
+    {
+      "model": "assets/models/wizard_helm.glb",
+      "reference": "wizard.png",
+      "generation_group": "wizard",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket"
+    },
+    {
+      "model": "assets/models/wizard_rust.glb",
+      "reference": "wizard.png",
+      "generation_group": "wizard",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket"
+    }
+  ]
+}

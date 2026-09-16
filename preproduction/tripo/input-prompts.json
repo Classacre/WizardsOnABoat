@@ -1,0 +1,8 @@
+{
+  "wizard": {
+    "tool": "built-in image_gen",
+    "reference": "preproduction/art/01-wizard.png",
+    "output": "preproduction/tripo/inputs/wizard.png",
+    "prompt": "Prepare ONE isolated model-generation reference image from the supplied APPROVED WIZARD SAILOR design sheet. Preserve this exact youthful dark curly-haired wizard's appearance, navy bent pointed hat with ochre band, teal weathered knee-length coat with cream wave embroidery, cream lace-front shirt, rope belt and compass, charcoal breeches, rolled cuffs and leather boots. ONE character only, seen straight-on from the front in a relaxed symmetrical A-pose, hands open and clearly separated from torso, legs slightly apart. The entire silhouette including hat tip, fingers and feet must be visible with comfortable margin. Remove the handheld staff, separate book and all other freestanding props. Small belt ornaments may stay. Match the approved painterly stylized 3D game materials, rich colors, softened carved forms and proportions; do not redesign or make photorealistic. Plain solid pale cool-gray background, even soft neutral studio illumination, negligible cast shadow, no scenery, no labels, no captions, NO turnaround or multiple views, NO second character, NO inset panel. This is one asset reference for image-to-3D and skeletal rigging."
+  }
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "asset": "barrel.glb",
+    "bytes": 2435416,
+    "meshes": 2,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "boat.glb",
+    "bytes": 4449964,
+    "meshes": 11,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "boat_sail.glb",
+    "bytes": 2533340,
+    "meshes": 3,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "crab.glb",
+    "bytes": 2559984,
+    "meshes": 7,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "dock.glb",
+    "bytes": 2710220,
+    "meshes": 6,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "glider.glb",
+    "bytes": 2472128,
+    "meshes": 7,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "hearthstone.glb",
+    "bytes": 2419148,
+    "meshes": 3,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "lighthouse.glb",
+    "bytes": 2870784,
+    "meshes": 8,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "loot_chest.glb",
+    "bytes": 2399060,
+    "meshes": 2,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "ruin_arch.glb",
+    "bytes": 2434940,
+    "meshes": 1,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "shop.glb",
+    "bytes": 2974912,
+    "meshes": 15,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "shopkeeper.glb",
+    "bytes": 2807400,
+    "meshes": 10,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "staff.glb",
+    "bytes": 2451748,
+    "meshes": 4,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "tree.glb",
+    "bytes": 2446372,
+    "meshes": 3,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "wizard.glb",
+    "bytes": 2862664,
+    "meshes": 12,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "wizard_cast.glb",
+    "bytes": 2862764,
+    "meshes": 12,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "wizard_green.glb",
+    "bytes": 2862788,
+    "meshes": 12,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "wizard_helm.glb",
+    "bytes": 2784608,
+    "meshes": 11,
+    "images": 1,
+    "valid": true
+  },
+  {
+    "asset": "wizard_rust.glb",
+    "bytes": 2862772,
+    "meshes": 12,
+    "images": 1,
+    "valid": true
+  }
+]

@@ -1,0 +1,379 @@
+D:\AI\WizardsOnABoat\tools\build_assets.py:30: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes=True
+BlenderMCP addon registered
+BUILD_ASSET boat
+Warning: No mesh data to join
+INFO Draco is available, use library at D:\Games\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at D:\Games\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+19:01:52 | INFO: Starting glTF 2.0 export
+19:01:52 | INFO: Extracting primitive: Curved continuous gunwale.001
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Long blue mast pennant
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Shell fender ridge
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Faceted aether crystal
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Curved continuous gunwale.002
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Warm lantern glass
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Barrel iron hoops
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Tied shell fender rope
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Cream shell fender
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Rounded layered hull plank.006
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Rounded layered hull plank
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Finished glTF 2.0 export in 0.12386560440063477 s
+
+Warning: No mesh data to join
+19:01:52 | INFO: Starting glTF 2.0 export
+19:01:52 | INFO: Extracting primitive: Bold painted spiral on canvas
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Canvas edge bolt rope
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Extracting primitive: Billowed triangular lateen sail
+19:01:52 | INFO: Primitives created: 1
+19:01:52 | INFO: Finished glTF 2.0 export in 0.020451068878173828 s
+
+BUILD_ASSET wizard
+Warning: No mesh data to join
+19:01:53 | INFO: Starting glTF 2.0 export
+19:01:53 | INFO: Extracting primitive: Dark pupil
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot ankle strap
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Flared coat panel
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream coat piping
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Faceted aether crystal.003
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Hand sewn boot
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Trouser leg
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Rope belt
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream linen shirt
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Forearm
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Eye white
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot cuff
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Finished glTF 2.0 export in 0.05874300003051758 s
+
+BUILD_ASSET wizard_variants
+Warning: No mesh data to join
+19:01:53 | INFO: Starting glTF 2.0 export
+19:01:53 | INFO: Extracting primitive: Dark pupil.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot ankle strap.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Flared coat panel.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream coat piping.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Faceted aether crystal.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Hand sewn boot.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Trouser leg.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Rope belt.001
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream linen shirt.001
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Forearm.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Eye white.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot cuff.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Finished glTF 2.0 export in 0.05460476875305176 s
+
+19:01:53 | INFO: Starting glTF 2.0 export
+19:01:53 | INFO: Extracting primitive: Dark pupil.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot ankle strap.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Flared coat panel.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream coat piping.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Hand sewn boot.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Trouser leg.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Rope belt.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream linen shirt.002
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Forearm.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Eye white.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot cuff.004
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Finished glTF 2.0 export in 0.05120038986206055 s
+
+Warning: No mesh data to join
+19:01:53 | INFO: Starting glTF 2.0 export
+19:01:53 | INFO: Extracting primitive: Dark pupil.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot ankle strap.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Flared coat panel.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream coat piping.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Faceted aether crystal.005
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Hand sewn boot.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Trouser leg.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Rope belt.003
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Cream linen shirt.003
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Forearm.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Eye white.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Extracting primitive: Boot cuff.006
+19:01:53 | INFO: Primitives created: 1
+19:01:53 | INFO: Finished glTF 2.0 export in 0.05364561080932617 s
+
+Warning: No mesh data to join
+19:01:54 | INFO: Starting glTF 2.0 export
+19:01:54 | INFO: Extracting primitive: Dark pupil.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Boot ankle strap.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Flared coat panel.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Cream coat piping.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Faceted aether crystal.006
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Hand sewn boot.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Trouser leg.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Rope belt.004
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Cream linen shirt.004
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Forearm.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Eye white.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Boot cuff.008
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Finished glTF 2.0 export in 0.06669855117797852 s
+
+BUILD_ASSET shopkeeper
+19:01:54 | INFO: Starting glTF 2.0 export
+19:01:54 | INFO: Extracting primitive: Dark pupil.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Boot ankle strap.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Cream coat piping.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Hand sewn boot.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Trouser leg.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Rope belt.005
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Cream linen shirt.005
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Forearm.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Eye white.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Extracting primitive: Boot cuff.010
+19:01:54 | INFO: Primitives created: 1
+19:01:54 | INFO: Finished glTF 2.0 export in 0.06677532196044922 s
+
+BUILD_ASSET lighthouse
+19:01:55 | INFO: Starting glTF 2.0 export
+19:01:55 | INFO: Extracting primitive: Door handle
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Gallery railing baluster
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Luminous lighthouse lens
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Deep lighthouse window
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Copper lighthouse roof
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Hand-cut lighthouse masonry
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Lantern window frame
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Extracting primitive: Lighthouse door
+19:01:55 | INFO: Primitives created: 1
+19:01:55 | INFO: Finished glTF 2.0 export in 0.043263912200927734 s
+
+BUILD_ASSET shop
+Warning: No mesh data to join
+Warning: No mesh data to join
+19:01:57 | INFO: Starting glTF 2.0 export
+19:01:57 | INFO: Extracting primitive: Dark chimney mouth
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Potion bottle.002
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Shop door pull
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Potion bottle
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Roof underlay
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Warm lantern glass.004
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Potion bottle.006
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Gable round window
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Individual terracotta roof tile
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Individual terracotta roof tile.001
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Individual terracotta roof tile.002
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Striped shop awning.001
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Shop masonry
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Striped shop awning
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Corner timber
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Finished glTF 2.0 export in 0.07003092765808105 s
+
+BUILD_ASSET dock
+Warning: No mesh data to join
+19:01:57 | INFO: Starting glTF 2.0 export
+19:01:57 | INFO: Extracting primitive: Lantern foot.005
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Pier bearer
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Warm lantern glass.005
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Pier rope binding
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Pier piling cap
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Pier deck plank
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Finished glTF 2.0 export in 0.03165125846862793 s
+
+BUILD_ASSET crab
+19:01:57 | INFO: Starting glTF 2.0 export
+19:01:57 | INFO: Extracting primitive: Kettleback dark eye
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Kettleback body
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Kettleback ceramic shell
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Vent rim
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Vent dark opening
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Eye stalk
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Extracting primitive: Kettleback eye glint
+19:01:57 | INFO: Primitives created: 1
+19:01:57 | INFO: Finished glTF 2.0 export in 0.033512115478515625 s
+
+BUILD_ASSET glider
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Threadwing large eye
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Teal wing leading spar
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Antenna pale tip
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Hooked threadwing foot
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Cream sail-like wing membrane
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Threadwing thorax
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Threadwing eye gleam
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.03344583511352539 s
+
+BUILD_ASSET props
+Warning: No mesh data to join
+Warning: No mesh data to join
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Staff seashell charm.004
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Faceted aether crystal.007
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Staff rope binding.024
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Twisted driftwood staff.004
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.020020008087158203 s
+
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Barrel iron hoops.009
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Barrel staves.003
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.014251947402954102 s
+
+Warning: No mesh data to join
+Warning: No mesh data to join
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Focus brass foot.003
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Faceted aether crystal.008
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Focus pedestal.003
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.016001462936401367 s
+
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Broad painted foliage clump
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Foliage accent
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Weathered coastal tree trunk
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.016193866729736328 s
+
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Ruined arch pier
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.01129913330078125 s
+
+19:01:58 | INFO: Starting glTF 2.0 export
+19:01:58 | INFO: Extracting primitive: Chest iron strap
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Extracting primitive: Salvage chest body
+19:01:58 | INFO: Primitives created: 1
+19:01:58 | INFO: Finished glTF 2.0 export in 0.013847589492797852 s
+D:\AI\WizardsOnABoat\tools\build_assets.py:837: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world=bpy.data.worlds.new('Spellwake studio sky');world.use_nodes=True
+00:11.078  render           | Saved: 'D:\AI\WizardsOnABoat\assets\models\boat-review.png'
+00:11.641  render           | Saved: 'D:\AI\WizardsOnABoat\assets\models\wizard-review.png'
+00:12.328  render           | Saved: 'D:\AI\WizardsOnABoat\assets\models\harbour-review.png'
+00:12.922  render           | Saved: 'D:\AI\WizardsOnABoat\assets\models\creature-review.png'
+
+Info: Saved as "spellwake-source.blend"
+ASSETS_COMPLETE [{"asset": "boat.glb", "vertices": 20214, "triangles": 32732, "materials": 11, "godot_bounds_min": [-3.6973259449005127, -1.5, -7.900000095367432], "godot_bounds_max": [4.393877029418945, 10.45549488067627, 7.123206615447998]}, {"asset": "boat_sail.glb", "vertices": 2299, "triangles": 3832, "materials": 3, "godot_bounds_min": [-0.022516660392284393, 2.7578585147857666, -3.892730712890625], "godot_bounds_max": [4.373136520385742, 9.73099422454834, 0.46765461564064026]}, {"asset": "wizard.glb", "vertices": 4054, "triangles": 7186, "materials": 12, "godot_bounds_min": [-0.6275094151496887, -0.019999999552965164, -0.36719998717308044], "godot_bounds_max": [0.5007137656211853, 2.271751642227173, 0.40720000863075256]}, {"asset": "wizard_cast.glb", "vertices": 4054, "triangles": 7186, "materials": 12, "godot_bounds_min": [-0.6275094151496887, -0.019999999552965164, -0.36719998717308044], "godot_bounds_max": [0.5007137656211853, 2.727513313293457, 0.40720000863075256]}, {"asset": "wizard_helm.glb", "vertices": 3407, "triangles": 5944, "materials": 11, "godot_bounds_min": [-0.5007137656211853, -0.019999999552965164, -0.5486359000205994], "godot_bounds_max": [0.5007137656211853, 2.271751642227173, 0.40720000863075256]}, {"asset": "wizard_green.glb", "vertices": 4054, "triangles": 7186, "materials": 12, "godot_bounds_min": [-0.6275094151496887, -0.019999999552965164, -0.36719998717308044], "godot_bounds_max": [0.5007137656211853, 2.271751642227173, 0.40720000863075256]}, {"asset": "wizard_rust.glb", "vertices": 4054, "triangles": 7186, "materials": 12, "godot_bounds_min": [-0.6275094151496887, -0.019999999552965164, -0.36719998717308044], "godot_bounds_max": [0.5007137656211853, 2.271751642227173, 0.40720000863075256]}, {"asset": "shopkeeper.glb", "vertices": 3573, "triangles": 6284, "materials": 10, "godot_bounds_min": [-0.5924497842788696, -0.019999999552965164, -0.3545999825000763], "godot_bounds_max": [0.5924497842788696, 2.271751642227173, 0.3545999825000763]}, {"asset": "lighthouse.glb", "vertices": 4802, "triangles": 7380, "materials": 8, "godot_bounds_min": [-2.1805500984191895, 0.0, -2.503000020980835], "godot_bounds_max": [2.1805500984191895, 14.350000381469727, 2.1805500984191895]}, {"asset": "shop.glb", "vertices": 6108, "triangles": 8818, "materials": 15, "godot_bounds_min": [-4.394499778747559, -0.019999999552965164, -4.647958278656006], "godot_bounds_max": [4.40500020980835, 8.007499694824219, 3.680000066757202]}, {"asset": "dock.glb", "vertices": 2710, "triangles": 5136, "materials": 6, "godot_bounds_min": [-2.0999999046325684, -2.1600000858306885, -4.150000095367432], "godot_bounds_max": [2.0999999046325684, 3.3522591590881348, 4.150000095367432]}, {"asset": "crab.glb", "vertices": 1566, "triangles": 2748, "materials": 7, "godot_bounds_min": [-1.041471242904663, 0.030826907604932785, -1.1774667501449585], "godot_bounds_max": [1.041471242904663, 1.2542487382888794, 0.7300000190734863]}, {"asset": "glider.glb", "vertices": 808, "triangles": 1374, "materials": 7, "godot_bounds_min": [-1.7018872499465942, -0.6573849320411682, -0.6681200861930847], "godot_bounds_max": [1.70203697681427, 0.6345787644386292, 1.7400000095367432]}, {"asset": "staff.glb", "vertices": 647, "triangles": 1242, "materials": 4, "godot_bounds_min": [-0.19294501841068268, -0.00828869454562664, -0.10392304509878159], "godot_bounds_max": [0.16133639216423035, 1.910340666770935, 0.10392304509878159]}, {"asset": "barrel.glb", "vertices": 534, "triangles": 1048, "materials": 2, "godot_bounds_min": [-0.4300000071525574, 0.0, -0.41999998688697815], "godot_bounds_max": [0.4300000071525574, 0.9509999752044678, 0.41999998688697815]}, {"asset": "hearthstone.glb", "vertices": 364, "triangles": 708, "materials": 3, "godot_bounds_min": [-0.5939711332321167, 0.0, -0.5174999833106995], "godot_bounds_max": [0.5936377644538879, 1.913971185684204, 0.5174999833106995]}, {"asset": "tree.glb", "vertices": 621, "triangles": 1058, "materials": 3, "godot_bounds_min": [-2.001056432723999, -0.02847142703831196, -1.6706339120864868], "godot_bounds_max": [2.145250082015991, 5.190000057220459, 1.8559508323669434]}, {"asset": "ruin_arch.glb", "vertices": 456, "triangles": 836, "materials": 1, "godot_bounds_min": [-1.784999966621399, 0.014999999664723873, -0.41499999165534973], "godot_bounds_max": [1.784999966621399, 4.585000038146973, 0.41499999165534973]}, {"asset": "loot_chest.glb", "vertices": 212, "triangles": 394, "materials": 2, "godot_bounds_min": [-0.5899999737739563, 0.0, -0.445499986410141], "godot_bounds_max": [0.5899999737739563, 0.8796295523643494, 0.4172285199165344]}]
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

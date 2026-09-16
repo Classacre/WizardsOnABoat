@@ -1,0 +1,309 @@
+{
+  "route": "Prepared image references; Tripo generation deferred at user request",
+  "existing_model_count": 30,
+  "unique_generation_groups": 25,
+  "input_policy": "One complete subject, one view per generation. Use Tripo for segmentation.",
+  "assets": [
+    {
+      "path": "assets/models/aquatic/lanternjaw.glb",
+      "generation_group": "lanternjaw",
+      "approved_art": "preproduction/art/14-lanternjaw.png",
+      "rig_requirements": "aquatic; spine, jaw, throat sac, flippers, tail",
+      "input": "preproduction/model-references/lanternjaw.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/aquatic/ribbonwake.glb",
+      "generation_group": "ribbonwake",
+      "approved_art": "preproduction/art/12-ribbonwake.png",
+      "rig_requirements": "aquatic; body, four petal fins, ribbon tail, feeding fan",
+      "input": "preproduction/model-references/ribbonwake.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/aquatic/tidebell.glb",
+      "generation_group": "tidebell",
+      "approved_art": "preproduction/art/15-tidebell.png",
+      "rig_requirements": "custom aquatic; six arms, mantle pulse, shell root",
+      "input": "preproduction/model-references/tidebell.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/barrel.glb",
+      "generation_group": "barrel",
+      "approved_art": "preproduction/art/22-equipment.png",
+      "rig_requirements": "rigid root",
+      "input": "preproduction/model-references/barrel.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/boat.glb",
+      "generation_group": "boat",
+      "approved_art": "preproduction/art/03-boat.png",
+      "rig_requirements": "rigid hull root; helm and rudder controls; attachment sockets",
+      "input": "preproduction/model-references/boat.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/boat_sail.glb",
+      "generation_group": "boat",
+      "approved_art": "preproduction/art/03-boat.png",
+      "rig_requirements": "mast attachment; boom rotation; sail deformation bones",
+      "input": "preproduction/model-references/boat.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false,
+      "segmentation_note": "Extract the sail from the complete boat using Tripo segmentation."
+    },
+    {
+      "path": "assets/models/crab.glb",
+      "generation_group": "crab",
+      "approved_art": "preproduction/art/13-kettleback.png",
+      "rig_requirements": "six walking legs plus claws; body and pressure vent controls",
+      "input": "preproduction/model-references/crab.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/dock.glb",
+      "generation_group": "dock",
+      "approved_art": "preproduction/art/05-buildings-v2.png",
+      "rig_requirements": "rigid root and attachment points",
+      "input": "preproduction/model-references/dock.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/glider.glb",
+      "generation_group": "glider",
+      "approved_art": "preproduction/art/19-threadwing.png",
+      "rig_requirements": "body, two gripping legs, four wings and split tail articulation; follow the approved Threadwing sheet",
+      "input": "preproduction/model-references/glider.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/hearthstone.glb",
+      "generation_group": "hearthstone",
+      "approved_art": "preproduction/art/22-equipment.png",
+      "rig_requirements": "rigid root; rounded carved stone",
+      "input": "preproduction/model-references/hearthstone.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/lighthouse.glb",
+      "generation_group": "lighthouse",
+      "approved_art": "preproduction/art/05-buildings-v2.png",
+      "rig_requirements": "rigid root; door hinge and lantern rotation",
+      "input": "preproduction/model-references/lighthouse.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/loot_chest.glb",
+      "generation_group": "loot_chest",
+      "approved_art": "preproduction/art/22-equipment.png",
+      "rig_requirements": "rigid body root; lid hinge and latch",
+      "input": "preproduction/model-references/loot_chest.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/amber_coral.glb",
+      "generation_group": "amber_coral",
+      "approved_art": "preproduction/art/06-sea-biomes.png",
+      "rig_requirements": "rigid coral root",
+      "input": "preproduction/model-references/amber_coral.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/coastal_crag_0.glb",
+      "generation_group": "coastal_crag_0",
+      "approved_art": "preproduction/art/07-land-biomes.png",
+      "rig_requirements": "rigid root",
+      "input": "preproduction/model-references/coastal_crag_0.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/coastal_crag_1.glb",
+      "generation_group": "coastal_crag_1",
+      "approved_art": "preproduction/art/07-land-biomes.png",
+      "rig_requirements": "rigid root",
+      "input": "preproduction/model-references/coastal_crag_1.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/coastal_crag_2.glb",
+      "generation_group": "coastal_crag_2",
+      "approved_art": "preproduction/art/07-land-biomes.png",
+      "rig_requirements": "rigid root",
+      "input": "preproduction/model-references/coastal_crag_2.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/kelp_fan.glb",
+      "generation_group": "kelp_fan",
+      "approved_art": "preproduction/art/06-sea-biomes.png",
+      "rig_requirements": "anchored root and kelp blade sway chains",
+      "input": "preproduction/model-references/kelp_fan.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/mangrove.glb",
+      "generation_group": "mangrove",
+      "approved_art": "preproduction/art/07-land-biomes.png",
+      "rig_requirements": "root, trunk and branch wind deformation",
+      "input": "preproduction/model-references/mangrove.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/shoal_seagrass.glb",
+      "generation_group": "shoal_seagrass",
+      "approved_art": "preproduction/art/06-sea-biomes.png",
+      "rig_requirements": "anchored roots and blade sway chains",
+      "input": "preproduction/model-references/shoal_seagrass.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/nature/wind_tree.glb",
+      "generation_group": "wind_tree",
+      "approved_art": "preproduction/art/08-sky-biomes.png",
+      "rig_requirements": "root, trunk and branch wind deformation",
+      "input": "preproduction/model-references/wind_tree.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/ruin_arch.glb",
+      "generation_group": "ruin_arch",
+      "approved_art": "preproduction/art/09-tide-vault.png",
+      "rig_requirements": "rigid root",
+      "input": "preproduction/model-references/ruin_arch.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/shop.glb",
+      "generation_group": "shop",
+      "approved_art": "preproduction/art/05-buildings-v2.png",
+      "rig_requirements": "rigid root; door and shutters; sign swing",
+      "input": "preproduction/model-references/shop.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/shopkeeper.glb",
+      "generation_group": "shopkeeper",
+      "approved_art": "preproduction/art/02-shopkeeper.png",
+      "rig_requirements": "biped; hands, head, spine, legs, arms; apron deformation",
+      "input": "preproduction/model-references/shopkeeper.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/staff.glb",
+      "generation_group": "staff",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "rigid root; grip and spell-tip sockets",
+      "input": "preproduction/model-references/staff.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/tree.glb",
+      "generation_group": "tree",
+      "approved_art": "preproduction/art/07-land-biomes.png",
+      "rig_requirements": "root, trunk and branch wind deformation",
+      "input": "preproduction/model-references/tree.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/wizard.glb",
+      "generation_group": "wizard",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket",
+      "input": "preproduction/model-references/wizard.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/wizard_cast.glb",
+      "generation_group": "wizard",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket",
+      "input": "preproduction/model-references/wizard.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/wizard_green.glb",
+      "generation_group": "wizard",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket",
+      "input": "preproduction/model-references/wizard.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/wizard_helm.glb",
+      "generation_group": "wizard",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket",
+      "input": "preproduction/model-references/wizard.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    },
+    {
+      "path": "assets/models/wizard_rust.glb",
+      "generation_group": "wizard",
+      "approved_art": "preproduction/art/01-wizard.png",
+      "rig_requirements": "biped; fingers, spine, head, legs, arms; coat deformation; staff socket",
+      "input": "preproduction/model-references/wizard.png",
+      "status": "reference_ready_not_generated",
+      "tripo_job_id": null,
+      "rig_verified": false
+    }
+  ]
+}

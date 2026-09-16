@@ -1,0 +1,8 @@
+{
+  "shop": {
+    "prompt": "Edit this model reference into ONE complete standalone general-shop BUILDING on a plain pale cool-gray studio background. Preserve the exact cream-stone shop, terracotta roof and chimney, teal shutters, teal awning with its attached wooden supports, exterior merchandise counter, door and attached lanterns. REMOVE ALL ocean water, foam, shoreline, rocky island terrain, raised island plinth, jetty, dock and dock stairs. The building and its awning posts must terminate together at one simple level ground plane; a very shallow flat stone foundation immediately beneath the building and shop porch is acceptable. This must be the complete assembled shop, not segmented parts or an exploded view. Keep the same painterly stylized 3D game look, rich colours, three-quarter angle, soft neutral light and full uncropped silhouette with ample margin. No people, text, labels, inset views, separate scenery or other buildings. The resulting PNG will be supplied directly to image-to-3D reconstruction, so the silhouette should contain only the complete shop assembly.",
+    "tool": "built-in image_gen",
+    "source_image": "archive/shop-scene-draft.png",
+    "generated_source": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-c12f7552-b118-4bbd-bde2-23870072bbbd.png"
+  }
+}

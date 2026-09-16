@@ -1,0 +1,10 @@
+{
+  "engine": "Godot",
+  "version": "4.7.2-stable",
+  "platform": "Windows x86_64",
+  "source": "https://github.com/godotengine/godot/releases/tag/4.7.2-stable",
+  "archive_sha256": "731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953",
+  "license": "MIT",
+  "renderer": "Forward+ / Vulkan",
+  "installed_location": ".tools/godot"
+}

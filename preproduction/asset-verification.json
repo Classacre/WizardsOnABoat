@@ -1,0 +1,184 @@
+[
+  {
+    "id": "00-voyage",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2940828,
+    "sha256": "9F117D46F4CCADDBC81CEADC6A137D7843ED8A987263C6D456B293AA822B22FD"
+  },
+  {
+    "id": "01-wizard",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2426763,
+    "sha256": "CE9E8450D99968875BE5FCC25F357E7D6A08DF1FF88E68E0959B2A6E5D045D10"
+  },
+  {
+    "id": "02-shopkeeper",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2451624,
+    "sha256": "D6FF3544EDE9C4B1195F429FCCFA6B41DE52681996B3213E70373E22125D42BD"
+  },
+  {
+    "id": "03-boat",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2579151,
+    "sha256": "C14017D98E79DAB5BFD19399D72DD4E7DEF73B4CB93673F018EC257A3F937C37"
+  },
+  {
+    "id": "04-starter-island",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2927283,
+    "sha256": "EC03CFD53AAAFC1FB40425C12AB8DA1EBFA3FDB21F6C952B57D944783832C8EC"
+  },
+  {
+    "id": "05-buildings",
+    "width": 1402,
+    "height": 1122,
+    "bytes": 2402382,
+    "sha256": "A423FE1FA0232D85D0E06B294E77A4FFB0C740CAA5FA9D6558CE6476704A201E"
+  },
+  {
+    "id": "06-sea-biomes",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2660709,
+    "sha256": "4003EBE0469D95431CAA1325CB1F09B12C05BBE7C455623937BC3E6ACA0366D6"
+  },
+  {
+    "id": "07-land-biomes",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 3056137,
+    "sha256": "067042D6CEFF6814F206C33BE79DD674A9D1C2DFE2C926C4CBE6D92B47C4422B"
+  },
+  {
+    "id": "08-sky-biomes",
+    "width": 1402,
+    "height": 1122,
+    "bytes": 2642640,
+    "sha256": "4B7AA925C22F9FE5A1518DF1FF9FBEF81B5BB572FA10A1F05AB1045F03A1ED96"
+  },
+  {
+    "id": "09-tide-vault",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2630186,
+    "sha256": "E286774C3AA2AEDE4C079E6D0730B4AB5E3B8D82ED6DEA624CB0C5E6DA4AA290"
+  },
+  {
+    "id": "10-root-archive",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2791906,
+    "sha256": "677B62E926630D74410240FE55CFD16FB810C4140ABC4B36AD4B300298095C0C"
+  },
+  {
+    "id": "11-storm-observatory",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2925743,
+    "sha256": "147FDD32DEBC8EDD369D4441426D66844F6875B0997F0528721276FCC8521649"
+  },
+  {
+    "id": "12-ribbonwake",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2042697,
+    "sha256": "DBE917BEF4C7DC3CBEB7CBD14A86B4F87DFF14F8C6FA797ED8CDA0D4E28D451A"
+  },
+  {
+    "id": "13-kettleback",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2085335,
+    "sha256": "B0E7F02A461DDE9AA4B384B204022EEB570F5E0B23AD7FA645F765607CDA97EA"
+  },
+  {
+    "id": "14-lanternjaw",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 1788237,
+    "sha256": "40656CCF2706A09E2698D4CE5CBCD055404BBD190CC34D5A4B3B27F0F20F2F4A"
+  },
+  {
+    "id": "15-tidebell",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2348411,
+    "sha256": "468FB85DFBACB38CD79FEB027ADCE351E359F093F9DFA09BFD3C4F2860AA46D8"
+  },
+  {
+    "id": "16-brinecap",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2240629,
+    "sha256": "6DEA8DCC0D82D9235448CED74144C8C04905D63D7AAA891CF889962E0AC800BB"
+  },
+  {
+    "id": "17-basalt",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2201518,
+    "sha256": "93EE49A5A29BBAE831BC5CE325E11D5F424B95FBD7A9B2440AE74789A0B25502"
+  },
+  {
+    "id": "18-orchard",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2612180,
+    "sha256": "4B2BB1E34D5DE668D1594C7DF7E7F1E6E7EFAEDC7220472C612DEF5389CF7E5C"
+  },
+  {
+    "id": "19-threadwing",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 1760548,
+    "sha256": "F356DCA4DC839A3EFDF1D39410B4E4EE316605B5D5C82D358258A3B291A13B07"
+  },
+  {
+    "id": "20-cumulus",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2063569,
+    "sha256": "D821E92728CDCF6D7CD98A49D85A5CE8524E713BA2DDF9AD7E3DE54D716137BB"
+  },
+  {
+    "id": "21-stormglass",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2243518,
+    "sha256": "84FABE5E944C5B1AA98E37D3275F51B27C82FEB8E3F650EB6E534B319694C198"
+  },
+  {
+    "id": "22-equipment",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2285653,
+    "sha256": "5608EFE09C5AFB5580D9A6939E53F7EDDF627E595E80F241CAA2C1C8B5BC7934"
+  },
+  {
+    "id": "23-spellbook",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2458721,
+    "sha256": "8BDFCE255423D85485D10BA1B0E544A7BB768D554E5DB029F49EDDFB7723DBDB"
+  },
+  {
+    "id": "24-spell-physics",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2832012,
+    "sha256": "D86E3C7C236CF1585A376693F61A16F97429DE7A83AD0F02E3D2B7D3DCE792CC"
+  },
+  {
+    "id": "25-island-paths",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2700911,
+    "sha256": "B6E0387A1F5EC5796D6C8DED152E0D9B469D7B94548795CCFC1C319459406FBD"
+  }
+]

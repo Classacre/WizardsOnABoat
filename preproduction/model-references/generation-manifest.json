@@ -1,0 +1,603 @@
+{
+  "generated_with": "built-in image_gen",
+  "purpose": "Whole-object single-view references; use Tripo for component segmentation",
+  "existing_wizard": "preproduction/tripo/inputs/wizard.png",
+  "jobs": [
+    {
+      "id": "shopkeeper",
+      "title": "Mara, the harbour keeper",
+      "category": "Characters",
+      "board": "02-shopkeeper.png",
+      "subject": "The elderly female harbour keeper, warm brown skin, silver curls, round brass spectacles, small teal pointed cap, navy coat, mustard work apron, rolled trousers and leather boots. Full-body front view in a relaxed A-pose with hands separated from hips, nothing held.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. The elderly female harbour keeper, warm brown skin, silver curls, round brass spectacles, small teal pointed cap, navy coat, mustard work apron, rolled trousers and leather boots. Full-body front view in a relaxed A-pose with hands separated from hips, nothing held. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-c32f154b-2d11-4383-921a-aebd3c625161.png"
+    },
+    {
+      "id": "boat",
+      "title": "The complete Spellwake Sloop",
+      "category": "Boat & gear",
+      "board": "03-boat.png",
+      "subject": "ONE complete Spellwake Sloop from the approved board: golden-brown timber hull with complete keel, teal gunwales, walkable deck, small stern cabin, steering wheel, mast, spars, one ivory sail bearing its blue spiral, rope rigging, brass details, lantern, attached boarding ladder and blue pennant. Elevated three-quarter bow view of the entire assembled vessel, all the way from mast tip to keel; sail angled so some deck is visible. No crew, water, waves, island, stand or detached parts. This is the complete assembled boat, NOT a hull-only or exploded parts image.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. ONE complete Spellwake Sloop from the approved board: golden-brown timber hull with complete keel, teal gunwales, walkable deck, small stern cabin, steering wheel, mast, spars, one ivory sail bearing its blue spiral, rope rigging, brass details, lantern, attached boarding ladder and blue pennant. Elevated three-quarter bow view of the entire assembled vessel, all the way from mast tip to keel; sail angled so some deck is visible. No crew, water, waves, island, stand or detached parts. This is the complete assembled boat, NOT a hull-only or exploded parts image. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "previous_source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-4a3c7056-8409-4cd2-b881-0f5e4a988483.png",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-0cf2a4d5-14d2-4a42-a103-e37c98456e1e.png"
+    },
+    {
+      "id": "boat_sail",
+      "title": "Spellwake mast and sail",
+      "category": "Boat & gear",
+      "board": "03-boat.png",
+      "subject": "One complete sloop mast-and-sail assembly: tall wooden mast, spar and boom, single ivory triangular patched sail with large blue spiral, small blue pennant and minimal attached ropes. Sail opened with gentle curvature. Three-quarter view, complete mast base visible. No ship hull, water or base.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One complete sloop mast-and-sail assembly: tall wooden mast, spar and boom, single ivory triangular patched sail with large blue spiral, small blue pennant and minimal attached ropes. Sail opened with gentle curvature. Three-quarter view, complete mast base visible. No ship hull, water or base. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-14ef2e5a-c851-4ea3-91e0-3a16605c0a59.png",
+      "covered_by": "boat"
+    },
+    {
+      "id": "crab",
+      "title": "Kettleback Crab",
+      "category": "Creatures",
+      "board": "13-kettleback.png",
+      "subject": "One Kettleback Crab: cream stony dome shell with exactly two hollow organic pressure vents, cobalt blue body, two eyestalks with amber eyes, two large front pincers and six walking legs (three per side). Slightly elevated front three-quarter neutral stance with legs spread and clearly separated. No steam or rocks.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Kettleback Crab: cream stony dome shell with exactly two hollow organic pressure vents, cobalt blue body, two eyestalks with amber eyes, two large front pincers and six walking legs (three per side). Slightly elevated front three-quarter neutral stance with legs spread and clearly separated. No steam or rocks. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-56f28407-aa2b-4407-90ae-83fda5eaabba.png"
+    },
+    {
+      "id": "ribbonwake",
+      "title": "Ribbonwake Glider",
+      "category": "Creatures",
+      "board": "12-ribbonwake.png",
+      "subject": "One Ribbonwake Glider, cobalt and turquoise dappled manta-like filter feeder, FOUR separate ivory-edged petal fins, ivory pleated throat fan, black eyes and long slender curled ribbon tail. Elevated front three-quarter swimming-neutral pose with all four fins separated; tail stretches behind without crossing the body. No water.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Ribbonwake Glider, cobalt and turquoise dappled manta-like filter feeder, FOUR separate ivory-edged petal fins, ivory pleated throat fan, black eyes and long slender curled ribbon tail. Elevated front three-quarter swimming-neutral pose with all four fins separated; tail stretches behind without crossing the body. No water. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-1db7164a-bd82-4d27-93b7-ca6dd3fa7c2e.png"
+    },
+    {
+      "id": "lanternjaw",
+      "title": "Lanternjaw Skulker",
+      "category": "Creatures",
+      "board": "14-lanternjaw.png",
+      "subject": "One Lanternjaw Skulker, long navy mottled marine body, turquoise cream underside, shovel snout, small dorsal fin, two foreflippers, vertical tail fin and amber pleated throat pouch. Neutral near-side three-quarter pose, body straight and pouch folded against throat; all silhouette including tail visible. No glow aura or water.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Lanternjaw Skulker, long navy mottled marine body, turquoise cream underside, shovel snout, small dorsal fin, two foreflippers, vertical tail fin and amber pleated throat pouch. Neutral near-side three-quarter pose, body straight and pouch folded against throat; all silhouette including tail visible. No glow aura or water. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-0b3fc53d-4a4e-40d6-b80d-b4357b110b2c.png"
+    },
+    {
+      "id": "tidebell",
+      "title": "Tidebell Colossus",
+      "category": "Creatures",
+      "board": "15-tidebell.png",
+      "subject": "One Tidebell Colossus: stepped conical ivory shell with turquoise spiral bands and tiny encrusted mossy rocks, golden folded mantle, two visible eyes, and exactly SIX thick blue-green sucker-lined arms. Low front three-quarter view, all six arms fanned out separately and visible under shell, no coiled overlap, no base, water or foam.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Tidebell Colossus: stepped conical ivory shell with turquoise spiral bands and tiny encrusted mossy rocks, golden folded mantle, two visible eyes, and exactly SIX thick blue-green sucker-lined arms. Low front three-quarter view, all six arms fanned out separately and visible under shell, no coiled overlap, no base, water or foam. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-b0061efa-41b4-4eb7-a194-2468292365dd.png"
+    },
+    {
+      "id": "brinecap",
+      "title": "Brinecap Browser",
+      "category": "Creatures",
+      "board": "16-brinecap.png",
+      "subject": "One Brinecap Browser: stout blue-gray reptilian herbivore, cream blunt friendly beak muzzle and belly, exactly four short strong legs, tapering tail and dorsal fan of large pale turquoise salt-crystal plates. Neutral three-quarter standing pose, legs apart and dorsal fan clearly silhouetted.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Brinecap Browser: stout blue-gray reptilian herbivore, cream blunt friendly beak muzzle and belly, exactly four short strong legs, tapering tail and dorsal fan of large pale turquoise salt-crystal plates. Neutral three-quarter standing pose, legs apart and dorsal fan clearly silhouetted. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-e33758f3-aedf-46b8-a148-15d76daf5a63.png"
+    },
+    {
+      "id": "basalt",
+      "title": "Basalt Knuckler",
+      "category": "Creatures",
+      "board": "17-basalt.png",
+      "subject": "One Basalt Knuckler as approved: dark slate armored six-limbed rock lizard, pale ochre underside, two oversized muscular front knuckle arms plus four smaller walking legs, long weighty tail, layered craggy plates. Neutral three-quarter stance with six limbs clearly separate, calm closed mouth. No impact effect.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Basalt Knuckler as approved: dark slate armored six-limbed rock lizard, pale ochre underside, two oversized muscular front knuckle arms plus four smaller walking legs, long weighty tail, layered craggy plates. Neutral three-quarter stance with six limbs clearly separate, calm closed mouth. No impact effect. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f34d0b8f-f23d-4e6b-b9aa-ba3aca8cde5b.png"
+    },
+    {
+      "id": "orchard",
+      "title": "Orchard Reliquary",
+      "category": "Creatures",
+      "board": "18-orchard.png",
+      "subject": "One Orchard Reliquary boss: domed ancient beetle-tortoise, four stout main legs plus two smaller front feeding claws, pale stone shell with teal bands, warm seed-pod head crown and one small living orchard rooted on its back. Three-quarter neutral pose, all limbs visible, only the attached shell orchard, no surrounding ground roots or arena.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Orchard Reliquary boss: domed ancient beetle-tortoise, four stout main legs plus two smaller front feeding claws, pale stone shell with teal bands, warm seed-pod head crown and one small living orchard rooted on its back. Three-quarter neutral pose, all limbs visible, only the attached shell orchard, no surrounding ground roots or arena. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-3e86a2a9-bebc-4c29-aadd-d8700a7d4a17.png"
+    },
+    {
+      "id": "glider",
+      "title": "Threadwing Skater",
+      "category": "Creatures",
+      "board": "19-threadwing.png",
+      "subject": "One Threadwing Skater from the approved design: slender teal airborne insect, exactly FOUR cream delta membrane wings with teal veins, small golden head details, paired grasping feet and long forked split tail. Slightly elevated front three-quarter view, wings fully open and distinct, feet hanging separately. No sky or wind effects.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Threadwing Skater from the approved design: slender teal airborne insect, exactly FOUR cream delta membrane wings with teal veins, small golden head details, paired grasping feet and long forked split tail. Slightly elevated front three-quarter view, wings fully open and distinct, feet hanging separately. No sky or wind effects. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-e6aefbce-0600-4bb5-a0e8-55a05db85e50.png"
+    },
+    {
+      "id": "cumulus",
+      "title": "Cumulus Grazer",
+      "category": "Creatures",
+      "board": "20-cumulus.png",
+      "subject": "One Cumulus Grazer: gentle buoyant teal creature with FOUR ivory inflated lobes, attached patches of moss and small stones, two small paddle fins, expressive dark eyes and long prehensile anchoring tail. Neutral three-quarter floating pose, tail uncoiled to one side without touching anything. No island, clouds or detached props.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Cumulus Grazer: gentle buoyant teal creature with FOUR ivory inflated lobes, attached patches of moss and small stones, two small paddle fins, expressive dark eyes and long prehensile anchoring tail. Neutral three-quarter floating pose, tail uncoiled to one side without touching anything. No island, clouds or detached props. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-60fac989-a59d-4621-b9d0-a9f47be3b0e2.png"
+    },
+    {
+      "id": "stormglass",
+      "title": "Stormglass Roc",
+      "category": "Creatures",
+      "board": "21-stormglass.png",
+      "subject": "One Stormglass Roc: regal seabird with navy and turquoise faceted feathers, ivory breast, attached amber throat crystals, hooked beak, two strong taloned legs and forked tail. Front three-quarter neutral flying pose with both wings outspread, full wingspan visible. No effects, perch, scenery or loose crystals.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Stormglass Roc: regal seabird with navy and turquoise faceted feathers, ivory breast, attached amber throat crystals, hooked beak, two strong taloned legs and forked tail. Front three-quarter neutral flying pose with both wings outspread, full wingspan visible. No effects, perch, scenery or loose crystals. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-993fe318-b80b-4e0d-9508-91bcba1d386d.png"
+    },
+    {
+      "id": "staff",
+      "title": "Tideglass staff",
+      "category": "Equipment",
+      "board": "01-wizard.png",
+      "subject": "One entire driftwood wizard staff from the right-side detail: twisted fork of brown wood holding a faceted pale turquoise crystal, rope bindings and attached cream shell charm. Upright three-quarter view, full length including tip and butt. No wizard, hands or separate accessory.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One entire driftwood wizard staff from the right-side detail: twisted fork of brown wood holding a faceted pale turquoise crystal, rope bindings and attached cream shell charm. Upright three-quarter view, full length including tip and butt. No wizard, hands or separate accessory. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-7a37e181-96fc-4e2c-ab41-18b34b9ca8c8.png"
+    },
+    {
+      "id": "spellbook",
+      "title": "Starting spellbook",
+      "category": "Equipment",
+      "board": "23-spellbook.png",
+      "subject": "One open thick weathered leather-bound wizard spellbook, cream parchment pages with restrained blue ink glyph diagrams and decorative lines, brass corner hardware and clasp. Three-quarter view with readable volume and spine. No UI overlays, hands, floating glyphs, loose pages or text labels; small page ink marks are part of the object.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One open thick weathered leather-bound wizard spellbook, cream parchment pages with restrained blue ink glyph diagrams and decorative lines, brass corner hardware and clasp. Three-quarter view with readable volume and spine. No UI overlays, hands, floating glyphs, loose pages or text labels; small page ink marks are part of the object. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ea1a4630-4654-449b-b988-cf305f8da0c7.png"
+    },
+    {
+      "id": "compass",
+      "title": "Wayfinder compass",
+      "category": "Equipment",
+      "board": "22-equipment.png",
+      "subject": "One brass hinged pocket compass with its circular lid open, dark navy enamel compass rose, ivory dial, brass needle and suspension ring. Three-quarter view; lid attached. No map, hand or detached compass components.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One brass hinged pocket compass with its circular lid open, dark navy enamel compass rose, ivory dial, brass needle and suspension ring. Three-quarter view; lid attached. No map, hand or detached compass components. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-b0c47a8e-7d27-44d4-849d-eb2760086f17.png"
+    },
+    {
+      "id": "potion",
+      "title": "Potion flask",
+      "category": "Equipment",
+      "board": "22-equipment.png",
+      "subject": "One rounded faceted glass potion flask filled with turquoise liquid, cork stopper and simple tan leather neck wrap. Slightly stylized opaque-translucent glass so the silhouette is easy to reconstruct, readable liquid level. Three-quarter view; no separate bottles or smoke.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One rounded faceted glass potion flask filled with turquoise liquid, cork stopper and simple tan leather neck wrap. Slightly stylized opaque-translucent glass so the silhouette is easy to reconstruct, readable liquid level. Three-quarter view; no separate bottles or smoke. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-68892d91-e367-463c-9d15-ac8b5099eddc.png"
+    },
+    {
+      "id": "hearthstone",
+      "title": "Hearthstone",
+      "category": "Equipment",
+      "board": "22-equipment.png",
+      "subject": "One handheld weathered teal-blue hearthstone, a rounded irregular standing-stone shape with a bold cream spiral carved into its broad front face, worn pale edges and subtle turquoise mineral flecks, matching the Return Anchor stone in the approved board. Three-quarter view, no pedestal, ground patch, beam, loose fragments or halo.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One handheld weathered teal-blue hearthstone, a rounded irregular standing-stone shape with a bold cream spiral carved into its broad front face, worn pale edges and subtle turquoise mineral flecks, matching the Return Anchor stone in the approved board. Three-quarter view, no pedestal, ground patch, beam, loose fragments or halo. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-8ce3ed5b-a41a-4b95-8385-dbd9d1f49597.png"
+    },
+    {
+      "id": "loot_chest",
+      "title": "Floating loot chest",
+      "category": "Equipment",
+      "board": "22-equipment.png",
+      "subject": "One sturdy closed nautical treasure chest matching the Dungeon Discoveries chest in the approved board: dark teal wooden panels, chunky warm brass corner plates and edge bands with rivets, central circular brass latch, small compass-star inlay on the lid and attached short blue cloth ribbon. Three-quarter view, no pedestal, coins, water, background or detached objects.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One sturdy closed nautical treasure chest matching the Dungeon Discoveries chest in the approved board: dark teal wooden panels, chunky warm brass corner plates and edge bands with rivets, central circular brass latch, small compass-star inlay on the lid and attached short blue cloth ribbon. Three-quarter view, no pedestal, coins, water, background or detached objects. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ec57e276-cf75-4a1e-9f34-1ba91ff26b70.png"
+    },
+    {
+      "id": "barrel",
+      "title": "Ship's barrel",
+      "category": "Equipment",
+      "board": "05-buildings-v2.png",
+      "subject": "One closed weathered oak supply barrel from the building kit, dark iron hoops, wooden circular lid and small bung. Three-quarter view, thick stylized timber grain, no stand, cargo or additional barrels.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One closed weathered oak supply barrel from the building kit, dark iron hoops, wooden circular lid and small bung. Three-quarter view, thick stylized timber grain, no stand, cargo or additional barrels. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-5726f666-169e-4f8e-a0e5-a6af6ef76d53.png"
+    },
+    {
+      "id": "crate",
+      "title": "Supply crate",
+      "category": "Equipment",
+      "board": "05-buildings-v2.png",
+      "subject": "One closed square timber supply crate from the building kit, diagonally braced golden-brown planks, dark nail heads, simple rope carrying handle attached to side. Three-quarter view, no goods or other boxes.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One closed square timber supply crate from the building kit, diagonally braced golden-brown planks, dark nail heads, simple rope carrying handle attached to side. Three-quarter view, no goods or other boxes. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-d1a6ca8c-016d-42a3-8f5d-35f8568b4021.png"
+    },
+    {
+      "id": "lantern",
+      "title": "Harbour lantern",
+      "category": "Equipment",
+      "board": "03-boat.png",
+      "subject": "One brass-and-dark-iron hanging ship lantern, warm ivory glass panels, compact pitched cap, attached top hanging loop. Three-quarter view of the entire lantern. Gentle warm glass color, no cast glow aura, hanging post or scene.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One brass-and-dark-iron hanging ship lantern, warm ivory glass panels, compact pitched cap, attached top hanging loop. Three-quarter view of the entire lantern. Gentle warm glass color, no cast glow aura, hanging post or scene. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ab37dc42-cb5f-4172-8caf-8b7e11431abc.png"
+    },
+    {
+      "id": "helm",
+      "title": "Ship's wheel",
+      "category": "Boat & gear",
+      "board": "03-boat.png",
+      "subject": "One small wooden ship's steering wheel with eight turned spokes, brass hub and its attached short wooden pedestal. Three-quarter view, isolated assembly, no deck, ship or character.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One small wooden ship's steering wheel with eight turned spokes, brass hub and its attached short wooden pedestal. Three-quarter view, isolated assembly, no deck, ship or character. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "boat"
+    },
+    {
+      "id": "rudder",
+      "title": "Sloop rudder",
+      "category": "Boat & gear",
+      "board": "03-boat.png",
+      "subject": "One separate sloop rudder assembly: tall tapered golden-brown planked rudder blade, teal upper edge, dark metal hinge fittings and attached short tiller linkage. Near-side three-quarter view. No boat hull or water.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One separate sloop rudder assembly: tall tapered golden-brown planked rudder blade, teal upper edge, dark metal hinge fittings and attached short tiller linkage. Near-side three-quarter view. No boat hull or water. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "boat"
+    },
+    {
+      "id": "shop",
+      "title": "Hearthharbour general shop",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One complete approved general shop: cream stone walls, terracotta tiled pitched roof, chimney, teal shutters, teal fabric awning over exterior counter and warm wooden front door. Three-quarter front view, whole building, no people, floating floor plan, island base, surrounding water, signs with lettering or unrelated crates.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One complete approved general shop: cream stone walls, terracotta tiled pitched roof, chimney, teal shutters, teal fabric awning over exterior counter and warm wooden front door. Three-quarter front view, whole building, no people, floating floor plan, island base, surrounding water, signs with lettering or unrelated crates. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-c12f7552-b118-4bbd-bde2-23870072bbbd.png",
+      "previous_source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-df00c092-58fb-4145-8468-ec9d522e8ba5.png",
+      "edit_prompts": [
+        "Edit this model reference into ONE complete standalone general-shop BUILDING on a plain pale cool-gray studio background. Preserve the exact cream-stone shop, terracotta roof and chimney, teal shutters, teal awning with its attached wooden supports, exterior merchandise counter, door and attached lanterns. REMOVE ALL ocean water, foam, shoreline, rocky island terrain, raised island plinth, jetty, dock and dock stairs. The building and its awning posts must terminate together at one simple level ground plane; a very shallow flat stone foundation immediately beneath the building and shop porch is acceptable. This must be the complete assembled shop, not segmented parts or an exploded view. Keep the same painterly stylized 3D game look, rich colours, three-quarter angle, soft neutral light and full uncropped silhouette with ample margin. No people, text, labels, inset views, separate scenery or other buildings. The resulting PNG will be supplied directly to image-to-3D reconstruction, so the silhouette should contain only the complete shop assembly."
+      ]
+    },
+    {
+      "id": "lighthouse",
+      "title": "Hearthharbour lighthouse",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One complete approved lighthouse: tapered cream stone tower, warm wood arched door, narrow windows, wooden gallery rail and glass lantern room with terracotta cap. One attached teal flag. Three-quarter view showing base and tip. No rocky island, people, water or detached buildings.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One complete approved lighthouse: tapered cream stone tower, warm wood arched door, narrow windows, wooden gallery rail and glass lantern room with terracotta cap. One attached teal flag. Three-quarter view showing base and tip. No rocky island, people, water or detached buildings. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f8d8f343-f8db-41dc-b1fe-efdfbee7d7b1.png"
+    },
+    {
+      "id": "cottage",
+      "title": "Fisher-wizard cottage",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One compact cream stone fisher-wizard cottage with terracotta roof, chimney, teal shutters, arched timber door and small attached wooden porch awning. Three-quarter front view, whole structure, no island base, people, surroundings or floor-plan insert.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One compact cream stone fisher-wizard cottage with terracotta roof, chimney, teal shutters, arched timber door and small attached wooden porch awning. Three-quarter front view, whole structure, no island base, people, surroundings or floor-plan insert. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-22775689-373f-4adf-9907-00ba5db4698a.png"
+    },
+    {
+      "id": "dock",
+      "title": "Modular dock segment",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One straight standalone wooden dock module: rectangular weathered plank deck supported by four stout timber pilings, attached rope rail along one side and short attached boarding ladder. Three-quarter view exposing full pilings. No water, stone shore, boat, people or other dock segments.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One straight standalone wooden dock module: rectangular weathered plank deck supported by four stout timber pilings, attached rope rail along one side and short attached boarding ladder. Three-quarter view exposing full pilings. No water, stone shore, boat, people or other dock segments. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-5743fa8b-b7d3-498b-9ed7-a5593a0c656c.png"
+    },
+    {
+      "id": "ruin_arch",
+      "title": "Ancient coastal arch",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One weathered cream limestone freestanding arch ruin, chipped voussoirs, chunky side pillars, sparse attached moss and trailing ivy. Three-quarter view, open unobstructed doorway, no terrain mound, people or adjacent ruins.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One weathered cream limestone freestanding arch ruin, chipped voussoirs, chunky side pillars, sparse attached moss and trailing ivy. Three-quarter view, open unobstructed doorway, no terrain mound, people or adjacent ruins. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-7418d78b-b2c7-4a3f-be92-34d35744d196.png"
+    },
+    {
+      "id": "stone_wall",
+      "title": "Stone wall module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One rectangular modular cream limestone wall panel, slightly irregular chunky blocks, a narrow small arched window opening near center. Three-quarter view showing wall thickness, straight bottom and vertical ends. No roof, ground, window glass or other modules.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One rectangular modular cream limestone wall panel, slightly irregular chunky blocks, a narrow small arched window opening near center. Three-quarter view showing wall thickness, straight bottom and vertical ends. No roof, ground, window glass or other modules. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "stone_corner",
+      "title": "Stone corner module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One L-shaped corner module of chunky warm ivory limestone blocks, same height and block scale as the coastal wall kit, neat straight bottom. Three-quarter view showing inside and outside thickness. No roof, scenery or separate pieces.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One L-shaped corner module of chunky warm ivory limestone blocks, same height and block scale as the coastal wall kit, neat straight bottom. Three-quarter view showing inside and outside thickness. No roof, scenery or separate pieces. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "door",
+      "title": "Arched timber door",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One arched wooden door fitted within its chunky ivory limestone doorway frame. Closed dark honey planks, black strap hinges and small brass handle. Three-quarter front view showing thickness. No wider wall, building, ground or extra door.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One arched wooden door fitted within its chunky ivory limestone doorway frame. Closed dark honey planks, black strap hinges and small brass handle. Three-quarter front view showing thickness. No wider wall, building, ground or extra door. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "window",
+      "title": "Shuttered window module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One compact ivory stone-framed window with teal timber shutters opened outward and a dark recessed opening. Three-quarter front view showing frame depth and hinge construction. One connected module, no wider wall or house.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One compact ivory stone-framed window with teal timber shutters opened outward and a dark recessed opening. Three-quarter front view showing frame depth and hinge construction. One connected module, no wider wall or house. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "roof",
+      "title": "Terracotta roof module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One square sloping roof panel of overlapping orange terracotta barrel tiles on thick weathered timber rafters, matching the modular kit. Three-quarter view with top and underside rim visible. Single roof panel, no complete house or extra parts.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One square sloping roof panel of overlapping orange terracotta barrel tiles on thick weathered timber rafters, matching the modular kit. Three-quarter view with top and underside rim visible. Single roof panel, no complete house or extra parts. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "stairs",
+      "title": "Stone stair module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One short freestanding flight of five chunky worn ivory limestone steps with filled stone sides. Three-quarter view with all treads visible, flat bottom, no handrail, terrain or house.",
+      "status": "consolidated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One short freestanding flight of five chunky worn ivory limestone steps with filled stone sides. Three-quarter view with all treads visible, flat bottom, no handrail, terrain or house. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "covered_by": "shop"
+    },
+    {
+      "id": "rope_fence",
+      "title": "Rope railing module",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One simple dock railing span: two square weathered timber posts connected by two slightly sagging thick tan ropes with tied ends. Three-quarter view showing both post bottoms, no base platform or nearby sections.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One simple dock railing span: two square weathered timber posts connected by two slightly sagging thick tan ropes with tied ends. Three-quarter view showing both post bottoms, no base platform or nearby sections. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-d1904927-da4f-48e5-8694-0129bfa4c352.png"
+    },
+    {
+      "id": "signpost",
+      "title": "Harbour signpost",
+      "category": "Building kit",
+      "board": "05-buildings-v2.png",
+      "subject": "One wooden harbour sign structure from the building kit: two upright posts with small crossbar and one attached blank hanging framed sign panel. Warm worn wood and rope ties, three-quarter view, no lettering, ground or additional items.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One wooden harbour sign structure from the building kit: two upright posts with small crossbar and one attached blank hanging framed sign panel. Warm worn wood and rope ties, three-quarter view, no lettering, ground or additional items. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-cfb2dbd8-ced8-4a16-8282-32887ae90b48.png"
+    },
+    {
+      "id": "tree",
+      "title": "Coastal broadleaf tree",
+      "category": "Nature",
+      "board": "07-land-biomes.png",
+      "subject": "One stylized coastal broadleaf tree, thick warm gray-brown trunk, broad wind-rounded olive and bright green foliage masses, visible forks and root flare. Three-quarter view, roots end cleanly with no earth mound. Match the sunny painted island trees, no landscape.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One stylized coastal broadleaf tree, thick warm gray-brown trunk, broad wind-rounded olive and bright green foliage masses, visible forks and root flare. Three-quarter view, roots end cleanly with no earth mound. Match the sunny painted island trees, no landscape. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-742f2a51-d3eb-46de-a3f7-a6779aeac047.png"
+    },
+    {
+      "id": "wind_tree",
+      "title": "Cloud Meadow wind tree",
+      "category": "Nature",
+      "board": "08-sky-biomes.png",
+      "subject": "One wind-bent sky-island tree, elegantly curved pale weathered trunk, exposed gripping roots and swept clusters of pale spring-green leaves. Three-quarter view, full crown and roots isolated, no floating island or cloud.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One wind-bent sky-island tree, elegantly curved pale weathered trunk, exposed gripping roots and swept clusters of pale spring-green leaves. Three-quarter view, full crown and roots isolated, no floating island or cloud. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-497ce56c-0b85-4c7b-95e5-34cb957f7d3b.png"
+    },
+    {
+      "id": "mangrove",
+      "title": "Mangrove tree",
+      "category": "Nature",
+      "board": "07-land-biomes.png",
+      "subject": "One mangrove tree, warm gray branching trunk, clearly separated arched prop roots, dense olive-green leaf clumps and sparse hanging roots. Three-quarter view, entire crown and root system, no mud, water or other trees.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One mangrove tree, warm gray branching trunk, clearly separated arched prop roots, dense olive-green leaf clumps and sparse hanging roots. Three-quarter view, entire crown and root system, no mud, water or other trees. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-58ffddd2-d49c-4ab4-9318-0affae3eefad.png"
+    },
+    {
+      "id": "kelp_fan",
+      "title": "Kelp fan",
+      "category": "Nature",
+      "board": "06-sea-biomes.png",
+      "subject": "One attached kelp plant with a compact holdfast and seven long broad gently waving translucent-opaque teal olive blades, small amber floats along the stems. Three-quarter view with blades separated, full plant isolated. No water, bubbles, seabed, fish or landscape.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One attached kelp plant with a compact holdfast and seven long broad gently waving translucent-opaque teal olive blades, small amber floats along the stems. Three-quarter view with blades separated, full plant isolated. No water, bubbles, seabed, fish or landscape. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ccffa2cc-0065-4101-8196-532836504aad.png"
+    },
+    {
+      "id": "shoal_seagrass",
+      "title": "Shoal seagrass",
+      "category": "Nature",
+      "board": "06-sea-biomes.png",
+      "subject": "One compact seagrass tuft joined at one root, multiple long tapering turquoise-green ribbon blades gently fanning out, readable thick stylized blades. Three-quarter view, no seabed, stones, water or multiple separate tufts.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One compact seagrass tuft joined at one root, multiple long tapering turquoise-green ribbon blades gently fanning out, readable thick stylized blades. Three-quarter view, no seabed, stones, water or multiple separate tufts. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-99679596-4f1c-4ba5-9404-502bf35b19e1.png"
+    },
+    {
+      "id": "amber_coral",
+      "title": "Amber fan coral",
+      "category": "Nature",
+      "board": "06-sea-biomes.png",
+      "subject": "One warm amber-gold branching fan coral colony on its compact attached calcified foot, thick stylized branching lobes with rounded tips and subtle ochre-to-ivory variation. Three-quarter view, single connected coral, no seabed, water or marine animals.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One warm amber-gold branching fan coral colony on its compact attached calcified foot, thick stylized branching lobes with rounded tips and subtle ochre-to-ivory variation. Three-quarter view, single connected coral, no seabed, water or marine animals. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-4ed9d7d6-a9fb-4a49-b910-b34b5cc7b25f.png"
+    },
+    {
+      "id": "coastal_crag_0",
+      "title": "Low coastal crag",
+      "category": "Nature",
+      "board": "07-land-biomes.png",
+      "subject": "One squat broad faceted coastal rock, gray slate sides with ochre mineral streaks and a little attached olive moss on the top. Low asymmetrical boulder silhouette and chipped planes, three-quarter view. No terrain patch or other rocks.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One squat broad faceted coastal rock, gray slate sides with ochre mineral streaks and a little attached olive moss on the top. Low asymmetrical boulder silhouette and chipped planes, three-quarter view. No terrain patch or other rocks. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-426265d7-6426-4fff-a141-04110b0a7000.png"
+    },
+    {
+      "id": "coastal_crag_1",
+      "title": "Tall coastal crag",
+      "category": "Nature",
+      "board": "07-land-biomes.png",
+      "subject": "One tall narrow angular coastal rock pinnacle, gray slate faces, pale weathered edges, a few attached moss patches. Strong vertical silhouette with thick stable base. Three-quarter view, isolated single rock, no island terrain or detached fragments.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One tall narrow angular coastal rock pinnacle, gray slate faces, pale weathered edges, a few attached moss patches. Strong vertical silhouette with thick stable base. Three-quarter view, isolated single rock, no island terrain or detached fragments. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f1ecdc15-734c-4ff7-85d9-d05a2b83db55.png"
+    },
+    {
+      "id": "coastal_crag_2",
+      "title": "Split coastal crag",
+      "category": "Nature",
+      "board": "07-land-biomes.png",
+      "subject": "One medium broad coastal boulder with a deep central notch forming two joined peaks, dark slate facets, ochre streaks and olive moss in creases. One connected rock at base. Three-quarter view, no separate rocks or landscape.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One medium broad coastal boulder with a deep central notch forming two joined peaks, dark slate facets, ochre streaks and olive moss in creases. One connected rock at base. Three-quarter view, no separate rocks or landscape. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-7452a9ac-ccfd-4676-ae09-da6b0cc8cf37.png"
+    },
+    {
+      "id": "storm_crystal",
+      "title": "Stormglass outcrop",
+      "category": "Nature",
+      "board": "08-sky-biomes.png",
+      "subject": "One connected cluster of three to five thick turquoise stormglass crystal prisms growing from a compact pale limestone foot. Angular mineral faces and pale ivory edges. Three-quarter view, no glow halo, lightning, terrain slab or extra scattered crystals.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One connected cluster of three to five thick turquoise stormglass crystal prisms growing from a compact pale limestone foot. Angular mineral faces and pale ivory edges. Three-quarter view, no glow halo, lightning, terrain slab or extra scattered crystals. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-815e5031-64e1-4948-9048-a54cac173543.png"
+    },
+    {
+      "id": "hearth_pad",
+      "title": "Hearthharbour return anchor",
+      "category": "Buildings",
+      "board": "04-starter-island.png",
+      "subject": "One circular low cream-stone return-anchor pedestal with three shallow concentric steps and a large central inset turquoise hearth crystal, restrained carved nautical markings. Three-quarter view, one complete connected assembly, no island, beam, people or surrounding props.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One circular low cream-stone return-anchor pedestal with three shallow concentric steps and a large central inset turquoise hearth crystal, restrained carved nautical markings. Three-quarter view, one complete connected assembly, no island, beam, people or surrounding props. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ca3d1088-6b9c-452e-917e-93e3ab466e7a.png"
+    },
+    {
+      "id": "tide_gate",
+      "title": "Tide Vault entrance",
+      "category": "Dungeons",
+      "board": "09-tide-vault.png",
+      "subject": "One Tide Vault entrance portal: heavy ancient ivory stone frame, paired inset teal bronze doors, wave-carved lintel, worn copper hinge bands and attached barnacles. Three-quarter front view with flat threshold, one freestanding portal module. No cave, landscape or water.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Tide Vault entrance portal: heavy ancient ivory stone frame, paired inset teal bronze doors, wave-carved lintel, worn copper hinge bands and attached barnacles. Three-quarter front view with flat threshold, one freestanding portal module. No cave, landscape or water. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-137b0cbc-86e4-4438-90ec-a9f4a9efda87.png"
+    },
+    {
+      "id": "tidewheel",
+      "title": "Tidewheel mechanism",
+      "category": "Dungeons",
+      "board": "09-tide-vault.png",
+      "subject": "One tide-control puzzle mechanism: large weathered bronze spoked wheel set upright in a compact carved ivory stone plinth, turquoise inlaid channels and attached short mechanical axle. Three-quarter view, one connected device. No water, building, characters or floating effects.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One tide-control puzzle mechanism: large weathered bronze spoked wheel set upright in a compact carved ivory stone plinth, turquoise inlaid channels and attached short mechanical axle. Three-quarter view, one connected device. No water, building, characters or floating effects. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-8aa4852e-8464-43c4-997a-17d19ddc61ba.png"
+    },
+    {
+      "id": "vault_bay",
+      "title": "Tide Vault passage bay",
+      "category": "Dungeons",
+      "board": "09-tide-vault.png",
+      "subject": "One modular Tide Vault passage bay: two parallel short ivory masonry piers joined overhead by a low arched rib, a rectangular tiled stone floor connecting them, teal worn tile details and attached barnacles. Clearly a single open-ended tunnel module shown three-quarter, no roof beyond arch, landscape, water or adjacent rooms.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One modular Tide Vault passage bay: two parallel short ivory masonry piers joined overhead by a low arched rib, a rectangular tiled stone floor connecting them, teal worn tile details and attached barnacles. Clearly a single open-ended tunnel module shown three-quarter, no roof beyond arch, landscape, water or adjacent rooms. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-6876b98c-5cb9-41dd-8a1a-b90689742331.png"
+    },
+    {
+      "id": "root_gate",
+      "title": "Root Archive entrance",
+      "category": "Dungeons",
+      "board": "10-root-archive.png",
+      "subject": "One Root Archive doorway module: ancient ochre stone arch entwined with thick living brown roots, inset teal carved timber double doors, a few attached green leaves, flat threshold. Three-quarter view, single freestanding architectural assembly, no surrounding forest or terrain.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Root Archive doorway module: ancient ochre stone arch entwined with thick living brown roots, inset teal carved timber double doors, a few attached green leaves, flat threshold. Three-quarter view, single freestanding architectural assembly, no surrounding forest or terrain. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ecbdc60c-4110-49dd-ae72-1963b08f6b04.png"
+    },
+    {
+      "id": "root_bridge",
+      "title": "Root Archive bridge",
+      "category": "Dungeons",
+      "board": "10-root-archive.png",
+      "subject": "One short arched root bridge: thick intertwined weathered living roots forming two side rails and a walkable deck of old stone slabs bound in roots, sparse attached moss. Three-quarter view with both ends fully visible. No canyon, trees, ground or other structures.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One short arched root bridge: thick intertwined weathered living roots forming two side rails and a walkable deck of old stone slabs bound in roots, sparse attached moss. Three-quarter view with both ends fully visible. No canyon, trees, ground or other structures. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-720aa0a2-5890-4cfa-bb1f-b626602d17f4.png"
+    },
+    {
+      "id": "seed_mechanism",
+      "title": "Seed mechanism",
+      "category": "Dungeons",
+      "board": "10-root-archive.png",
+      "subject": "One Root Archive seed puzzle mechanism: large amber-green carved seed pod cradled in a low bowl of intertwined roots and worn ivory stone, small teal rune inlays. One compact connected device, three-quarter view. No effects, forest, character or detached seeds.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One Root Archive seed puzzle mechanism: large amber-green carved seed pod cradled in a low bowl of intertwined roots and worn ivory stone, small teal rune inlays. One compact connected device, three-quarter view. No effects, forest, character or detached seeds. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-d3bb1887-e04d-4010-9b4a-bceaa78e38c0.png"
+    },
+    {
+      "id": "observatory_arch",
+      "title": "Storm Observatory arch",
+      "category": "Dungeons",
+      "board": "11-storm-observatory.png",
+      "subject": "One tall freestanding ochre limestone observatory arch with teal star-chart inlays, chunky weathered pillars, a subtle brass celestial medallion in the keystone and attached small wind-streamer. Three-quarter view, open center and complete bases. No sky island, backdrop or detached stars.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One tall freestanding ochre limestone observatory arch with teal star-chart inlays, chunky weathered pillars, a subtle brass celestial medallion in the keystone and attached small wind-streamer. Three-quarter view, open center and complete bases. No sky island, backdrop or detached stars. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-f1098e20-2143-4fbc-a661-02fa257e5cf6.png"
+    },
+    {
+      "id": "wind_vane",
+      "title": "Observatory wind vane",
+      "category": "Dungeons",
+      "board": "11-storm-observatory.png",
+      "subject": "One wind puzzle device: weathered brass celestial rings mounted on a short ochre stone pedestal, central turquoise crystal and a single arrow-shaped wind vane, simple readable ring structure. Three-quarter view, whole device isolated, no loose pieces, wind swirls or room.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One wind puzzle device: weathered brass celestial rings mounted on a short ochre stone pedestal, central turquoise crystal and a single arrow-shaped wind vane, simple readable ring structure. Three-quarter view, whole device isolated, no loose pieces, wind swirls or room. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-c8fb4209-155f-49f9-85d2-c4c70d422aa8.png"
+    },
+    {
+      "id": "glyph_reliquary",
+      "title": "Glyph reliquary",
+      "category": "Dungeons",
+      "board": "09-tide-vault.png",
+      "subject": "One dungeon reward reliquary: low ivory stone pedestal supporting an open brass-framed case with a single cream rune tablet held upright, turquoise wave-carved accents. One connected assembly, three-quarter view, no floating runes, spotlight, water or room.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One dungeon reward reliquary: low ivory stone pedestal supporting an open brass-framed case with a single cream rune tablet held upright, turquoise wave-carved accents. One connected assembly, three-quarter view, no floating runes, spotlight, water or room. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ed37b418-9354-4213-adbf-cf987bde2994.png"
+    },
+    {
+      "id": "harbour_counter",
+      "title": "Mara's trading counter",
+      "category": "Buildings",
+      "board": "02-shopkeeper.png",
+      "subject": "One wooden harbour trading counter, warm weathered planks, teal front panel with a small carved compass emblem, thick countertop and attached small shelf. Three-quarter view, empty working surface, no shopkeeper, bottles, loose goods, building or floor.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One wooden harbour trading counter, warm weathered planks, teal front panel with a small carved compass emblem, thick countertop and attached small shelf. Three-quarter view, empty working surface, no shopkeeper, bottles, loose goods, building or floor. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-a9bdbeae-dc6c-47dd-93df-d1dd99a4cab1.png"
+    },
+    {
+      "id": "noticeboard",
+      "title": "Harbour noticeboard",
+      "category": "Buildings",
+      "board": "05-buildings-v2.png",
+      "subject": "One freestanding weathered timber harbour noticeboard on two stout posts, small terracotta-tile canopy, one attached cream parchment sheet with abstract unreadable map-like marks and teal trim. Three-quarter view, complete post bottoms, no ground or people.",
+      "status": "generated",
+      "prompt": "Create ONE clean single-subject image for image-to-3D reconstruction, faithfully derived from the supplied approved Wizards on a Boat style/design reference. One freestanding weathered timber harbour noticeboard on two stout posts, small terracotta-tile canopy, one attached cream parchment sheet with abstract unreadable map-like marks and teal trim. Three-quarter view, complete post bottoms, no ground or people. Preserve the reference's painterly stylized 3D game aesthetic, sculpted broad forms, rich marine colors and tactile painted materials. Soft even neutral studio light with minimal baked shadow; plain solid pale cool-gray background. Entire silhouette uncropped, centered with generous margin, subject large and clear. ONE view of ONE subject only. No collage, multi-view sheet, captions, labels, border, scale figures, scenery, display plinth unless intrinsic to the requested object, watermark or extraneous objects. Adapt framing to the subject.",
+      "source_path": "C:\\Users\\nieuw\\.codex\\generated_images\\01a0a917-38fb-7eb3-8372-8816e1438af0\\exec-ec935628-7602-458d-be11-8b300384dfb4.png"
+    }
+  ]
+}

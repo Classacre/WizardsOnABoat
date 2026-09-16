@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "lanternjaw.glb",
+    "Nodes": 1,
+    "Meshes": 1,
+    "Surfaces": 12,
+    "Textures": 1,
+    "Images": 1,
+    "FirstFactor": [
+      0.02500000037252903,
+      0.23999999463558197,
+      0.38999998569488525,
+      1.0
+    ]
+  },
+  {
+    "Name": "ribbonwake.glb",
+    "Nodes": 1,
+    "Meshes": 1,
+    "Surfaces": 11,
+    "Textures": 1,
+    "Images": 1,
+    "FirstFactor": [
+      0.02500000037252903,
+      0.23999999463558197,
+      0.38999998569488525,
+      1.0
+    ]
+  },
+  {
+    "Name": "tidebell.glb",
+    "Nodes": 1,
+    "Meshes": 1,
+    "Surfaces": 13,
+    "Textures": 1,
+    "Images": 1,
+    "FirstFactor": [
+      0.02500000037252903,
+      0.23999999463558197,
+      0.38999998569488525,
+      1.0
+    ]
+  }
+]
