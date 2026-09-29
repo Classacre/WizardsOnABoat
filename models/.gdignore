@@ -1,0 +1,2 @@
+# Preserve supplied originals without importing their full-resolution textures.
+# Runtime-ready derivatives are in assets/models/supplied/.

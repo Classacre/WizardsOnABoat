@@ -1,0 +1,1044 @@
+{
+  "coordinate_system": "glTF +Y up, -Z forward",
+  "validation": "Exported GLBs reimported into Blender; both clips sampled through complete loop.",
+  "scope": "Basic deforming idle/locomotion rigs; no IK, combat, facial, retargeting or production retopology.",
+  "assets": [
+    {
+      "id": "ribbonwake",
+      "path": "assets/models/supplied/ribbonwake.glb",
+      "skins": 1,
+      "joints": 15,
+      "deforming_bones": 14,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 5707,
+        "head_01": 3614,
+        "tail_01": 463,
+        "tail_02": 423,
+        "tail_03": 537,
+        "tail_04": 691,
+        "wing_lower_L_01": 456,
+        "wing_lower_L_02": 389,
+        "wing_lower_R_01": 418,
+        "wing_lower_R_02": 373,
+        "wing_upper_L_01": 833,
+        "wing_upper_L_02": 612,
+        "wing_upper_R_01": 801,
+        "wing_upper_R_02": 619
+      },
+      "vertices": 8475,
+      "triangles": 10174,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 45,
+          "max_vertex_displacement_metres": 0.1514,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.01302,
+              "max_edge_length_ratio": 1.2392
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.03465,
+              "max_edge_length_ratio": 1.57601
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.01358,
+              "max_edge_length_ratio": 1.20316
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.03414,
+              "max_edge_length_ratio": 1.59754
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.01302,
+              "max_edge_length_ratio": 1.2392
+            }
+          ]
+        },
+        {
+          "name": "swim",
+          "duration_seconds": 2,
+          "starts_at_zero": true,
+          "exported_channels": 45,
+          "max_vertex_displacement_metres": 0.68048,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.05865,
+              "max_edge_length_ratio": 2.40428
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.16527,
+              "max_edge_length_ratio": 3.1817
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.06549,
+              "max_edge_length_ratio": 1.97656
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.17255,
+              "max_edge_length_ratio": 4.05818
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.05865,
+              "max_edge_length_ratio": 2.40428
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "glider",
+      "path": "assets/models/supplied/glider.glb",
+      "skins": 1,
+      "joints": 18,
+      "deforming_bones": 17,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 4232,
+        "head_01": 1401,
+        "leg_L_01": 1148,
+        "leg_L_02": 1148,
+        "leg_R_01": 1116,
+        "leg_R_02": 1418,
+        "tail_01": 1123,
+        "tail_02": 1212,
+        "tail_03": 771,
+        "wing_lower_L_01": 469,
+        "wing_lower_L_02": 449,
+        "wing_lower_R_01": 1171,
+        "wing_lower_R_02": 531,
+        "wing_upper_L_01": 590,
+        "wing_upper_L_02": 478,
+        "wing_upper_R_01": 1169,
+        "wing_upper_R_02": 734
+      },
+      "vertices": 11020,
+      "triangles": 10172,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 54,
+          "max_vertex_displacement_metres": 0.14834,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.03049,
+              "max_edge_length_ratio": 2.16825
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.09901,
+              "max_edge_length_ratio": 2.038
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.03169,
+              "max_edge_length_ratio": 1.65711
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.10192,
+              "max_edge_length_ratio": 2.2858
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.03049,
+              "max_edge_length_ratio": 2.16825
+            }
+          ]
+        },
+        {
+          "name": "fly",
+          "duration_seconds": 1.2,
+          "starts_at_zero": true,
+          "exported_channels": 54,
+          "max_vertex_displacement_metres": 0.6702,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.13282,
+              "max_edge_length_ratio": 4.47295
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.47751,
+              "max_edge_length_ratio": 6.08153
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.15213,
+              "max_edge_length_ratio": 4.09585
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.52082,
+              "max_edge_length_ratio": 7.45535
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.13282,
+              "max_edge_length_ratio": 4.47295
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "stormglass",
+      "path": "assets/models/supplied/stormglass.glb",
+      "skins": 1,
+      "joints": 17,
+      "deforming_bones": 16,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 4394,
+        "head_01": 2685,
+        "head_02": 2323,
+        "leg_L_01": 1217,
+        "leg_L_02": 1107,
+        "leg_R_01": 1075,
+        "leg_R_02": 1073,
+        "tail_01": 146,
+        "tail_02": 236,
+        "tail_03": 175,
+        "wing_L_01": 2512,
+        "wing_L_02": 2622,
+        "wing_L_03": 1346,
+        "wing_R_01": 1568,
+        "wing_R_02": 2206,
+        "wing_R_03": 1092
+      },
+      "vertices": 12683,
+      "triangles": 10974,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 51,
+          "max_vertex_displacement_metres": 0.32312,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.01267,
+              "max_edge_length_ratio": 1.28256
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.07813,
+              "max_edge_length_ratio": 1.4665
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.01265,
+              "max_edge_length_ratio": 1.27931
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.0759,
+              "max_edge_length_ratio": 1.67357
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.01267,
+              "max_edge_length_ratio": 1.28256
+            }
+          ]
+        },
+        {
+          "name": "fly",
+          "duration_seconds": 1.2,
+          "starts_at_zero": true,
+          "exported_channels": 51,
+          "max_vertex_displacement_metres": 1.4531,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.05867,
+              "max_edge_length_ratio": 2.46137
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.39265,
+              "max_edge_length_ratio": 3.50969
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.0582,
+              "max_edge_length_ratio": 2.41389
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.33928,
+              "max_edge_length_ratio": 5.13852
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.05867,
+              "max_edge_length_ratio": 2.46137
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "lanternjaw",
+      "path": "assets/models/supplied/lanternjaw.glb",
+      "skins": 1,
+      "joints": 10,
+      "deforming_bones": 9,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 4487,
+        "fin_L_01": 346,
+        "fin_L_02": 463,
+        "fin_R_01": 488,
+        "fin_R_02": 551,
+        "head_01": 3523,
+        "tail_01": 973,
+        "tail_02": 1386,
+        "tail_03": 1368
+      },
+      "vertices": 8278,
+      "triangles": 10708,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 30,
+          "max_vertex_displacement_metres": 0.19815,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00825,
+              "max_edge_length_ratio": 1.02307
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.02456,
+              "max_edge_length_ratio": 1.10876
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00813,
+              "max_edge_length_ratio": 1.02289
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.02436,
+              "max_edge_length_ratio": 1.11349
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00825,
+              "max_edge_length_ratio": 1.02307
+            }
+          ]
+        },
+        {
+          "name": "swim",
+          "duration_seconds": 2,
+          "starts_at_zero": true,
+          "exported_channels": 30,
+          "max_vertex_displacement_metres": 0.89692,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.03869,
+              "max_edge_length_ratio": 1.10951
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.1164,
+              "max_edge_length_ratio": 1.7888
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.03665,
+              "max_edge_length_ratio": 1.1101
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.114,
+              "max_edge_length_ratio": 1.60181
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.03869,
+              "max_edge_length_ratio": 1.10951
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "tidebell",
+      "path": "assets/models/supplied/tidebell.glb",
+      "skins": 1,
+      "joints": 26,
+      "deforming_bones": 25,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 7955,
+        "tentacle_0_01": 254,
+        "tentacle_0_02": 555,
+        "tentacle_0_03": 424,
+        "tentacle_1_01": 219,
+        "tentacle_1_02": 542,
+        "tentacle_1_03": 434,
+        "tentacle_2_01": 272,
+        "tentacle_2_02": 597,
+        "tentacle_2_03": 435,
+        "tentacle_3_01": 310,
+        "tentacle_3_02": 560,
+        "tentacle_3_03": 427,
+        "tentacle_4_01": 317,
+        "tentacle_4_02": 555,
+        "tentacle_4_03": 383,
+        "tentacle_5_01": 508,
+        "tentacle_5_02": 707,
+        "tentacle_5_03": 331,
+        "tentacle_6_01": 488,
+        "tentacle_6_02": 732,
+        "tentacle_6_03": 356,
+        "tentacle_7_01": 362,
+        "tentacle_7_02": 595,
+        "tentacle_7_03": 374
+      },
+      "vertices": 11731,
+      "triangles": 9867,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 78,
+          "max_vertex_displacement_metres": 0.14405,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.02646,
+              "max_edge_length_ratio": 1.11461
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.02437,
+              "max_edge_length_ratio": 1.14772
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.02624,
+              "max_edge_length_ratio": 1.10414
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.02424,
+              "max_edge_length_ratio": 1.13146
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.02646,
+              "max_edge_length_ratio": 1.11461
+            }
+          ]
+        },
+        {
+          "name": "swim",
+          "duration_seconds": 2,
+          "starts_at_zero": true,
+          "exported_channels": 78,
+          "max_vertex_displacement_metres": 0.599,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.1259,
+              "max_edge_length_ratio": 1.81008
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.11532,
+              "max_edge_length_ratio": 2.16441
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.1255,
+              "max_edge_length_ratio": 1.65345
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.11475,
+              "max_edge_length_ratio": 1.60978
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.1259,
+              "max_edge_length_ratio": 1.81008
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "orchard",
+      "path": "assets/models/supplied/orchard.glb",
+      "skins": 1,
+      "joints": 14,
+      "deforming_bones": 13,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 9974,
+        "head_01": 1933,
+        "head_02": 1933,
+        "leg_back_L_01": 747,
+        "leg_back_L_02": 760,
+        "leg_back_R_01": 652,
+        "leg_back_R_02": 719,
+        "leg_front_L_01": 802,
+        "leg_front_L_02": 804,
+        "leg_front_R_01": 770,
+        "leg_front_R_02": 806,
+        "tail_01": 383,
+        "tail_02": 333
+      },
+      "vertices": 13400,
+      "triangles": 9766,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 42,
+          "max_vertex_displacement_metres": 0.02691,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00104,
+              "max_edge_length_ratio": 1.00984
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.01095,
+              "max_edge_length_ratio": 1.08268
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00104,
+              "max_edge_length_ratio": 1.00978
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.01087,
+              "max_edge_length_ratio": 1.07951
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00104,
+              "max_edge_length_ratio": 1.00984
+            }
+          ]
+        },
+        {
+          "name": "walk",
+          "duration_seconds": 1.6,
+          "starts_at_zero": true,
+          "exported_channels": 42,
+          "max_vertex_displacement_metres": 0.2171,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00474,
+              "max_edge_length_ratio": 1.04598
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.14843,
+              "max_edge_length_ratio": 2.20015
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00469,
+              "max_edge_length_ratio": 1.04474
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.15033,
+              "max_edge_length_ratio": 2.78831
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00474,
+              "max_edge_length_ratio": 1.04598
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "basalt",
+      "path": "assets/models/supplied/basalt.glb",
+      "skins": 1,
+      "joints": 18,
+      "deforming_bones": 17,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 5587,
+        "head_01": 2062,
+        "leg_back_L_01": 1223,
+        "leg_back_L_02": 1347,
+        "leg_back_R_01": 1145,
+        "leg_back_R_02": 1294,
+        "leg_front_L_01": 1244,
+        "leg_front_L_02": 1151,
+        "leg_front_R_01": 1222,
+        "leg_front_R_02": 1171,
+        "leg_middle_L_01": 807,
+        "leg_middle_L_02": 848,
+        "leg_middle_R_01": 781,
+        "leg_middle_R_02": 863,
+        "tail_01": 657,
+        "tail_02": 1007,
+        "tail_03": 706
+      },
+      "vertices": 13745,
+      "triangles": 11150,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 54,
+          "max_vertex_displacement_metres": 0.04586,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00216,
+              "max_edge_length_ratio": 1.01025
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.00694,
+              "max_edge_length_ratio": 1.05552
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00217,
+              "max_edge_length_ratio": 1.01026
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.00692,
+              "max_edge_length_ratio": 1.05618
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00216,
+              "max_edge_length_ratio": 1.01025
+            }
+          ]
+        },
+        {
+          "name": "walk",
+          "duration_seconds": 1.6,
+          "starts_at_zero": true,
+          "exported_channels": 54,
+          "max_vertex_displacement_metres": 0.19418,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00984,
+              "max_edge_length_ratio": 1.04739
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.1095,
+              "max_edge_length_ratio": 2.10663
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00989,
+              "max_edge_length_ratio": 1.04744
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.11064,
+              "max_edge_length_ratio": 2.86196
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00984,
+              "max_edge_length_ratio": 1.04739
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "brinecap",
+      "path": "assets/models/supplied/brinecap.glb",
+      "skins": 1,
+      "joints": 13,
+      "deforming_bones": 12,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 4092,
+        "head_01": 3478,
+        "leg_back_L_01": 920,
+        "leg_back_L_02": 1082,
+        "leg_back_R_01": 895,
+        "leg_back_R_02": 884,
+        "leg_front_L_01": 718,
+        "leg_front_L_02": 967,
+        "leg_front_R_01": 991,
+        "leg_front_R_02": 1220,
+        "tail_01": 277,
+        "tail_02": 328
+      },
+      "vertices": 10097,
+      "triangles": 10964,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 39,
+          "max_vertex_displacement_metres": 0.01971,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.0003,
+              "max_edge_length_ratio": 1.00193
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.01653,
+              "max_edge_length_ratio": 1.06925
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.0003,
+              "max_edge_length_ratio": 1.00193
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.01634,
+              "max_edge_length_ratio": 1.06792
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.0003,
+              "max_edge_length_ratio": 1.00193
+            }
+          ]
+        },
+        {
+          "name": "walk",
+          "duration_seconds": 1.6,
+          "starts_at_zero": true,
+          "exported_channels": 39,
+          "max_vertex_displacement_metres": 0.14686,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00136,
+              "max_edge_length_ratio": 1.00873
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.51087,
+              "max_edge_length_ratio": 3.89469
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00137,
+              "max_edge_length_ratio": 1.00889
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.48085,
+              "max_edge_length_ratio": 3.70948
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00136,
+              "max_edge_length_ratio": 1.00873
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "cumulus",
+      "path": "assets/models/supplied/cumulus.glb",
+      "skins": 1,
+      "joints": 16,
+      "deforming_bones": 15,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 7831,
+        "fin_back_L_01": 257,
+        "fin_back_L_02": 271,
+        "fin_back_R_01": 193,
+        "fin_back_R_02": 173,
+        "fin_front_L_01": 246,
+        "fin_front_L_02": 237,
+        "fin_front_R_01": 280,
+        "fin_front_R_02": 244,
+        "head_01": 911,
+        "head_02": 795,
+        "tail_01": 184,
+        "tail_02": 33,
+        "tail_03": 232,
+        "tail_04": 359
+      },
+      "vertices": 8924,
+      "triangles": 10272,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 48,
+          "max_vertex_displacement_metres": 0.08241,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.01064,
+              "max_edge_length_ratio": 1.17411
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.06684,
+              "max_edge_length_ratio": 1.53633
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.01085,
+              "max_edge_length_ratio": 1.19174
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.06567,
+              "max_edge_length_ratio": 1.37915
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.01064,
+              "max_edge_length_ratio": 1.17411
+            }
+          ]
+        },
+        {
+          "name": "fly",
+          "duration_seconds": 1.2,
+          "starts_at_zero": true,
+          "exported_channels": 48,
+          "max_vertex_displacement_metres": 0.36523,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.0507,
+              "max_edge_length_ratio": 1.83843
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.33458,
+              "max_edge_length_ratio": 2.94262
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.04934,
+              "max_edge_length_ratio": 1.80424
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.31735,
+              "max_edge_length_ratio": 2.78046
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.0507,
+              "max_edge_length_ratio": 1.83843
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    },
+    {
+      "id": "crab",
+      "path": "assets/models/supplied/crab.glb",
+      "skins": 1,
+      "joints": 20,
+      "deforming_bones": 19,
+      "weighted_vertices_by_bone": {
+        "root": 0,
+        "body": 7619,
+        "claw_L_01": 1375,
+        "claw_L_02": 1408,
+        "claw_R_01": 1405,
+        "claw_R_02": 1338,
+        "eye_L_01": 612,
+        "eye_R_01": 662,
+        "leg_0_L_01": 561,
+        "leg_0_L_02": 385,
+        "leg_0_R_01": 435,
+        "leg_0_R_02": 202,
+        "leg_1_L_01": 534,
+        "leg_1_L_02": 465,
+        "leg_1_R_01": 577,
+        "leg_1_R_02": 532,
+        "leg_2_L_01": 604,
+        "leg_2_L_02": 570,
+        "leg_2_R_01": 734,
+        "leg_2_R_02": 583
+      },
+      "vertices": 11595,
+      "triangles": 10361,
+      "max_influences_per_vertex": 4,
+      "unit_weight_sums": true,
+      "clips": [
+        {
+          "name": "idle",
+          "duration_seconds": 3,
+          "starts_at_zero": true,
+          "exported_channels": 60,
+          "max_vertex_displacement_metres": 0.01377,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.00287,
+              "max_edge_length_ratio": 1.02494
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.033,
+              "max_edge_length_ratio": 1.13611
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.00287,
+              "max_edge_length_ratio": 1.0245
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.0331,
+              "max_edge_length_ratio": 1.11883
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.00287,
+              "max_edge_length_ratio": 1.02494
+            }
+          ]
+        },
+        {
+          "name": "walk",
+          "duration_seconds": 1.6,
+          "starts_at_zero": true,
+          "exported_channels": 60,
+          "max_vertex_displacement_metres": 0.09938,
+          "loop_endpoint_error_metres": 0.0,
+          "edge_distortion_samples": [
+            {
+              "phase": 0,
+              "p99_edge_length_ratio": 1.01307,
+              "max_edge_length_ratio": 1.1223
+            },
+            {
+              "phase": 0.25,
+              "p99_edge_length_ratio": 1.56559,
+              "max_edge_length_ratio": 5.93561
+            },
+            {
+              "phase": 0.5,
+              "p99_edge_length_ratio": 1.01327,
+              "max_edge_length_ratio": 1.11256
+            },
+            {
+              "phase": 0.75,
+              "p99_edge_length_ratio": 1.60416,
+              "max_edge_length_ratio": 4.69045
+            },
+            {
+              "phase": 1,
+              "p99_edge_length_ratio": 1.01307,
+              "max_edge_length_ratio": 1.1223
+            }
+          ]
+        }
+      ],
+      "visual_review": "rest and quarter/half/three-quarter locomotion poses reviewed",
+      "preview_directory": "tmp/model-intake/rigs"
+    }
+  ]
+}

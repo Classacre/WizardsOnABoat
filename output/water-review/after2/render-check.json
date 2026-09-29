@@ -1,0 +1,14 @@
+{
+	"animated_frame_gaps_ms": {
+		"max": 20.035,
+		"median": 16.639,
+		"p95": 17.379,
+		"samples": 479
+	},
+	"mismatched_materials": 0,
+	"shader_code_hash": 2816139531,
+	"shader_path": "res://shaders/ocean.gdshader",
+	"viewport": "(1280, 854)",
+	"water_meshes": 83,
+	"wave_components": 6
+}

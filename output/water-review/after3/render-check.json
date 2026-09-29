@@ -1,0 +1,15 @@
+{
+	"animated_frame_gaps_ms": {
+		"max": 20.327,
+		"median": 16.578,
+		"p95": 18.563,
+		"samples": 479
+	},
+	"gpu": "AMD Radeon(TM) Graphics",
+	"mismatched_materials": 0,
+	"shader_code_hash": 2329274853,
+	"shader_path": "res://shaders/ocean.gdshader",
+	"viewport": "(1280, 854)",
+	"water_meshes": 83,
+	"wave_components": 6
+}

@@ -1,6 +1,12 @@
 class_name SpellwakeBoat
 extends AnimatableBody3D
 
+const SUPPLIED_HULL := "res://assets/models/supplied/boat_hull.glb"
+const SUPPLIED_RIG := "res://assets/models/supplied/boat_rig.glb"
+const ORIGINAL_HULL := "res://assets/models/boat.glb"
+const SAIL := "res://assets/models/boat_sail.glb"
+const HELM_LOCAL := Vector3(-1.6,1.18,2.5)
+
 var ship_id := ""
 var ocean: Node3D
 var archipelago: Node3D
@@ -19,13 +25,20 @@ func _ready() -> void:
 	collision_mask = 1
 	sync_to_physics = false
 	set_meta("ship_id",ship_id)
-	for part in ["boat", "boat_sail"]:
-		if ResourceLoader.exists("res://assets/models/%s.glb" % part):
-			var model: Node3D = load("res://assets/models/%s.glb" % part).instantiate()
+	var model_paths: Array[String] = [ORIGINAL_HULL, SAIL]
+	if ResourceLoader.exists(SUPPLIED_HULL) and ResourceLoader.exists(SUPPLIED_RIG):
+		model_paths = [SUPPLIED_HULL, SUPPLIED_RIG, SAIL]
+	for path in model_paths:
+		if ResourceLoader.exists(path):
+			var model: Node3D = load(path).instantiate()
 			add_child(model)
-			if part == "boat_sail":
+			if path == SAIL:
 				sail = model
 	_add_box(Vector3(6.2,0.36,10.5),Vector3(0,1.0,0))
+	if model_paths[0] == SUPPLIED_HULL:
+		# The raised stern cabin occupies the old centerline helm position.
+		# A small box keeps players out while leaving the port-side helm lane open.
+		_add_box(Vector3(2.4,1.9,2.9),Vector3(0,2.15,4.1))
 	# Sail collider allows projectile raycasts to physically find the canvas.
 	var sail_collider := StaticBody3D.new()
 	sail_collider.collision_layer = 8

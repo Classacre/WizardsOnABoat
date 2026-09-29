@@ -20,6 +20,8 @@ extends Node3D
 @export_range(1, 20) var levels_of_detail := 1
 ## Size of quads in the innermost LOD.
 @export var unit_size := 1.0
+## Keep the innermost tile dense while reducing vertex work on outer rings.
+@export_range(1, 4, 1) var outer_shell_resolution_divisor := 1
 ## The farthest visible distance. Set this from camera.far.
 @export var far_edge := 1000
 
@@ -94,14 +96,16 @@ func build_meshes():
 			var onion = levels_of_detail - shell - 1
 			var pos = Vector3(x, 0, z) * region_width
 			#print("Generate mesh at: ", pos, " shell ", shell, " onion ", onion)
-			var this_unit_size = unit_size * 2 ** shell
-			var this_resolution = outermost_resolution * (2 ** (onion))
+			var shell_divisor: int = outer_shell_resolution_divisor if shell > 0 else 1
+			var this_unit_size = unit_size * 2 ** shell * shell_divisor
+			var this_resolution = int(outermost_resolution * (2 ** onion) / shell_divisor)
 			var seam_up = -z >= shell
 			var seam_down = z >= shell
 			var seam_left = -x >= shell
 			var seam_right = x >= shell
 			var plane = PlaneMeshGenerator.new(
-				this_resolution, this_unit_size, seam_up, seam_down, seam_left, seam_right
+				this_resolution, this_unit_size, seam_up, seam_down, seam_left, seam_right,
+				outer_shell_resolution_divisor * 2 if shell == 0 else 2
 			)
 			plane.generate()
 			var mesh = plane.commit()
@@ -142,6 +146,7 @@ class PlaneMeshGenerator:
 	var seam_down: bool
 	var seam_left: bool
 	var seam_right: bool
+	var seam_ratio: int
 	var _st: SurfaceTool
 
 	func _init(
@@ -150,7 +155,8 @@ class PlaneMeshGenerator:
 		seam_up: bool = false,
 		seam_down: bool = false,
 		seam_left: bool = false,
-		seam_right: bool = false
+		seam_right: bool = false,
+		seam_ratio: int = 2
 	):
 		self.resolution = resolution
 		self.unit_size = unit_size
@@ -158,6 +164,7 @@ class PlaneMeshGenerator:
 		self.seam_down = seam_down
 		self.seam_left = seam_left
 		self.seam_right = seam_right
+		self.seam_ratio = seam_ratio
 		self._st = SurfaceTool.new()
 		self._st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
@@ -171,7 +178,7 @@ class PlaneMeshGenerator:
 				var coords = [
 					Vector2i(x, z), Vector2i(x + 1, z), Vector2i(x + 1, z + 1), Vector2i(x, z + 1)
 				]
-				# seam edges by welding any odd vertices
+				# Align high-detail seam vertices with the coarser neighboring ring.
 				var on_seamable_edge = false
 				var mark = [false, false, false, false]
 				if seam_left and x == 0:
@@ -194,10 +201,8 @@ class PlaneMeshGenerator:
 				if on_seamable_edge:
 					for i in range(len(coords)):
 						if mark[i]:
-							if coords[i].y % 2 == 1:
-								coords[i].y -= 1
-							if coords[i].x % 2 == 1:
-								coords[i].x -= 1
+							coords[i].y -= coords[i].y % seam_ratio
+							coords[i].x -= coords[i].x % seam_ratio
 
 				# uv should iterate from 0,0 to 1,1
 				var uvs = []

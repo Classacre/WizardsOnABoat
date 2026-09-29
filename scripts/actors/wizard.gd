@@ -21,6 +21,11 @@ var input_data: Dictionary = {}
 var knockback := Vector3.ZERO
 var target_position := Vector3.ZERO
 var _step_time := 0.0
+var dev_fly_enabled := false
+var dev_fly_speed := 24.0
+var _walk_collision_layer := 2
+var _walk_collision_mask := 1
+var _walk_floor_snap_length := 0.65
 
 func _ready() -> void:
 	collision_layer = 2
@@ -28,6 +33,9 @@ func _ready() -> void:
 	platform_floor_layers = 0
 	floor_max_angle = deg_to_rad(55)
 	floor_snap_length = 0.65
+	_walk_collision_layer = collision_layer
+	_walk_collision_mask = collision_mask
+	_walk_floor_snap_length = floor_snap_length
 	var collider := CollisionShape3D.new()
 	var capsule := CapsuleShape3D.new()
 	capsule.radius = 0.32
@@ -64,6 +72,37 @@ func _update_look() -> void:
 	if camera:
 		camera.rotation.x = pitch
 
+func set_dev_fly(enabled: bool) -> void:
+	if dev_fly_enabled == enabled:
+		return
+	dev_fly_enabled = enabled
+	velocity = Vector3.ZERO
+	knockback = Vector3.ZERO
+	if enabled:
+		collision_layer = 0
+		collision_mask = 0
+		floor_snap_length = 0.0
+		aboard_id = ""
+		return
+	collision_layer = _walk_collision_layer
+	collision_mask = _walk_collision_mask
+	floor_snap_length = _walk_floor_snap_length
+	if archipelago:
+		var dungeon_id: String = archipelago.dungeon_at(global_position) if archipelago.has_method("dungeon_at") else ""
+		if not dungeon_id.is_empty() and archipelago.has_method("dungeon_landmarks"):
+			var nearest := global_position
+			var nearest_distance := INF
+			for landmark in archipelago.dungeon_landmarks():
+				if str(landmark.get("dungeon_id","")) != dungeon_id or archipelago.dungeon_at(landmark.position) != dungeon_id: continue
+				var point: Vector3 = landmark.position
+				var distance := global_position.distance_squared_to(point)
+				if distance < nearest_distance:
+					nearest_distance = distance
+					nearest = point
+			global_position = nearest
+		else:
+			global_position.y = maxf(global_position.y,archipelago.sample_surface_at(global_position)+1.25)
+
 func simulate(delta: float, boats: Dictionary) -> void:
 	if not alive:
 		return
@@ -71,9 +110,21 @@ func simulate(delta: float, boats: Dictionary) -> void:
 	pitch = float(input_data.get("pitch",pitch))
 	_update_look()
 	mana = minf(100,mana+delta*9)
+	if dev_fly_enabled:
+		var move := Vector2(float(input_data.get("move_x",0)),float(input_data.get("move_y",0))).limit_length()
+		var vertical := float(bool(input_data.get("ascend",false)))-float(bool(input_data.get("descend",false)))
+		var look_basis := Basis(Vector3.UP,yaw)*Basis(Vector3.RIGHT,pitch)
+		var direction := look_basis*Vector3(move.x,0,move.y)+Vector3.UP*vertical
+		if direction.length_squared()>1.0: direction=direction.normalized()
+		global_position += direction*dev_fly_speed*(2.0 if bool(input_data.get("sprint",false)) else 1.0)*delta
+		velocity = Vector3.ZERO
+		breath = 30.0
+		swimming = false
+		head_underwater = false
+		return
 	if not helm_id.is_empty() and boats.has(helm_id):
 		var boat: Node3D = boats[helm_id]
-		global_position = boat.to_global(Vector3(0,1.18,3.5))
+		global_position = boat.to_global(SpellwakeBoat.HELM_LOCAL)
 		velocity = Vector3.ZERO
 		breath = 30.0
 		return
@@ -113,12 +164,9 @@ func simulate(delta: float, boats: Dictionary) -> void:
 			velocity.y=0
 		elif absf(deck_pos.x)>3.1 or absf(deck_pos.z)>5.4 or deck_pos.y<0.2:
 			aboard_id=""
-	# The shared height query also keeps headless simulation independent of rendering.
-	if archipelago:
-		var ground: float = archipelago.sample_ground_height(global_position.x,global_position.z)
-		if ground > global_position.y and ground < global_position.y+2.8:
-			global_position.y = ground
-			velocity.y = maxf(velocity.y,0)
+	# Let the physical floor support the wizard. The terrain height image is a
+	# smooth approximation of streamed triangles; snapping up to it can hold
+	# feet above the collider forever and prevent grounded jumping.
 	if local_control and staff:
 		_step_time += delta*move.length()*8
 		staff.position.y = -0.86 + sin(_step_time)*0.022

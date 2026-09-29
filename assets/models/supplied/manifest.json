@@ -1,0 +1,1233 @@
+{
+  "units": "metres",
+  "forward": "-Z",
+  "up": "+Y",
+  "assets": [
+    {
+      "id": "crab",
+      "source": "models/stylized+crab+3d+model.glb",
+      "source_sha256": "316d032b1e42086ab4024999289ca377c02ed196231d679c5744783056417efc",
+      "path": "assets/models/supplied/crab.glb",
+      "bounds_min": [
+        -1.05,
+        0.0,
+        -0.78019
+      ],
+      "bounds_max": [
+        1.05,
+        1.33879,
+        0.78019
+      ],
+      "triangles": 10361,
+      "vertices": 11593,
+      "bytes": 1067584,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "walk"
+      ],
+      "reference_id": "crab",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 20
+    },
+    {
+      "id": "ribbonwake",
+      "source": "models/blue+manta+ray+3d+model.glb",
+      "source_sha256": "6d3b1690fe2b705394f779bb03ee3066373f31c14311460363692ad6c474db07",
+      "path": "assets/models/supplied/ribbonwake.glb",
+      "bounds_min": [
+        -2.1,
+        -1.06981,
+        -2.79681
+      ],
+      "bounds_max": [
+        2.1,
+        1.06981,
+        2.79681
+      ],
+      "triangles": 10174,
+      "vertices": 8472,
+      "bytes": 785112,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "swim"
+      ],
+      "reference_id": "ribbonwake",
+      "source_rotation_degrees": 180,
+      "origin": "center",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 15
+    },
+    {
+      "id": "lanternjaw",
+      "source": "models/blue+patterned+fish+3d+model.glb",
+      "source_sha256": "f3f52e3344956e3fcbf28646180857ea18c9f86d11f05363aa82378e35dc8a96",
+      "path": "assets/models/supplied/lanternjaw.glb",
+      "bounds_min": [
+        -0.853,
+        -0.74348,
+        -1.9
+      ],
+      "bounds_max": [
+        0.853,
+        0.74348,
+        1.9
+      ],
+      "triangles": 10708,
+      "vertices": 8274,
+      "bytes": 706996,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "swim"
+      ],
+      "reference_id": "lanternjaw",
+      "source_rotation_degrees": 90,
+      "origin": "center",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 10
+    },
+    {
+      "id": "stormglass",
+      "source": "models/blue+phoenix+3d+model.glb",
+      "source_sha256": "df2e3788d5aef31c1edf06a754450cdcd7154f186d88a416871728e90b2b6155",
+      "path": "assets/models/supplied/stormglass.glb",
+      "bounds_min": [
+        -3.4,
+        -1.66263,
+        -1.83205
+      ],
+      "bounds_max": [
+        3.4,
+        1.66263,
+        1.83205
+      ],
+      "triangles": 10974,
+      "vertices": 12663,
+      "bytes": 1096624,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "fly"
+      ],
+      "reference_id": "stormglass",
+      "source_rotation_degrees": 90,
+      "origin": "center",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 17
+    },
+    {
+      "id": "tidebell",
+      "source": "models/fantasy+sea+creature+3d+model.glb",
+      "source_sha256": "ebb1329e5973ba3f2300cf780199529a1bd9a13f19ad826eb341590c6e1ec639",
+      "path": "assets/models/supplied/tidebell.glb",
+      "bounds_min": [
+        -3.5,
+        0.0,
+        -3.44871
+      ],
+      "bounds_max": [
+        3.5,
+        4.99609,
+        3.44871
+      ],
+      "triangles": 9867,
+      "vertices": 11730,
+      "bytes": 1047196,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "swim"
+      ],
+      "reference_id": "tidebell",
+      "source_rotation_degrees": 180,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 26
+    },
+    {
+      "id": "glider",
+      "source": "models/flying+fantasy+creature+3d+model.glb",
+      "source_sha256": "62b473711e397fbef1303dcaf0ad5fd57ac5c5727b62675233bc004057fd2b19",
+      "path": "assets/models/supplied/glider.glb",
+      "bounds_min": [
+        -1.7,
+        -0.85955,
+        -1.05887
+      ],
+      "bounds_max": [
+        1.7,
+        0.85955,
+        1.05887
+      ],
+      "triangles": 10172,
+      "vertices": 11018,
+      "bytes": 911844,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "fly"
+      ],
+      "reference_id": "glider",
+      "source_rotation_degrees": 90,
+      "origin": "center",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 18
+    },
+    {
+      "id": "orchard",
+      "source": "models/giant+turtle+3d+model.glb",
+      "source_sha256": "163b1562b489855c7a39ae7edb37b00ada5473803433d6966092d79540e7e916",
+      "path": "assets/models/supplied/orchard.glb",
+      "bounds_min": [
+        -2.23371,
+        0.0,
+        -3.06667
+      ],
+      "bounds_max": [
+        2.23371,
+        5.6,
+        3.06667
+      ],
+      "triangles": 9766,
+      "vertices": 13394,
+      "bytes": 1102896,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "walk"
+      ],
+      "reference_id": "orchard",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 14
+    },
+    {
+      "id": "basalt",
+      "source": "models/rock+plated+reptile+3d+model.glb",
+      "source_sha256": "ed441958da0ad9fa87af0cafbfc74daa5a18ad96a83994fcfe0044bca6fd1be6",
+      "path": "assets/models/supplied/basalt.glb",
+      "bounds_min": [
+        -1.54719,
+        0.0,
+        -2.7
+      ],
+      "bounds_max": [
+        1.54719,
+        1.90728,
+        2.7
+      ],
+      "triangles": 11150,
+      "vertices": 13740,
+      "bytes": 1170964,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "walk"
+      ],
+      "reference_id": "basalt",
+      "source_rotation_degrees": 180,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 18
+    },
+    {
+      "id": "brinecap",
+      "source": "models/stegosaurus+3d+model.glb",
+      "source_sha256": "a392967530964c899832a30abb67ab5ed0bac18b9c10902136f22c1f8b243a04",
+      "path": "assets/models/supplied/brinecap.glb",
+      "bounds_min": [
+        -0.72491,
+        0.0,
+        -1.9
+      ],
+      "bounds_max": [
+        0.72491,
+        2.24807,
+        1.9
+      ],
+      "triangles": 10964,
+      "vertices": 10091,
+      "bytes": 874548,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "walk"
+      ],
+      "reference_id": "brinecap",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 13
+    },
+    {
+      "id": "cumulus",
+      "source": "models/turtle+creature+3d+model.glb",
+      "source_sha256": "3223183df401ed66bd71e749463cb7e9f48aa948e5f481e01e9d6d75967d353e",
+      "path": "assets/models/supplied/cumulus.glb",
+      "bounds_min": [
+        -2.4222,
+        -2.25,
+        -2.38766
+      ],
+      "bounds_max": [
+        2.4222,
+        2.25,
+        2.38766
+      ],
+      "triangles": 10272,
+      "vertices": 8920,
+      "bytes": 764880,
+      "rigged": true,
+      "animations": [
+        "idle",
+        "fly"
+      ],
+      "reference_id": "cumulus",
+      "source_rotation_degrees": 135,
+      "origin": "center",
+      "texture_size": 1024,
+      "notes": "Skinned anatomical rig with basic idle and locomotion loops; source mesh and atlas preserved.",
+      "bones": 16
+    },
+    {
+      "id": "lantern",
+      "source": "models/lantern+3d+model.glb",
+      "source_sha256": "86946535c678511d87f987e6ac205ce3b848e0dd9e1d3bf1adbfcbd5832634e7",
+      "path": "assets/models/supplied/lantern.glb",
+      "bounds_min": [
+        -0.15691,
+        0.0,
+        -0.15691
+      ],
+      "bounds_max": [
+        0.15691,
+        0.8,
+        0.15691
+      ],
+      "triangles": 8750,
+      "vertices": 9982,
+      "bytes": 638272,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "lantern",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "tide_gate",
+      "source": "models/medieval+door+3d+model.glb",
+      "source_sha256": "fe06590eeabeb3f7c21e992d451f603c7f03b2ffd6beb934ec177b8166a15db9",
+      "path": "assets/models/supplied/tide_gate.glb",
+      "bounds_min": [
+        -2.49585,
+        0.0,
+        -1.13425
+      ],
+      "bounds_max": [
+        2.49585,
+        5.2,
+        1.13425
+      ],
+      "triangles": 8734,
+      "vertices": 12175,
+      "bytes": 735936,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "tide_gate",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "hearth_pad",
+      "source": "models/orb+pedestal+3d+model.glb",
+      "source_sha256": "330a5db85f1ce51b8df07b9b2aa37f3bcd39bc976828a636e3c89abb175c5e6a",
+      "path": "assets/models/supplied/hearth_pad.glb",
+      "bounds_min": [
+        -2.3,
+        0.0,
+        -2.3
+      ],
+      "bounds_max": [
+        2.3,
+        2.09213,
+        2.3
+      ],
+      "triangles": 8900,
+      "vertices": 9869,
+      "bytes": 668484,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "hearth_pad",
+      "source_rotation_degrees": 0,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "ruin_arch",
+      "source": "models/stone+arch+3d+model.glb",
+      "source_sha256": "0965c35d36a4645e038b205418d3b817447bcb494ab9054752ae97eebdd680e9",
+      "path": "assets/models/supplied/ruin_arch.glb",
+      "bounds_min": [
+        -2.32499,
+        0.0,
+        -0.77802
+      ],
+      "bounds_max": [
+        2.32499,
+        4.6,
+        0.77802
+      ],
+      "triangles": 7727,
+      "vertices": 10032,
+      "bytes": 664836,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "ruin_arch",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "cottage",
+      "source": "models/stone+cottage+3d+model.glb",
+      "source_sha256": "89c2fe3ab377d0179581957f2b863af205af9ac08f58b1b1acf037f3e873d987",
+      "path": "assets/models/supplied/cottage.glb",
+      "bounds_min": [
+        -4.4,
+        0.0,
+        -3.75085
+      ],
+      "bounds_max": [
+        4.4,
+        7.9574,
+        3.75085
+      ],
+      "triangles": 8689,
+      "vertices": 13904,
+      "bytes": 1350044,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "cottage",
+      "source_rotation_degrees": 180,
+      "origin": "base",
+      "texture_size": 2048,
+      "notes": ""
+    },
+    {
+      "id": "loot_chest",
+      "source": "models/treasure+chest+3d+model.glb",
+      "source_sha256": "96b5ff6aa7b9b421708d31a6059d4eedab9d6b8c9470db4a9a3a71e75a01d4f0",
+      "path": "assets/models/supplied/loot_chest.glb",
+      "bounds_min": [
+        -0.6057,
+        0.0,
+        -0.45953
+      ],
+      "bounds_max": [
+        0.6057,
+        0.88,
+        0.45953
+      ],
+      "triangles": 9030,
+      "vertices": 9920,
+      "bytes": 618260,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "loot_chest",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "barrel",
+      "source": "models/wooden+barrel+3d+model.glb",
+      "source_sha256": "685c3e77424f983ce06c7ac46bc044dd7ec830513160efd128d48d9f8dca2f2c",
+      "path": "assets/models/supplied/barrel.glb",
+      "bounds_min": [
+        -0.46246,
+        0.0,
+        -0.43644
+      ],
+      "bounds_max": [
+        0.46246,
+        0.95,
+        0.43644
+      ],
+      "triangles": 10443,
+      "vertices": 10448,
+      "bytes": 631308,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "barrel",
+      "source_rotation_degrees": 0,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "crate",
+      "source": "models/wooden+crate+3d+model.glb",
+      "source_sha256": "539b79e1381fcb9b04da9e9fe7df8df2f2452183332d2cc63e50079b477cd475",
+      "path": "assets/models/supplied/crate.glb",
+      "bounds_min": [
+        -0.5954,
+        0.0,
+        -0.53258
+      ],
+      "bounds_max": [
+        0.5954,
+        1.0,
+        0.53258
+      ],
+      "triangles": 10068,
+      "vertices": 11909,
+      "bytes": 666676,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "crate",
+      "source_rotation_degrees": 90,
+      "origin": "base",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "dock",
+      "source": "models/wooden+dock+3d+model.glb",
+      "source_sha256": "95f3a48cb83f352403c2cd31124b89aa9e8b7507236e7d99d11cb69f5e71acf7",
+      "path": "assets/models/supplied/dock.glb",
+      "bounds_min": [
+        -2.1,
+        -1.57378,
+        -2.13123
+      ],
+      "bounds_max": [
+        2.1,
+        1.09364,
+        2.13123
+      ],
+      "triangles": 9630,
+      "vertices": 11192,
+      "bytes": 693292,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "dock",
+      "source_rotation_degrees": 0,
+      "origin": "deck",
+      "texture_size": 1024,
+      "notes": ""
+    },
+    {
+      "id": "boat_hull",
+      "source": "models/ship+3d+model.glb",
+      "source_sha256": "fdaca7046c8661ba14e8a8a79724cc9d0f8c86cfbdb9cbf313f49972b79748f1",
+      "path": "assets/models/supplied/boat_hull.glb",
+      "bounds_min": [
+        -3.1,
+        -0.676,
+        -6.617
+      ],
+      "bounds_max": [
+        3.1,
+        3.14041,
+        6.617
+      ],
+      "triangles": 9205,
+      "vertices": 13581,
+      "bytes": 1506840,
+      "rigged": false,
+      "animations": [],
+      "reference_id": "boat",
+      "source_rotation_degrees": 90,
+      "origin": "boat_deck",
+      "texture_size": 2048,
+      "notes": "Hull only; combine boat_rig and existing boat_sail."
+    },
+    {
+      "id": "boat_rig",
+      "source": "assets/models/boat.glb",
+      "source_sha256": "337afc37e5a2b089728fe143683a6b78ba7de774a5ac0c88bd99d9995dfd5bb6",
+      "path": "assets/models/supplied/boat_rig.glb",
+      "bounds_min": [
+        -2.79876,
+        1.1,
+        -6.18912
+      ],
+      "bounds_max": [
+        4.39388,
+        10.45549,
+        3.79
+      ],
+      "triangles": 6604,
+      "vertices": 11708,
+      "bytes": 675364,
+      "rigged": false,
+      "animations": [],
+      "origin": "existing boat origin",
+      "texture_size": 1254,
+      "notes": "Extracted existing mast, lateen boom, pennant, shrouds, ratlines and helm; original geometry/materials retained."
+    },
+    {
+      "id": "tide_kit",
+      "source": "models/ancient+ruins+3d+model.glb",
+      "source_sha256": "cdaca678e256f8c320121c0738717ca1c76cee8c0f321724063642e1028c2814",
+      "path": "assets/models/supplied/tide_kit.glb",
+      "bounds_min": [
+        -8.49585,
+        0.0,
+        -6.19653
+      ],
+      "bounds_max": [
+        8.49585,
+        5.37061,
+        6.18823
+      ],
+      "triangles": 10453,
+      "vertices": 13822,
+      "bytes": 1378736,
+      "rigged": false,
+      "animations": [],
+      "reference_id": null,
+      "origin": "library layout; child mesh base-centered",
+      "texture_size": 2048,
+      "modules": [
+        {
+          "node": "tide_steps",
+          "bounds_min": [
+            -1.1621,
+            0,
+            -2.1167
+          ],
+          "bounds_max": [
+            1.1621,
+            3.3286,
+            2.1167
+          ],
+          "triangles": 367,
+          "placement": "world_prop",
+          "subject": "tide steps",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_banner_gate",
+          "bounds_min": [
+            -1.8843,
+            0,
+            -0.5396
+          ],
+          "bounds_max": [
+            1.8843,
+            4.8394,
+            0.5396
+          ],
+          "triangles": 3244,
+          "placement": "world_prop",
+          "subject": "Teal portcullis",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_wall",
+          "bounds_min": [
+            -1.4609,
+            0,
+            -0.5105
+          ],
+          "bounds_max": [
+            1.4609,
+            4.2002,
+            0.5105
+          ],
+          "triangles": 739,
+          "placement": "world_prop",
+          "subject": "tide wall",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_arch",
+          "bounds_min": [
+            -1.8096,
+            0,
+            -0.6724
+          ],
+          "bounds_max": [
+            1.8096,
+            4.5322,
+            0.6724
+          ],
+          "triangles": 1552,
+          "placement": "world_prop",
+          "subject": "tide arch",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_rubble",
+          "bounds_min": [
+            -1.1787,
+            0,
+            -1.2534
+          ],
+          "bounds_max": [
+            1.1787,
+            1.9009,
+            1.2534
+          ],
+          "triangles": 1258,
+          "placement": "world_prop",
+          "subject": "tide rubble",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_railing",
+          "bounds_min": [
+            -1.2576,
+            0,
+            -0.6973
+          ],
+          "bounds_max": [
+            1.2576,
+            2.2495,
+            0.6973
+          ],
+          "triangles": 2482,
+          "placement": "world_prop",
+          "subject": "Small raised wooden platform",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_pillar",
+          "bounds_min": [
+            -0.4648,
+            0,
+            -0.4731
+          ],
+          "bounds_max": [
+            0.4648,
+            2.2993,
+            0.4731
+          ],
+          "triangles": 321,
+          "placement": "world_prop",
+          "subject": "tide pillar",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_block",
+          "bounds_min": [
+            -0.606,
+            0,
+            -0.3735
+          ],
+          "bounds_max": [
+            0.606,
+            1.4111,
+            0.3735
+          ],
+          "triangles": 155,
+          "placement": "world_prop",
+          "subject": "tide block",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_floor",
+          "bounds_min": [
+            -1.3904,
+            0,
+            -1.0791
+          ],
+          "bounds_max": [
+            1.3904,
+            1.3281,
+            1.0791
+          ],
+          "triangles": 196,
+          "placement": "world_prop",
+          "subject": "tide floor",
+          "review_reason": ""
+        },
+        {
+          "node": "tide_tile",
+          "bounds_min": [
+            -0.4316,
+            0,
+            -0.4358
+          ],
+          "bounds_max": [
+            0.4316,
+            1.27,
+            0.4358
+          ],
+          "triangles": 139,
+          "placement": "world_prop",
+          "subject": "Capped stone pedestal",
+          "review_reason": ""
+        }
+      ],
+      "notes": "Multi-object source board separated into reusable named child meshes. Reset child position when instantiating a module; all children share one atlas. Unclassified fragments retained for review."
+    },
+    {
+      "id": "coastal_kit",
+      "source": "models/modular+environment+elements+3d+model.glb",
+      "source_sha256": "70b9dce7c9371ef901f29140875d6f9812231cd325959b0ecf191f0854be994e",
+      "path": "assets/models/supplied/coastal_kit.glb",
+      "bounds_min": [
+        -16.9917,
+        0.0,
+        -3.71045
+      ],
+      "bounds_max": [
+        16.9917,
+        4.33301,
+        3.57764
+      ],
+      "triangles": 9036,
+      "vertices": 12528,
+      "bytes": 1260344,
+      "rigged": false,
+      "animations": [],
+      "reference_id": null,
+      "origin": "library layout; child mesh base-centered",
+      "texture_size": 2048,
+      "modules": [
+        {
+          "node": "coastal_arch",
+          "bounds_min": [
+            -1.6436,
+            0,
+            -1.0459
+          ],
+          "bounds_max": [
+            1.6436,
+            3.1045,
+            1.0459
+          ],
+          "triangles": 192,
+          "placement": "world_prop",
+          "subject": "coastal arch",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_pillar",
+          "bounds_min": [
+            -0.8633,
+            0,
+            -0.8633
+          ],
+          "bounds_max": [
+            0.8633,
+            3.3203,
+            0.8633
+          ],
+          "triangles": 326,
+          "placement": "world_prop",
+          "subject": "coastal pillar",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_railing",
+          "bounds_min": [
+            -1.6104,
+            0,
+            -1.7598
+          ],
+          "bounds_max": [
+            1.6104,
+            1.8428,
+            1.7598
+          ],
+          "triangles": 907,
+          "placement": "world_prop",
+          "subject": "coastal railing",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_steps",
+          "bounds_min": [
+            -2.0005,
+            0,
+            -2.4985
+          ],
+          "bounds_max": [
+            2.0005,
+            2.6562,
+            2.4985
+          ],
+          "triangles": 214,
+          "placement": "world_prop",
+          "subject": "coastal steps",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_banner",
+          "bounds_min": [
+            -2.7974,
+            0,
+            -1.6021
+          ],
+          "bounds_max": [
+            2.7974,
+            4.167,
+            1.6021
+          ],
+          "triangles": 588,
+          "placement": "review_only",
+          "subject": "Compass banner",
+          "review_reason": "Overlong disconnected pole reconstruction."
+        },
+        {
+          "node": "coastal_column",
+          "bounds_min": [
+            -0.8799,
+            0,
+            -0.8716
+          ],
+          "bounds_max": [
+            0.8799,
+            2.7891,
+            0.8716
+          ],
+          "triangles": 328,
+          "placement": "world_prop",
+          "subject": "coastal column",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_bridge",
+          "bounds_min": [
+            -2.6895,
+            0,
+            -1.7017
+          ],
+          "bounds_max": [
+            2.6895,
+            3.2041,
+            1.7017
+          ],
+          "triangles": 1560,
+          "placement": "world_prop",
+          "subject": "coastal bridge",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_rock",
+          "bounds_min": [
+            -2.2827,
+            0,
+            -2.3823
+          ],
+          "bounds_max": [
+            2.2827,
+            3.3701,
+            2.3823
+          ],
+          "triangles": 1874,
+          "placement": "world_prop",
+          "subject": "coastal rock",
+          "review_reason": ""
+        },
+        {
+          "node": "coastal_moss",
+          "bounds_min": [
+            -1.5356,
+            0,
+            -1.8677
+          ],
+          "bounds_max": [
+            1.5356,
+            2.4736,
+            1.8677
+          ],
+          "triangles": 3047,
+          "placement": "world_prop",
+          "subject": "coastal moss",
+          "review_reason": ""
+        }
+      ],
+      "notes": "Multi-object source board separated into reusable named child meshes. Reset child position when instantiating a module; all children share one atlas. Unclassified fragments retained for review."
+    },
+    {
+      "id": "root_kit",
+      "source": "models/stone+ruin+archway+3d+model.glb",
+      "source_sha256": "0f138c66fdc61a9d5082f96d0bdced406bb5270625e284917eb3f606ba35618d",
+      "path": "assets/models/supplied/root_kit.glb",
+      "bounds_min": [
+        -15.99219,
+        0.0,
+        -15.13281
+      ],
+      "bounds_max": [
+        15.99219,
+        4.57812,
+        15.13281
+      ],
+      "triangles": 9425,
+      "vertices": 11441,
+      "bytes": 1284000,
+      "rigged": false,
+      "animations": [],
+      "reference_id": null,
+      "origin": "library layout; child mesh base-centered",
+      "texture_size": 2048,
+      "modules": [
+        {
+          "node": "root_steps",
+          "bounds_min": [
+            -2.2578,
+            0,
+            -1.7812
+          ],
+          "bounds_max": [
+            2.2578,
+            2.0781,
+            1.7812
+          ],
+          "triangles": 110,
+          "placement": "world_prop",
+          "subject": "root steps",
+          "review_reason": ""
+        },
+        {
+          "node": "root_small_column",
+          "bounds_min": [
+            -0.6641,
+            0,
+            -0.7031
+          ],
+          "bounds_max": [
+            0.6641,
+            2.1875,
+            0.7031
+          ],
+          "triangles": 332,
+          "placement": "review_only",
+          "subject": "Root-covered small pillar",
+          "review_reason": "Partial irregular root/pillar reconstruction."
+        },
+        {
+          "node": "root_tree",
+          "bounds_min": [
+            -2.1328,
+            0,
+            -2.9062
+          ],
+          "bounds_max": [
+            2.1328,
+            4.4688,
+            2.9062
+          ],
+          "triangles": 2101,
+          "placement": "review_only",
+          "subject": "Root stump and small pedestal",
+          "review_reason": "Contains an adjacent independent pedestal; retained for later separation."
+        },
+        {
+          "node": "root_branch",
+          "bounds_min": [
+            -1.4766,
+            0,
+            -2.5938
+          ],
+          "bounds_max": [
+            1.4766,
+            3.7812,
+            2.5938
+          ],
+          "triangles": 1692,
+          "placement": "review_only",
+          "subject": "Branch and leaf reconstruction",
+          "review_reason": "Leaves float above the disconnected branch."
+        },
+        {
+          "node": "root_growth",
+          "bounds_min": [
+            -2.875,
+            0,
+            -2.3203
+          ],
+          "bounds_max": [
+            2.875,
+            3.75,
+            2.3203
+          ],
+          "triangles": 1684,
+          "placement": "world_prop",
+          "subject": "Open root arch",
+          "review_reason": ""
+        },
+        {
+          "node": "root_arch",
+          "bounds_min": [
+            -2.2812,
+            0,
+            -1.1094
+          ],
+          "bounds_max": [
+            2.2812,
+            3.6719,
+            1.1094
+          ],
+          "triangles": 2017,
+          "placement": "world_prop",
+          "subject": "Root-covered masonry wall relief",
+          "review_reason": ""
+        },
+        {
+          "node": "root_door",
+          "bounds_min": [
+            -0.9453,
+            0,
+            -0.8203
+          ],
+          "bounds_max": [
+            0.9453,
+            1.6875,
+            0.8203
+          ],
+          "triangles": 388,
+          "placement": "review_only",
+          "subject": "Root stump fragment",
+          "review_reason": "Not a door; partial root geometry with a cut end."
+        },
+        {
+          "node": "root_beam",
+          "bounds_min": [
+            -2.8828,
+            0,
+            -0.7109
+          ],
+          "bounds_max": [
+            2.8828,
+            1.6562,
+            0.7109
+          ],
+          "triangles": 120,
+          "placement": "world_prop",
+          "subject": "Low masonry rail",
+          "review_reason": ""
+        },
+        {
+          "node": "root_column",
+          "bounds_min": [
+            -0.4453,
+            0,
+            -1.1641
+          ],
+          "bounds_max": [
+            0.4453,
+            2.125,
+            1.1641
+          ],
+          "triangles": 117,
+          "placement": "world_prop",
+          "subject": "Stone wall panel",
+          "review_reason": ""
+        },
+        {
+          "node": "root_panel",
+          "bounds_min": [
+            -1.3594,
+            0,
+            -0.6094
+          ],
+          "bounds_max": [
+            1.3594,
+            0.5938,
+            0.6094
+          ],
+          "triangles": 8,
+          "placement": "review_only",
+          "subject": "Flat decorated stone panel",
+          "review_reason": "Low-detail planar reconstruction; no clear gameplay placement."
+        },
+        {
+          "node": "root_lintel",
+          "bounds_min": [
+            -1.4609,
+            0,
+            -1.0234
+          ],
+          "bounds_max": [
+            1.4609,
+            3.9688,
+            1.0234
+          ],
+          "triangles": 473,
+          "placement": "world_prop",
+          "subject": "Recessed stone bookshelf",
+          "review_reason": ""
+        },
+        {
+          "node": "root_wall",
+          "bounds_min": [
+            -2.0781,
+            0,
+            -1.1797
+          ],
+          "bounds_max": [
+            2.0781,
+            4.2188,
+            1.1797
+          ],
+          "triangles": 218,
+          "placement": "review_only",
+          "subject": "Stone arch and detached column",
+          "review_reason": "Contains two separate architectural subjects."
+        },
+        {
+          "node": "root_floor",
+          "bounds_min": [
+            -2.8516,
+            0,
+            -5.5469
+          ],
+          "bounds_max": [
+            2.8516,
+            0.4531,
+            5.5469
+          ],
+          "triangles": 20,
+          "placement": "review_only",
+          "subject": "Two flat decorative panels",
+          "review_reason": "Two disconnected planar panels; not a coherent prop."
+        },
+        {
+          "node": "review_fragments",
+          "bounds_min": [
+            -3.9609,
+            0,
+            -3.8047
+          ],
+          "bounds_max": [
+            3.9609,
+            3.5312,
+            3.8047
+          ],
+          "triangles": 145,
+          "placement": "review_only",
+          "subject": "Unclassified source fragments",
+          "review_reason": "Preserved fragments not assigned to a reviewed prop."
+        }
+      ],
+      "notes": "Multi-object source board separated into reusable named child meshes. Reset child position when instantiating a module; all children share one atlas. Unclassified fragments retained for review."
+    }
+  ]
+}

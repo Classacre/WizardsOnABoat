@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS HOST Host starts on isolated UDP port 24731
+FAIL HOST Timed out after 90 seconds
+DUNGEON_ENET_HOST checks=2 failures=1

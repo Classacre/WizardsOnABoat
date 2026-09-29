@@ -8,6 +8,19 @@ const OceanScript = preload("res://scripts/world/ocean.gd")
 const WorldScript = preload("res://scripts/world/archipelago.gd")
 const SkyScript = preload("res://scripts/world/sky.gd")
 const CreatureScript = preload("res://scripts/actors/creature_manager.gd")
+const SECONDS_PER_GAME_HOUR := 60.0
+const SUPPLIED_MODELS := {
+	"barrel": "barrel",
+	"cottage": "cottage",
+	"crate": "crate",
+	"dock": "dock",
+	"hearthstone": "hearth_pad",
+	"lantern": "lantern",
+	"loot_chest": "loot_chest",
+	"ruin_arch": "ruin_arch",
+	"shop": "cottage",
+	"tide_gate": "tide_gate",
+}
 
 var ocean: Node3D
 var archipelago: Node3D
@@ -40,12 +53,26 @@ var capture_timer := 0.0
 var capture_frames: Array[float] = []
 var _network_sequence := 0
 var _built_seed := 7319
+var _built_generator := 2
+var _stream_timer := 0.0
+var _poi_nodes: Dictionary = {}
+var _stream_publish_pending := false
 var _last_input: Dictionary = {}
+var _projectile_visuals: Dictionary = {}
+var _scenery_scenes: Dictionary = {}
+var _scenery_collision_shapes: Dictionary = {}
+var _profile_stream := OS.has_environment("SPELLWAKE_PROFILE_STREAM")
+var _projectile_prewarmed := false
+var _quickstart_requested := false
+var _dev_last_spawn_msec := 0
+var _dev_suppress_cast_until_msec := 0
 
 func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg == "--showcase": showcase = true
 		if arg.begins_with("--capture="): capture_path = arg.trim_prefix("--capture=")
+		if arg == "--quickstart": _quickstart_requested = true
+	_prepare_projectile_visuals()
 	_setup_input()
 	Session.state_changed.connect(_receive_state)
 	Session.input_received.connect(_receive_input)
@@ -60,6 +87,8 @@ func _ready() -> void:
 	add_child(hud)
 	hud.host_requested.connect(_host)
 	hud.join_requested.connect(_join)
+	hud.dev_requested.connect(_open_dev_menu)
+	hud.dev_action.connect(_dev_action)
 	hud.action.connect(func(name_value:String,data:Dictionary):
 		if name_value == "leave": _leave()
 		else: Session.request_action(name_value,data)
@@ -74,8 +103,63 @@ func _ready() -> void:
 	if showcase:
 		hud.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	for arg in OS.get_cmdline_user_args():
-		if arg == "--quickstart": _host("Playtest",7319,"Wayfarer")
+	_prewarm_projectile_visuals.call_deferred()
+
+func _prepare_projectile_visuals() -> void:
+	if not _projectile_visuals.is_empty(): return
+	for kind in ["wind","ember"]:
+		var material := StandardMaterial3D.new()
+		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		material.albedo_color = Color("91f9e4") if kind == "wind" else Color("ffb86a")
+		material.emission_enabled = true
+		material.emission = material.albedo_color
+		material.emission_energy_multiplier = 2
+		var orb_mesh := SphereMesh.new()
+		orb_mesh.radius = 0.14
+		orb_mesh.height = 0.28
+		orb_mesh.material = material
+		var ring_meshes: Array[Mesh] = []
+		for i in 3:
+			var torus := TorusMesh.new()
+			torus.inner_radius = 0.22+float(i)*0.045
+			torus.outer_radius = 0.245+float(i)*0.045
+			torus.rings = 24
+			torus.ring_segments = 6
+			torus.material = material
+			ring_meshes.append(torus)
+		_projectile_visuals[kind] = {"orb":orb_mesh,"rings":ring_meshes}
+
+func _make_projectile_visual(kind: String) -> Dictionary:
+	var resources: Dictionary = _projectile_visuals[kind]
+	var orb := MeshInstance3D.new()
+	orb.mesh = resources.orb
+	var rings: Array[Node3D] = []
+	for ring_mesh in resources.rings:
+		var ring := MeshInstance3D.new()
+		ring.mesh = ring_mesh
+		orb.add_child(ring)
+		ring.rotation = Vector3(PI/2,0,0)
+		rings.append(ring)
+	return {"node":orb,"rings":rings}
+
+func _prewarm_projectile_visuals() -> void:
+	if DisplayServer.get_name() != "headless":
+		var camera: Camera3D = get_viewport().get_camera_3d()
+		if camera:
+			var warmups: Array[Node3D] = []
+			for kind in ["wind","ember"]:
+				var visual: Dictionary = _make_projectile_visual(kind)
+				var orb: Node3D = visual.node
+				orb.scale = Vector3.ONE*0.02
+				camera.add_child(orb)
+				orb.position = Vector3(-0.035 if kind == "wind" else 0.035,-0.05,-0.2)
+				warmups.append(orb)
+			await RenderingServer.frame_post_draw
+			for orb in warmups:
+				if is_instance_valid(orb): orb.queue_free()
+	_projectile_prewarmed = true
+	if _quickstart_requested and not Session.is_session_active():
+		_host("Playtest",7319,"Wayfarer")
 
 func _setup_input() -> void:
 	var keys := {"forward":KEY_W,"back":KEY_S,"left":KEY_A,"right":KEY_D,"jump":KEY_SPACE,"dive":KEY_CTRL,"sprint":KEY_SHIFT,"interact":KEY_E,"book":KEY_B,"satchel":KEY_I,"crew":KEY_C,"hearth":KEY_H,"potion":KEY_Q}
@@ -85,8 +169,9 @@ func _setup_input() -> void:
 		event.physical_keycode=keys[action_name]
 		InputMap.action_add_event(action_name,event)
 
-func _build_world(seed_value: int) -> void:
+func _build_world(seed_value: int, generator_version: int = 2) -> void:
 	_built_seed=seed_value
+	_built_generator=generator_version
 	if scenery:
 		remove_child(scenery)
 		scenery.queue_free()
@@ -97,41 +182,24 @@ func _build_world(seed_value: int) -> void:
 	scenery.add_child(sky)
 	archipelago=WorldScript.new()
 	scenery.add_child(archipelago)
-	archipelago.configure(seed_value)
+	archipelago.configure(seed_value,generator_version)
 	archipelago.build()
 	ocean=OceanScript.new()
+	ocean.configure(seed_value)
 	scenery.add_child(ocean)
 	ocean.set_shore_data(archipelago.shore_texture,Vector2(-512,-512),Vector2(1024,1024))
 	creature_manager=CreatureScript.new()
 	scenery.add_child(creature_manager)
 	creature_manager.configure(archipelago,ocean)
 	interactables.clear()
+	_poi_nodes.clear()
 	for poi in archipelago.pois:
-		var at: Vector3=poi.position
-		match str(poi.kind):
-			"shop":
-				_place_model("shop",at,scenery,PI,true)
-				_place_model("shopkeeper",at+Vector3(1,0,5.0),scenery,PI)
-				interactables.append({"kind":"shop","position":at+Vector3(1,0,5),"name":"Mara's Chandlery"})
-			"lighthouse": _place_model("lighthouse",at,scenery,0,true)
-			"dock":
-				_place_model("dock",at-Vector3(0,0.35,0),scenery,-0.6,true)
-				_place_model("barrel",at+Vector3(1.6,0,0),scenery)
-			"spawn": _place_model("hearthstone",at,scenery)
-			"tutorial_ruin", "dungeon":
-				_place_model("ruin_arch",at,scenery,0,true)
-				_place_model("ruin_arch",at+Vector3(-4,0,-5),scenery,PI/2,true)
-				if poi.kind == "dungeon":
-					_place_model("loot_chest",at+Vector3(0,0.25,-3),scenery)
-					interactables.append({"kind":"dungeon","position":at+Vector3(0,0,-3),"id":poi.id,"name":poi.name})
-			"apprentice_cache":
-				_place_model("loot_chest",at,scenery)
-				interactables.append({"kind":"cache","position":at,"name":"Apprentice's Wind Cache"})
+		_add_world_poi(poi)
 	# Decorative village follows the approved harbour material and architecture kit.
 	for offset in [Vector2(-18,5),Vector2(13,-10),Vector2(-10,-15)]:
 		var p:=Vector3(-37+offset.x,0,-48+offset.y)
 		p.y=archipelago.sample_ground_height(p.x,p.z)
-		var house:=_place_model("shop",p,scenery,0.35,true)
+		var house:=_place_model("cottage",p,scenery,0.35,true)
 		if house: house.scale=Vector3.ONE*0.72
 	preview_boat=BoatScript.new()
 	preview_boat.ship_id="preview"
@@ -154,11 +222,112 @@ func _build_world(seed_value: int) -> void:
 	preview_camera.far=2000
 	preview_camera.look_at(Vector3(6.4,4.0,58))
 	preview_camera.current=true
+	_refresh_shore_patches([preview_camera.position])
+	for boat in boats.values():
+		boat.ocean=ocean
+		boat.archipelago=archipelago
+	for wizard in wizards.values():
+		wizard.ocean=ocean
+		wizard.archipelago=archipelago
+	if in_game and local_wizard and local_wizard.camera:
+		local_wizard.camera.current=true
+		preview_boat.hide()
+		preview_boat.collision_layer=0
+
+func _add_world_poi(poi: Dictionary) -> void:
+	if _poi_nodes.has(str(poi.id)): return
+	var started := Time.get_ticks_usec() if _profile_stream else 0
+	var holder := Node3D.new()
+	holder.name = ("POI_"+str(poi.id)).validate_node_name()
+	scenery.add_child(holder)
+	_poi_nodes[str(poi.id)] = holder
+	var at: Vector3 = poi.position
+	var biome: String = str(poi.get("biome",archipelago.biome_at(at)))
+	match str(poi.kind):
+		"shop":
+			_place_model("shop",at,holder,PI,true)
+			_place_model("shopkeeper",at+Vector3(1,0,5.0),holder,PI)
+			interactables.append({"kind":"shop","position":at+Vector3(1,0,5),"name":"Mara's Chandlery","id":poi.id})
+		"lighthouse": _place_model("lighthouse",at,holder,0,true)
+		"dock":
+			_place_model("dock",at-Vector3(0,0.35,0),holder,-0.6,true)
+			_place_model("barrel",at+Vector3(1.6,0,0),holder)
+			_place_model("crate",at+Vector3(-1.8,0,1.6),holder)
+			_place_model("lantern",at+Vector3(1.4,0,-2.0),holder)
+		"spawn": _place_model("hearthstone",at,holder)
+		"tutorial_ruin", "dungeon":
+			if biome in ["Basalt Heath","Glass Dunes"]:
+				_place_model("tide_gate",at,holder,0,true)
+				_place_module("tide_kit","tide_arch",_flat_surface_offset(at,Vector3(-4,0,-1),Vector2(0.7,1.9)),holder,PI/2,true)
+				_place_module("tide_kit","tide_rubble",_flat_surface_offset(at,Vector3(4,0,2),Vector2(1.2,1.3)),holder)
+			elif biome == "Mangrove Orchard":
+				_place_module("root_kit","root_arch",_flat_surface_offset(at,Vector3(-4,0,-2),Vector2(1.2,2.3)),holder,PI/2,true)
+			else:
+				_place_model("ruin_arch",at,holder,0,true)
+				_place_module("coastal_kit","coastal_arch",_flat_surface_offset(at,Vector3(-3,0,-3),Vector2(1.1,1.7)),holder,PI/2,true)
+				_place_module("coastal_kit","coastal_moss",_flat_surface_offset(at,Vector3(4,0,2),Vector2(1.6,1.9)),holder)
+			if poi.kind == "dungeon":
+				_place_model("loot_chest",at+Vector3(0,0.25,-3),holder)
+				interactables.append({"kind":"dungeon","position":at+Vector3(0,0,-3),"id":poi.id,"name":poi.name})
+		"landing":
+			_place_module("coastal_kit","coastal_pillar",_flat_surface_offset(at,Vector3(3,0,2),Vector2(1.3,1.3)),holder)
+		"apprentice_cache":
+			_place_model("loot_chest",at,holder)
+			interactables.append({"kind":"cache","position":at,"name":"Apprentice's Wind Cache","id":poi.id})
+	if _profile_stream:
+		var elapsed := float(Time.get_ticks_usec()-started)/1000.0
+		if elapsed>30.0: print("STREAM_POI ",poi.id," MS=",elapsed)
+
+func _refresh_shore_patches(anchors: Array[Vector3]) -> void:
+	if ocean and archipelago.has_method("shore_patches"):
+		ocean.set_shore_patches(archipelago.shore_patches(anchors))
+
+func _apply_stream_changes(changes: Dictionary) -> void:
+	for id in changes.get("removed_poi_ids",[]):
+		if _poi_nodes.has(str(id)):
+			_poi_nodes[str(id)].queue_free()
+			_poi_nodes.erase(str(id))
+		for index in range(interactables.size()-1,-1,-1):
+			if str(interactables[index].get("id","")) == str(id): interactables.remove_at(index)
+	for poi in changes.get("added_pois",[]): _add_world_poi(poi)
+	if not changes.get("added_islands",[]).is_empty() or not changes.get("removed_island_ids",[]).is_empty():
+		if Session.hosting and Session.world:
+			# State signals are synchronous; publish only after the current receive/
+			# stream pass completes, rather than recursively loading every anchor.
+			if creature_manager.seed_world(Session.world)>0: _stream_publish_pending=true
+		elif creature_manager and not snapshot.is_empty():
+			creature_manager.sync_snapshot(snapshot)
+
+func _ensure_surface_for_position(point: Vector3) -> void:
+	if not archipelago or not archipelago.has_method("ensure_at"): return
+	_apply_stream_changes(archipelago.ensure_at(point))
+
+func _stream_world() -> void:
+	var anchors: Array[Vector3] = []
+	if in_game:
+		for wizard in wizards.values(): anchors.append(wizard.global_position)
+		for boat in boats.values(): anchors.append(boat.global_position)
+	if anchors.is_empty(): anchors.append(archipelago.get_spawn_position())
+	creature_manager.set_stream_anchors(anchors)
+	_apply_stream_changes(archipelago.stream_around(anchors,1))
+	var camera := get_viewport().get_camera_3d()
+	var shore_anchors: Array[Vector3] = []
+	if camera:
+		shore_anchors.append(camera.global_position)
+	else:
+		shore_anchors.append_array(anchors)
+	_refresh_shore_patches(shore_anchors)
 
 func _place_model(asset: String, at: Vector3, parent: Node3D, angle:=0.0, collision:=false) -> Node3D:
-	var path:="res://assets/models/%s.glb"%asset
+	var path: String = "res://assets/models/%s.glb" % asset
+	if SUPPLIED_MODELS.has(asset):
+		var supplied_path: String = "res://assets/models/supplied/%s.glb" % SUPPLIED_MODELS[asset]
+		if ResourceLoader.exists(supplied_path):
+			path = supplied_path
+		elif asset == "cottage":
+			path = "res://assets/models/shop.glb"
 	if not ResourceLoader.exists(path): return null
-	var model: Node3D=load(path).instantiate()
+	var model: Node3D=_scenery_scene(path).instantiate()
 	parent.add_child(model)
 	model.position=at
 	model.rotation.y=angle
@@ -166,17 +335,62 @@ func _place_model(asset: String, at: Vector3, parent: Node3D, angle:=0.0, collis
 		_add_mesh_collisions(model)
 	return model
 
+func _flat_surface_offset(at: Vector3, offset: Vector3, half_size: Vector2) -> Vector3:
+	var p := at + offset
+	p.y = archipelago.sample_surface_at(p)
+	for corner in [Vector2(-half_size.x,-half_size.y),Vector2(-half_size.x,half_size.y),Vector2(half_size.x,-half_size.y),Vector2(half_size.x,half_size.y)]:
+		var sample: float = archipelago.sample_surface_at(p+Vector3(corner.x,0,corner.y))
+		if absf(sample-p.y) > 0.85:
+			return Vector3(NAN,NAN,NAN)
+	return p
+
+func _place_module(kit: String, module_name: String, at: Vector3, parent: Node3D, angle:=0.0, collision:=false) -> Node3D:
+	if not at.is_finite():
+		return null
+	var path := "res://assets/models/supplied/%s.glb" % kit
+	if not ResourceLoader.exists(path):
+		return null
+	var source: Node3D = _scenery_scene(path).instantiate()
+	var original: Node3D = source.find_child(module_name,true,false) as Node3D
+	if original == null:
+		source.free()
+		return null
+	var model: Node3D = original.duplicate()
+	source.free()
+	parent.add_child(model)
+	model.position = at
+	model.rotation.y = angle
+	if collision:
+		_add_mesh_collisions(model)
+	return model
+
+func _scenery_scene(path: String) -> PackedScene:
+	# Keep a strong reference so each streamed copy reuses the imported scene.
+	if not _scenery_scenes.has(path):
+		_scenery_scenes[path] = load(path)
+	return _scenery_scenes[path]
+
 func _add_mesh_collisions(node: Node) -> void:
 	if node is MeshInstance3D and node.mesh:
-		node.create_trimesh_collision()
+		# Imported arches contain many triangles. Share their immutable collision
+		# shapes so the physics BVH is built once, rather than on every island.
+		if not _scenery_collision_shapes.has(node.mesh):
+			_scenery_collision_shapes[node.mesh] = node.mesh.create_trimesh_shape()
+		var shape: Shape3D = _scenery_collision_shapes[node.mesh]
+		if shape:
+			var body := StaticBody3D.new()
+			var collider := CollisionShape3D.new()
+			collider.shape = shape
+			body.add_child(collider)
+			node.add_child(body)
 	for child in node.get_children():
 		if not child is StaticBody3D: _add_mesh_collisions(child)
 
-func _host(world_name:String,seed_value:int,wizard_name:String) -> void:
+func _host(world_name:String,seed_value:int,wizard_name:String,generator_version:int=2) -> void:
 	Session.display_name=wizard_name
-	if Session.start_host(world_name,seed_value)!=OK: return
-	if Session.world.seed_value!=_built_seed:
-		_build_world(Session.world.seed_value)
+	if Session.start_host(world_name,seed_value,Session.DEFAULT_PORT,generator_version)!=OK: return
+	if Session.world.seed_value!=_built_seed or Session.world.generator_version!=_built_generator:
+		_build_world(Session.world.seed_value,Session.world.generator_version)
 	for player_id in Session.world.players:
 		var data:Dictionary=Session.world.players[player_id]
 		if Vector3(data.position[0],data.position[1],data.position[2]).length()<3:
@@ -247,8 +461,25 @@ func _player_left(player_id:String,_peer_id:int) -> void:
 
 func _receive_state(data:Dictionary) -> void:
 	snapshot=data
-	if data.get("seed",_built_seed)!=_built_seed:
-		_build_world(int(data.seed))
+	if data.get("seed",_built_seed)!=_built_seed or int(data.get("generator_version",1))!=_built_generator:
+		_build_world(int(data.seed),int(data.get("generator_version",1)))
+	var stream_anchors: Array[Vector3] = []
+	for player_record in data.get("players",{}).values():
+		if player_record.get("online",false): stream_anchors.append(_vec(player_record.position))
+	for ship_record in data.get("ships",{}).values():
+		if ship_record.get("active",false) and ship_record.get("alive",false): stream_anchors.append(_vec(ship_record.position))
+	creature_manager.set_stream_anchors(stream_anchors)
+	for ship_record in data.get("ships",{}).values():
+		if ship_record.get("active",false) and ship_record.get("alive",false): _ensure_surface_for_position(_vec(ship_record.position))
+	for player_id in data.get("players",{}):
+		var player_record: Dictionary = data.players[player_id]
+		if player_record.get("online",false):
+			_ensure_surface_for_position(_vec(player_record.position))
+			_ensure_dungeon_for_position(_vec(player_record.position))
+	for mob_id in data.get("mobs",{}):
+		var mob_record: Dictionary = data.mobs[mob_id]
+		if mob_record.get("alive",false) and not str(mob_record.get("dungeon_id","")).is_empty():
+			_ensure_dungeon_for_position(_vec(mob_record.position))
 	if creature_manager and not Session.hosting: creature_manager.sync_snapshot(data)
 	for ship_id in data.get("ships",{}):
 		var record:Dictionary=data.ships[ship_id]
@@ -308,8 +539,12 @@ func _receive_input(_peer_id:int,data:Dictionary) -> void:
 	if wizards.has(id): wizards[id].input_data=data
 
 func _physics_process(delta:float) -> void:
+	var physics_started := Time.get_ticks_usec() if _profile_stream else 0
 	simulation_time+=delta
 	ocean.set_simulation_time(simulation_time)
+	creature_manager.time_of_day = fposmod(12.0 + simulation_time / SECONDS_PER_GAME_HOUR, 24.0)
+	if int(simulation_time) != int(simulation_time-delta):
+		sky.set_time_of_day(creature_manager.time_of_day)
 	if not in_game:
 		preview_boat.simulate(delta)
 		ocean.set_ship_wakes([Vector4(preview_boat.position.x,preview_boat.position.z,preview_boat.heading,5.0)])
@@ -323,7 +558,12 @@ func _physics_process(delta:float) -> void:
 			local_wizard.input_data=_last_input
 			local_wizard.simulate(delta,boats)
 	if Session.hosting:
-		if creature_manager.simulate(delta,Session.world,wizards): Session.publish_state()
+		var creature_started := Time.get_ticks_usec() if _profile_stream else 0
+		var creature_changed: bool = creature_manager.simulate(delta,Session.world,wizards)
+		if _profile_stream and Time.get_ticks_usec()-creature_started>30000:
+			print("STREAM_CREATURE_SIM_MS=",float(Time.get_ticks_usec()-creature_started)/1000.0)
+		if creature_changed: Session.publish_state()
+		var boat_previous_inverses: Dictionary = {}
 		for ship_id in boats:
 			var boat:Node3D=boats[ship_id]
 			boat.steering=0;boat.throttle=0
@@ -333,17 +573,20 @@ func _physics_process(delta:float) -> void:
 				boat.throttle=-float(pilot.input_data.get("move_y",0))
 			else: boat.pilot_id=""
 			boat.simulate(delta)
+			boat_previous_inverses[ship_id] = boat.last_transform.affine_inverse()
 			Session.world.update_ship_position(ship_id,boat.global_position,archipelago.is_safe_zone(boat.global_position))
 			Session.world.ships[ship_id]["heading"]=boat.heading
 		for player_id in wizards:
 			var wizard:Node3D=wizards[player_id]
 			if not wizard.helm_id.is_empty() and (not boats.has(wizard.helm_id) or boats[wizard.helm_id].pilot_id!=player_id or not Session.world.can_pilot(player_id,wizard.helm_id)):
 				_release_helm(player_id)
-			for boat in boats.values():
-				var previous_local:Vector3=boat.last_transform.affine_inverse()*wizard.global_position
-				if wizard.helm_id.is_empty() and absf(previous_local.x)<3.1 and absf(previous_local.z)<5.5 and previous_local.y>0.6 and previous_local.y<3.5:
+			for ship_id in boats:
+				var boat: Node3D = boats[ship_id]
+				var previous_inverse: Transform3D = boat_previous_inverses[ship_id]
+				var previous_local:Vector3=previous_inverse*wizard.global_position
+				if not wizard.dev_fly_enabled and wizard.helm_id.is_empty() and absf(previous_local.x)<3.1 and absf(previous_local.z)<5.5 and previous_local.y>0.6 and previous_local.y<3.5:
 					wizard.aboard_id=boat.ship_id
-					wizard.global_position=boat.global_transform*(boat.last_transform.affine_inverse()*wizard.global_position)
+					wizard.global_position=boat.global_transform*previous_local
 			wizard.simulate(delta,boats)
 			Session.world.update_player_position(player_id,wizard.global_position,archipelago.is_safe_zone(wizard.global_position))
 		_update_projectiles(delta)
@@ -352,7 +595,7 @@ func _physics_process(delta:float) -> void:
 			survival_timer=0
 			for player_id in wizards:
 				var wizard:Node=wizards[player_id]
-				if wizard.alive and (wizard.breath<=0 or wizard.global_position.y < -80):
+				if wizard.alive and not wizard.dev_fly_enabled and (wizard.breath<=0 or wizard.global_position.y < -80):
 					var p:Dictionary=Session.world.players[player_id]
 					p.health=maxf(0,p.health-14)
 					if p.health<=0: Session.world.kill_player(player_id,true);Session.publish_state()
@@ -369,17 +612,32 @@ func _physics_process(delta:float) -> void:
 		if snapshot.loot.get(chest_id,{}).get("floating",false):
 			chests[chest_id].position.y=ocean.sample_height(chests[chest_id].position)+0.2
 			chests[chest_id].rotation.z=sin(simulation_time*1.4)*0.08
+	if _profile_stream and Time.get_ticks_usec()-physics_started>30000:
+		print("STREAM_SCRIPT_PHYSICS_MS=",float(Time.get_ticks_usec()-physics_started)/1000.0)
 
 func _process(delta:float) -> void:
+	_stream_timer += delta
+	if _stream_timer>=0.15:
+		_stream_timer=0.0
+		_stream_world()
+	elif archipelago.has_pending_stream():
+		_apply_stream_changes(archipelago.advance_stream())
+	if _stream_publish_pending and Session.hosting and Session.world:
+		_stream_publish_pending=false
+		Session.publish_state()
 	if in_game and local_wizard:
 		selected_target=_nearest_interaction(local_wizard.global_position)
 		var hint:=""
 		if not local_wizard.helm_id.is_empty(): hint="W / S  Sail   A / D  Steer   E  Release helm"
 		elif not selected_target.is_empty(): hint="E  ·  "+str(selected_target.name)
 		var area:="The Great Sea"
-		for island in archipelago.island_records:
-			if local_wizard.global_position.distance_to(island.center)<island.radius+20:
-				area=island.name;break
+		var current_dungeon: String = archipelago.dungeon_at(local_wizard.global_position)
+		if not current_dungeon.is_empty():
+			area = str(archipelago.get_dungeon(current_dungeon).name)
+		else:
+			for island in archipelago.island_records:
+				if local_wizard.global_position.distance_to(island.center)<island.radius+20:
+					area=island.name;break
 		hud.update_player(snapshot,Session.local_player_id,local_wizard,area,hint)
 		if snapshot.get("players",{}).get(Session.local_player_id,{}).get("learned",[]).is_empty():
 			for item in interactables:
@@ -394,6 +652,12 @@ func _process(delta:float) -> void:
 			var path:=capture_path
 			capture_path=""
 			_capture.call_deferred(path)
+
+func _input(event: InputEvent) -> void:
+	if in_game and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F3:
+		if modal_open and hud.current_panel == "dev": hud.close_panel()
+		else: _open_dev_menu()
+		get_viewport().set_input_as_handled()
 
 func _unhandled_input(event:InputEvent) -> void:
 	if not in_game: return
@@ -414,7 +678,7 @@ func _unhandled_input(event:InputEvent) -> void:
 			KEY_E: _interact()
 			KEY_1: _select_index(0)
 			KEY_2: _select_index(1)
-	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not modal_open and local_wizard:
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not modal_open and local_wizard and Time.get_ticks_msec()>=_dev_suppress_cast_until_msec:
 		if not current_staff.is_empty(): Session.request_staff_cast(current_staff,local_wizard.get_eye_position(),local_wizard.get_aim_direction())
 		elif current_recipe.is_empty(): hud.show_notice("Find the apprentice's wind cache in the old ruin to learn your first spells.")
 		else: Session.request_cast(current_recipe,local_wizard.get_eye_position(),local_wizard.get_aim_direction())
@@ -431,14 +695,261 @@ func _select_spell(recipe:Array,spell_name:String) -> void:
 	current_spell=spell_name
 	hud.spell_label.text=spell_name.to_upper()+"  ·  LEFT CLICK"
 
+func _open_dev_menu() -> void:
+	if not local_wizard: return
+	hud.open_dev(_dev_destinations(),_dev_spawn_catalog(),local_wizard.dev_fly_enabled,Session.hosting)
+
+func _dev_destinations() -> Array:
+	var entries: Array = []
+	for island in archipelago.island_records:
+		entries.append({"id":"island/"+str(island.id),"label":"Island · "+str(island.name)})
+	for poi in archipelago.pois:
+		entries.append({"id":"poi/"+str(poi.id),"label":"Landmark · "+str(poi.name)})
+	if archipelago.has_method("dungeon_landmarks"):
+		for landmark in archipelago.dungeon_landmarks():
+			entries.append({"id":"dungeon/"+str(landmark.get("id","")),"label":"Dungeon · "+str(landmark.get("label",landmark.get("name","Room")))})
+	for ship_id in boats:
+		entries.append({"id":"boat/"+str(ship_id),"label":"Ship · "+str(ship_id)})
+	for player_id in wizards:
+		if player_id != Session.local_player_id:
+			entries.append({"id":"player/"+str(player_id),"label":"Player · "+str(snapshot.get("players",{}).get(player_id,{}).get("name",player_id))})
+	for mob_id in creature_manager.actors:
+		var actor: Dictionary = creature_manager.actors[mob_id]
+		entries.append({"id":"mob/"+str(mob_id),"label":"Creature · "+str(GameCatalog.SPECIES[actor.record.species].name)})
+	for chest_id in chests:
+		entries.append({"id":"loot/"+str(chest_id),"label":"Chest · "+str(chest_id)})
+	return entries
+
+func _dev_spawn_catalog() -> Array:
+	var entries: Array = [{"id":"chest/salvage","label":"Salvage chest"},{"id":"item/gold","label":"Gold chest · 100"}]
+	for species_id in GameCatalog.SPECIES:
+		var definition: Dictionary = GameCatalog.SPECIES[species_id]
+		if definition.get("boss",false): continue
+		entries.append({"id":"mob/"+str(species_id),"label":"Creature · "+str(definition.name)})
+	var item_names: Dictionary = {}
+	for item_id in GameCatalog.SHOP:
+		item_names[item_id] = GameCatalog.SHOP[item_id].name
+	for item_id in GameCatalog.SELL_VALUES:
+		item_names[item_id] = str(item_id).capitalize()
+	for definition in GameCatalog.SPECIES.values():
+		for loot_entry in definition.loot:
+			item_names[loot_entry.item] = str(loot_entry.item).replace("_"," ").capitalize()
+	for item_id in item_names:
+		entries.append({"id":"item/"+str(item_id),"label":"Item · "+str(item_names[item_id])})
+	return entries
+
+func _dev_action(action_name: String, data: Dictionary) -> void:
+	_dev_suppress_cast_until_msec = Time.get_ticks_msec()+250
+	if not Session.hosting or Session.world == null or not local_wizard or Session.local_player_id.is_empty():
+		hud.show_notice("Developer controls require the host.")
+		return
+	if not local_wizard.alive:
+		hud.show_notice("Respawn before using developer controls.")
+		return
+	match action_name:
+		"fly_toggle":
+			if bool(data.get("enabled",false)):
+				_release_helm(Session.local_player_id)
+				local_wizard.aboard_id = ""
+			local_wizard.set_dev_fly(bool(data.get("enabled",false)))
+			hud.show_notice("Free fly enabled. Space/Ctrl move vertically." if local_wizard.dev_fly_enabled else "Free fly disabled.")
+			hud.close_panel()
+		"fly_speed":
+			var requested: float = float(data.get("speed",local_wizard.dev_fly_speed))
+			if is_finite(requested):
+				local_wizard.dev_fly_speed = clampf(requested,5.0,120.0)
+				hud.show_notice("Free fly speed: %d m/s" % int(local_wizard.dev_fly_speed))
+		"teleport":
+			var destination: Dictionary = _dev_destination(str(data.get("id","")))
+			if not destination.get("ok",false):
+				hud.show_notice(str(destination.get("error","Destination unavailable.")))
+				return
+			_ensure_surface_for_position(destination.position)
+			_release_helm(Session.local_player_id)
+			local_wizard.aboard_id = str(destination.get("aboard","")) if not local_wizard.dev_fly_enabled else ""
+			local_wizard.velocity = Vector3.ZERO
+			local_wizard.knockback = Vector3.ZERO
+			local_wizard.global_position = destination.position
+			Session.world.update_player_position(Session.local_player_id,local_wizard.global_position,archipelago.is_safe_zone(local_wizard.global_position))
+			Session.publish_state()
+			_broadcast_simulation()
+			hud.show_notice("Teleported to "+str(destination.get("label","destination"))+".")
+			hud.close_panel()
+		"spawn":
+			var now_ms := Time.get_ticks_msec()
+			if now_ms-_dev_last_spawn_msec<200: return
+			var result: Dictionary = _dev_spawn(str(data.get("id","")))
+			if result.get("ok",false):
+				_dev_last_spawn_msec = now_ms
+				Session.publish_state()
+				_broadcast_simulation()
+			hud.show_notice(str(result.get("message",result.get("error","Spawn unavailable."))))
+
+func _dev_destination(id: String) -> Dictionary:
+	if id.begins_with("island/"):
+		var island_id := id.trim_prefix("island/")
+		for island in archipelago.island_records:
+			if str(island.id) != island_id: continue
+			var point: Vector3 = island.center
+			for poi in island.pois:
+				if poi.kind in ["landing","dock","spawn"]:
+					point = poi.position
+					break
+			point.y = archipelago.sample_surface_at(point)+1.25
+			return {"ok":true,"position":point,"label":island.name}
+	if id.begins_with("poi/"):
+		var poi_id := id.trim_prefix("poi/")
+		for poi in archipelago.pois:
+			if str(poi.id) != poi_id: continue
+			var point: Vector3 = poi.position+Vector3(2.5,0,2.5)
+			point.y = archipelago.sample_surface_at(point)+1.25
+			return {"ok":true,"position":point,"label":poi.name}
+	if id.begins_with("dungeon/") and archipelago.has_method("dungeon_landmarks"):
+		var landmark_id := id.trim_prefix("dungeon/")
+		for landmark in archipelago.dungeon_landmarks():
+			if str(landmark.get("id","")) != landmark_id: continue
+			var dungeon_id := str(landmark.get("dungeon_id",""))
+			if dungeon_id.is_empty() or archipelago.ensure_dungeon_built(dungeon_id) == null:
+				return {"ok":false,"error":"Dungeon is unavailable."}
+			return {"ok":true,"position":landmark.position,"label":landmark.get("label","dungeon")}
+	if id.begins_with("boat/"):
+		var ship_id := id.trim_prefix("boat/")
+		if boats.has(ship_id):
+			return {"ok":true,"position":boats[ship_id].to_global(Vector3(-1.8,1.25,0)),"aboard":ship_id,"label":"ship"}
+	if id.begins_with("player/"):
+		var player_id := id.trim_prefix("player/")
+		if wizards.has(player_id):
+			return {"ok":true,"position":_dev_near_entity(wizards[player_id].global_position),"label":"player"}
+	if id.begins_with("mob/"):
+		var mob_id := id.trim_prefix("mob/")
+		if creature_manager.actors.has(mob_id):
+			return {"ok":true,"position":_dev_near_entity(creature_manager.actors[mob_id].body.global_position),"label":"creature"}
+	if id.begins_with("loot/"):
+		var loot_id := id.trim_prefix("loot/")
+		if chests.has(loot_id):
+			return {"ok":true,"position":_dev_near_entity(chests[loot_id].global_position),"label":"chest"}
+	return {"ok":false,"error":"Destination is no longer available."}
+
+func _dev_near_entity(position_value: Vector3) -> Vector3:
+	if archipelago.has_method("dungeon_at"):
+		var dungeon_id: String = archipelago.dungeon_at(position_value)
+		if not dungeon_id.is_empty():
+			archipelago.ensure_dungeon_built(dungeon_id)
+			var nearest: Vector3 = archipelago.get_dungeon(dungeon_id).start_position
+			var nearest_distance := INF
+			for landmark in archipelago.dungeon_landmarks():
+				if str(landmark.get("dungeon_id","")) != dungeon_id or archipelago.dungeon_at(landmark.position) != dungeon_id: continue
+				var candidate: Vector3 = landmark.position
+				var distance: float = position_value.distance_squared_to(candidate)
+				if distance < nearest_distance:
+					nearest = candidate
+					nearest_distance = distance
+			return nearest
+	var point := position_value+Vector3(2.5,0,2.5)
+	point.y = maxf(point.y+1.0,archipelago.sample_surface_at(point)+1.25)
+	return point
+
+func _dev_spawn(id: String) -> Dictionary:
+	if id == "chest/salvage" or id.begins_with("item/"):
+		var contents: Dictionary = {"gold":100,"healing_potion":3,"ancient_coin":5} if id == "chest/salvage" else {}
+		if id.begins_with("item/"):
+			var item_id := id.trim_prefix("item/")
+			if item_id == "driftwood_staff":
+				var staff: Dictionary = Session.world.create_staff(Session.local_player_id)
+				return {"ok":staff.get("ok",false),"message":"Staff added to inventory.","error":staff.get("error","")}
+			if item_id != "gold" and GameCatalog.item_sell_value(item_id) <= 0:
+				return {"ok":false,"error":"Unknown item."}
+			contents[item_id] = 100 if item_id == "gold" else 1
+		if Session.world.loot.size() >= 64:
+			return {"ok":false,"error":"Chest limit reached (64)."}
+		var chest_position := _dev_spawn_origin()
+		var ground_height: float = archipelago.sample_surface_at(chest_position)
+		var floating: bool = ground_height < 0.0
+		if not floating: chest_position.y = ground_height+0.25
+		var chest_id: String = Session.world._create_loot(Session.local_player_id,contents,[chest_position.x,chest_position.y,chest_position.z],floating,archipelago.is_safe_zone(chest_position))
+		Session.world.revision += 1
+		return {"ok":true,"message":"Spawned chest "+chest_id+"."}
+	if id.begins_with("mob/"):
+		var species_id := id.trim_prefix("mob/")
+		if not GameCatalog.SPECIES.has(species_id) or GameCatalog.SPECIES[species_id].get("boss",false):
+			return {"ok":false,"error":"This creature is reserved for its dungeon encounter."}
+		if Session.world.mobs.size() >= 256 or creature_manager.actors.size() >= 96:
+			return {"ok":false,"error":"Creature limit reached."}
+		var definition: Dictionary = GameCatalog.SPECIES[species_id]
+		var point := _dev_spawn_origin()
+		if archipelago.is_safe_zone(point):
+			return {"ok":false,"error":"Move outside the harbour safe zone before spawning a creature."}
+		var island_id := ""
+		var dungeon_id: String = archipelago.dungeon_at(point) if archipelago.has_method("dungeon_at") else ""
+		if not dungeon_id.is_empty():
+			archipelago.ensure_dungeon_built(dungeon_id)
+			island_id = dungeon_id
+			if definition.domain not in ["land","shore"]:
+				return {"ok":false,"error":"Only ground creatures can spawn inside a dungeon."}
+		for island in archipelago.island_records:
+			if not island_id.is_empty(): break
+			if Vector2(point.x-island.center.x,point.z-island.center.z).length() < float(island.radius)*1.1 and (not island.sky or definition.domain == "sky"):
+				island_id = str(island.id)
+				break
+		if definition.domain in ["land","shore"]:
+			if island_id.is_empty() or (dungeon_id.is_empty() and archipelago.sample_surface_at(point) < 0.0):
+				return {"ok":false,"error":"Fly to dry island ground before spawning this creature."}
+			point.y = archipelago.sample_surface_at(point)+0.1
+		elif definition.domain == "sky":
+			point.y = maxf(point.y,archipelago.sample_surface_at(point)+3.3)
+		else:
+			var bounds: Array = CreatureScript.SEA_BOUNDS[species_id]
+			var floor_y: float = archipelago.sample_ground_height(point.x,point.z)
+			var surface_y: float = ocean.sample_height(point)
+			var low: float = floor_y-float(bounds[0])+0.8
+			var high: float = surface_y-float(bounds[1])-0.8
+			if low > high:
+				return {"ok":false,"error":"Fly over deep water before spawning this creature."}
+			point.y = clampf(point.y,low,high)
+		var allowed_hours: Array = definition.hours[0]
+		var hour: float = (float(allowed_hours[0])+float(allowed_hours[1]))*0.5
+		var result: Dictionary = Session.world.spawn_mob(species_id,str(definition.biomes[0]),hour,point)
+		if not result.get("ok",false): return result
+		var record: Dictionary = Session.world.mobs[result.mob_id]
+		record["home"] = [point.x,point.y,point.z]
+		record["island_id"] = island_id
+		if not dungeon_id.is_empty(): record["dungeon_id"] = dungeon_id
+		record["yaw"] = local_wizard.yaw
+		record["safe_zone"] = archipelago.is_safe_zone(point)
+		return {"ok":true,"message":"Spawned "+str(definition.name)+"."}
+	return {"ok":false,"error":"Unknown spawn selection."}
+
+func _dev_spawn_origin() -> Vector3:
+	var forward := Vector3(-sin(local_wizard.yaw),0,-cos(local_wizard.yaw))
+	var origin: Vector3 = local_wizard.global_position
+	var dungeon_id: String = archipelago.dungeon_at(origin) if archipelago.has_method("dungeon_at") else ""
+	if not dungeon_id.is_empty():
+		for distance_value in [3.0,2.0,1.0]:
+			var candidate: Vector3 = origin+forward*distance_value
+			if archipelago.dungeon_at(candidate)==dungeon_id and archipelago.dungeon_surface_at(candidate)>0.0:
+				return candidate
+		return origin
+	return origin+forward*7.0
+
 func _nearest_interaction(pos:Vector3) -> Dictionary:
 	var best:Dictionary={}
 	var distance_value:=6.0
+	if archipelago.has_method("dungeon_at"):
+		var dungeon_id: String = archipelago.dungeon_at(pos)
+		if not dungeon_id.is_empty():
+			var dungeon: Dictionary = archipelago.get_dungeon(dungeon_id)
+			for kind in ["dungeon_reward","dungeon_exit"]:
+				var key := "reward_position" if kind == "dungeon_reward" else "exit_position"
+				var point: Vector3 = dungeon.get(key,Vector3.ZERO)
+				var distance: float = pos.distance_to(point)
+				if distance < distance_value and _dungeon_interaction_visible(pos,point):
+					best = {"kind":kind,"id":dungeon_id,"position":point,"name":"Study the reliquary" if kind == "dungeon_reward" else "Leave the dungeon"}
+					distance_value = distance
 	for item in interactables:
 		var d:=pos.distance_to(item.position)
 		if d<distance_value: best=item;distance_value=d
 	for id in boats:
-		var p:Vector3=boats[id].to_global(Vector3(0,1.1,3.5))
+		var p:Vector3=boats[id].to_global(BoatScript.HELM_LOCAL)
 		var d:=pos.distance_to(p)
 		if d<distance_value:
 			best={"kind":"helm","id":id,"position":p,"name":"Take the helm / claim ship"};distance_value=d
@@ -458,10 +969,15 @@ func _interact() -> void:
 	if not local_wizard.helm_id.is_empty():
 		Session.request_action("helm",{"ship_id":""});return
 	if selected_target.is_empty(): return
+	if local_wizard.dev_fly_enabled and str(selected_target.kind) in ["helm","board"]:
+		hud.show_notice("Disable free fly before boarding or piloting a ship.")
+		return
 	match str(selected_target.kind):
 		"shop": hud.open_shop()
 		"cache": Session.request_action("claim_cache",{})
 		"dungeon": Session.request_action("interact",{"kind":"dungeon","id":selected_target.id})
+		"dungeon_reward": Session.request_action("interact",{"kind":"dungeon_reward","id":selected_target.id})
+		"dungeon_exit": Session.request_action("interact",{"kind":"dungeon_exit","id":selected_target.id})
 		"helm": Session.request_action("helm",{"ship_id":selected_target.id})
 		"board": Session.request_action("interact",{"kind":"board","ship_id":selected_target.id})
 		"loot": Session.request_action("loot",{"loot_id":selected_target.id})
@@ -473,6 +989,9 @@ func _action(player_id:String,action_name:String,data:Dictionary) -> void:
 	var result:Dictionary={"ok":false,"error":"Unavailable here."}
 	var now:=Time.get_unix_time_from_system()
 	if not p.alive and action_name!="respawn": return
+	if wizard.dev_fly_enabled and (action_name=="helm" or (action_name=="interact" and str(data.get("kind",""))=="board")):
+		_notify_player(player_id,"Disable free fly before boarding or piloting a ship.")
+		return
 	match action_name:
 		"claim_cache":
 			if _near_kind(wizard.global_position,"cache",6):
@@ -493,7 +1012,7 @@ func _action(player_id:String,action_name:String,data:Dictionary) -> void:
 			var id:=str(data.get("ship_id",""))
 			if id.is_empty():
 				_release_helm(player_id);result={"ok":true}
-			elif boats.has(id) and wizard.global_position.distance_to(boats[id].to_global(Vector3(0,1.1,3.5)))<6:
+			elif boats.has(id) and wizard.global_position.distance_to(boats[id].to_global(BoatScript.HELM_LOCAL))<6:
 				var boat:Node=boats[id]
 				if not boat.pilot_id.is_empty() and boat.pilot_id!=player_id:
 					result={"ok":false,"error":"The helm is occupied."}
@@ -536,24 +1055,82 @@ func _action(player_id:String,action_name:String,data:Dictionary) -> void:
 						p.inventory.healing_potion-=1;p.health=minf(100,p.health+45);result={"ok":true,"message":"Warmth returns. +45 health."}
 				"compass":
 					if p.inventory.get("reef_compass",0)>0 or p.inventory.get("storm_compass",0)>0:
-						var target:Dictionary=archipelago.island_records[3] if p.inventory.get("reef_compass",0)>0 else archipelago.island_records[7]
-						var bearing:=fposmod(rad_to_deg(atan2(target.center.x-wizard.position.x,-(target.center.z-wizard.position.z))),360)
-						result={"ok":true,"message":"%s · bearing %03d° · %dm"%[target.name,bearing,wizard.position.distance_to(target.center)]}
+						var biome := "Glass Dunes" if p.inventory.get("reef_compass",0)>0 else "Stormglass Reef"
+						var target := _compass_destination(wizard.position,biome)
+						if not target.is_empty():
+							var bearing:=fposmod(rad_to_deg(atan2(target.center.x-wizard.position.x,-(target.center.z-wizard.position.z))),360)
+							result={"ok":true,"message":"%s · bearing %03d° · %dm"%[target.name,bearing,wizard.position.distance_to(target.center)]}
+						else: result={"ok":false,"error":"No matching island within this compass's chart range."}
 				"dungeon":
 					for poi in interactables:
 						if poi.kind=="dungeon" and poi.id==data.get("id","") and wizard.position.distance_to(poi.position)<6:
-							if not p.claimed_caches.has(poi.id):
-								p.claimed_caches.append(poi.id)
-								var glyphs:=["power","range","heal","split"]
-								var glyph:String=glyphs[absi(str(poi.id).hash())%glyphs.size()]
-								Session.world.learn_glyph(player_id,glyph,"dungeon")
-								p.inventory.ancient_coin=int(p.inventory.get("ancient_coin",0))+3
-								result={"ok":true,"message":"Discovered glyph: "+glyph.capitalize()+". Three ancient coins recovered."}
-							else: result={"ok":false,"error":"You have already studied this reliquary in this world."}
+							var dungeon: Dictionary = archipelago.get_dungeon(str(poi.id))
+							if dungeon.is_empty():
+								# Existing sky reliquaries retain their original one-time reward.
+								result = _grant_dungeon_reward(player_id,str(poi.id))
+							elif archipelago.ensure_dungeon_built(str(poi.id)) != null:
+								_release_helm(player_id)
+								wizard.aboard_id = ""
+								wizard.velocity = Vector3.ZERO
+								wizard.global_position = dungeon.start_position
+								creature_manager.activate_dungeon(Session.world,str(poi.id))
+								result={"ok":true,"message":"Entered "+str(poi.name)+". Find the inner reliquary."}
+				"dungeon_reward":
+					var dungeon_id := str(data.get("id",""))
+					if archipelago.dungeon_at(wizard.global_position)==dungeon_id:
+						var dungeon: Dictionary = archipelago.get_dungeon(dungeon_id)
+						if not dungeon.is_empty() and wizard.global_position.distance_to(dungeon.reward_position)<6.0 and _dungeon_interaction_visible(wizard.global_position,dungeon.reward_position):
+							result = _grant_dungeon_reward(player_id,dungeon_id)
+				"dungeon_exit":
+					var dungeon_id := str(data.get("id",""))
+					if archipelago.dungeon_at(wizard.global_position)==dungeon_id:
+						var dungeon: Dictionary = archipelago.get_dungeon(dungeon_id)
+						if not dungeon.is_empty() and wizard.global_position.distance_to(dungeon.exit_position)<6.0 and _dungeon_interaction_visible(wizard.global_position,dungeon.exit_position):
+							_release_helm(player_id)
+							wizard.aboard_id = ""
+							wizard.velocity = Vector3.ZERO
+							wizard.global_position = dungeon.return_position
+							result={"ok":true,"message":"Returned to the island."}
 	Session.world.update_player_position(player_id,wizard.global_position,archipelago.is_safe_zone(wizard.global_position))
 	Session.publish_state()
 	_broadcast_simulation()
 	_notify_player(player_id,str(result.get("message","Done.")) if result.ok else str(result.get("error","Unavailable.")))
+
+func _grant_dungeon_reward(player_id: String, dungeon_id: String) -> Dictionary:
+	var player: Dictionary = Session.world.players[player_id]
+	if player.claimed_caches.has(dungeon_id):
+		return {"ok":false,"error":"You have already studied this reliquary in this world."}
+	player.claimed_caches.append(dungeon_id)
+	var glyphs := ["power","range","heal","split"]
+	var glyph: String = glyphs[absi(dungeon_id.hash())%glyphs.size()]
+	Session.world.learn_glyph(player_id,glyph,"dungeon")
+	player.inventory.ancient_coin = int(player.inventory.get("ancient_coin",0))+3
+	return {"ok":true,"message":"Discovered glyph: "+glyph.capitalize()+". Three ancient coins recovered."}
+
+func _compass_destination(from: Vector3, biome: String) -> Dictionary:
+	var nearest: Dictionary = {}
+	var distance := INF
+	var candidates: Array = archipelago.island_records.duplicate()
+	if archipelago.has_method("sector_manifest"):
+		var sector_size: float = WorldScript.ISLAND_GENERATOR.SECTOR_SIZE
+		var cell := Vector2i(floori(from.x/sector_size),floori(from.z/sector_size))
+		for z in range(cell.y-8,cell.y+9):
+			for x in range(cell.x-8,cell.x+9):
+				var island: Dictionary = archipelago.sector_manifest(x,z)
+				if not island.is_empty(): candidates.append(island)
+	for island in candidates:
+		if str(island.biome)!=biome: continue
+		var candidate: float = from.distance_squared_to(island.center)
+		if candidate<distance:
+			distance=candidate
+			nearest=island
+	return nearest
+
+func _dungeon_interaction_visible(from: Vector3, to: Vector3) -> bool:
+	# Dungeon walls and floors are static layer 1. Eye-height rays cannot pass
+	# through a neighbouring room wall when the two points are only metres apart.
+	var query := PhysicsRayQueryParameters3D.create(from+Vector3.UP*1.5,to+Vector3.UP*1.5,1)
+	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 
 func _near_kind(pos:Vector3,kind:String,distance_value:float) -> bool:
 	for item in interactables:
@@ -600,22 +1177,10 @@ func _spell_visual(player_id:String,recipe:Array,origin:Vector3,direction:Vector
 	_spawn_projectile(player_id,recipe,origin,direction,speed_value,life)
 
 func _spawn_projectile(player_id:String,recipe:Array,origin:Vector3,direction:Vector3,speed_value:float,life:float,modifiers:Dictionary={}) -> void:
-	var orb:=MeshInstance3D.new()
-	var mesh:=SphereMesh.new()
-	mesh.radius=0.14;mesh.height=0.28
-	var material:=StandardMaterial3D.new()
-	material.shading_mode=BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.albedo_color=Color("91f9e4") if recipe.has("wind") else Color("ffb86a")
-	material.emission_enabled=true;material.emission=material.albedo_color;material.emission_energy_multiplier=2
-	mesh.material=material;orb.mesh=mesh
+	var visual: Dictionary = _make_projectile_visual("wind" if recipe.has("wind") else "ember")
+	var orb: MeshInstance3D = visual.node
+	var rings: Array[Node3D] = visual.rings
 	add_child(orb);orb.position=origin+direction*0.65
-	var rings: Array[Node3D]=[]
-	for i in 3:
-		var ring:=MeshInstance3D.new()
-		var torus:=TorusMesh.new()
-		torus.inner_radius=0.22+float(i)*0.045;torus.outer_radius=0.245+float(i)*0.045
-		torus.rings=24;torus.ring_segments=6;torus.material=material
-		ring.mesh=torus;orb.add_child(ring);ring.rotation=Vector3(PI/2,0,0);rings.append(ring)
 	projectiles.append({"node":orb,"owner":player_id,"recipe":recipe,"direction":direction,"speed":speed_value,"life":life,"rings":rings,"modifiers":modifiers})
 
 func _update_projectiles(delta:float,authoritative:=true) -> void:
@@ -696,6 +1261,17 @@ func _broadcast_simulation() -> void:
 func _receive_simulation(packet:Dictionary) -> void:
 	if Session.hosting: return
 	simulation_time=float(packet.get("time",simulation_time))
+	var stream_anchors: Array[Vector3] = []
+	for data in packet.get("players",{}).values(): stream_anchors.append(data.position)
+	for data in packet.get("ships",{}).values(): stream_anchors.append(data.position)
+	creature_manager.set_stream_anchors(stream_anchors)
+	for id in packet.get("players",{}):
+		_ensure_surface_for_position(packet.players[id].position)
+		_ensure_dungeon_for_position(packet.players[id].position)
+	for data in packet.get("ships",{}).values(): _ensure_surface_for_position(data.position)
+	for id in packet.get("mobs",{}):
+		if str(id).begins_with("dungeon/"):
+			_ensure_dungeon_for_position(CreatureScript._vector(packet.mobs[id].position))
 	creature_manager.sync_snapshot(packet)
 	for id in packet.get("ships",{}):
 		if boats.has(id):
@@ -720,6 +1296,11 @@ func _receive_simulation(packet:Dictionary) -> void:
 
 func _vec(value:Array) -> Vector3:
 	return Vector3(float(value[0]),float(value[1]),float(value[2]))
+
+func _ensure_dungeon_for_position(position_value: Vector3) -> void:
+	if archipelago == null or not archipelago.has_method("dungeon_at"): return
+	var dungeon_id: String = archipelago.dungeon_at(position_value)
+	if not dungeon_id.is_empty(): archipelago.ensure_dungeon_built(dungeon_id)
 
 func _capture(path:String) -> void:
 	await RenderingServer.frame_post_draw

@@ -32,6 +32,8 @@ func _run() -> void:
 	var session: Node = root.get_node("Session")
 	session.save_enabled = false
 	session.identity_profile = "gameplay_integration"
+	session._identity_token = Crypto.new().generate_random_bytes(32).hex_encode()
+	session.local_player_id = session._identity_token.sha256_text().substr(0, 24)
 	game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	game.set_physics_process(false)
@@ -40,7 +42,7 @@ func _run() -> void:
 		check(false, "main scene world scripts compile and build successfully")
 		_finish()
 		return
-	game._host("Integration sandbox", 7319, "Integration Wizard")
+	game._host("Integration sandbox", 7319, "Integration Wizard", 1)
 	if not session.hosting or game.local_wizard == null:
 		check(false, "actual main scene hosts and creates local first-person wizard")
 		_finish()

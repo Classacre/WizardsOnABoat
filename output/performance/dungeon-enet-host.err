@@ -1,0 +1,13 @@
+WARNING: instance_reset_physics_interpolation() is deprecated.
+   at: _instance_reset_physics_interpolation_bind_compat_104269 (servers/rendering/rendering_server.compat.inc:62)
+   GDScript backtrace (most recent call first):
+       [0] _build_terrain (res://scripts/world/archipelago.gd:459)
+       [1] build (res://scripts/world/archipelago.gd:57)
+       [2] _build_world (res://scripts/main.gd:178)
+       [3] _ready (res://scripts/main.gd:78)
+       [4] _begin (res://tests/dungeon_enet_test.gd:49)
+SCRIPT ERROR: Invalid call. Nonexistent function 'online_count' in base 'Nil'.
+   at: <anonymous lambda> (res://tests/dungeon_enet_test.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://tests/dungeon_enet_test.gd:114)
+       [1] _wait_for (res://tests/dungeon_enet_test.gd:63)

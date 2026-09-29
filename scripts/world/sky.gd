@@ -7,6 +7,7 @@ var sun: DirectionalLight3D
 var sky_material: ShaderMaterial
 var time_of_day: float=12.0
 var _seconds:=0.0
+var _daylight := -1.0
 
 func _ready() -> void:
 	var sky:=Sky.new()
@@ -55,25 +56,30 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_seconds+=delta
-	if sky_material and int(_seconds / 3.0) != int((_seconds-delta) / 3.0):
+	if sky_material and _daylight < 0.999 and int(_seconds / 3.0) != int((_seconds-delta) / 3.0):
 		sky_material.set_shader_parameter("cloud_time",_seconds)
 
 func set_underwater(underwater: bool, depth:=0.0) -> void:
 	if not environment_node:
 		return
 	var environment:=environment_node.environment
-	environment.fog_density=lerpf(0.037,0.095,clampf(depth/35.0,0,1)) if underwater else 0.0009
-	environment.fog_light_color=Color("166b86") if underwater else Color("81bdcf")
-	environment.ambient_light_energy=0.48 if underwater else 0.28
+	var density: float=lerpf(0.037,0.095,clampf(depth/35.0,0,1)) if underwater else 0.0009
+	var fog_color:=Color("166b86") if underwater else Color("81bdcf")
+	var ambient: float=0.48 if underwater else 0.28
+	if not is_equal_approx(environment.fog_density,density): environment.fog_density=density
+	if environment.fog_light_color!=fog_color: environment.fog_light_color=fog_color
+	if not is_equal_approx(environment.ambient_light_energy,ambient): environment.ambient_light_energy=ambient
 
 func set_time_of_day(hour: float) -> void:
 	time_of_day=fposmod(hour,24.0)
 	if not sun or not environment_node:
 		return
 	var daylight:=smoothstep(5.0,8.0,time_of_day)*(1.0-smoothstep(17.0,20.0,time_of_day))
-	sun.light_energy=lerpf(0.16,1.18,daylight)
-	sun.light_color=Color("749bcc").lerp(Color("fff1cb"),daylight)
+	if not is_equal_approx(daylight,_daylight):
+		sun.light_energy=lerpf(0.16,1.18,daylight)
+		sun.light_color=Color("749bcc").lerp(Color("fff1cb"),daylight)
+		sky_material.set_shader_parameter("zenith_color",Color("082343").lerp(Color("1975d6"),daylight))
+		sky_material.set_shader_parameter("horizon_color",Color("1d4463").lerp(Color("8ccfea"),daylight))
+		sky_material.set_shader_parameter("panorama_strength",daylight)
+		_daylight=daylight
 	sun.rotation_degrees.x=-maxf(16.0,sin((time_of_day-6.0)/12.0*PI)*48.0)
-	sky_material.set_shader_parameter("zenith_color",Color("082343").lerp(Color("1975d6"),daylight))
-	sky_material.set_shader_parameter("horizon_color",Color("1d4463").lerp(Color("8ccfea"),daylight))
-	sky_material.set_shader_parameter("panorama_strength",daylight)

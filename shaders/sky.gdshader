@@ -15,18 +15,23 @@ void sky(){
 	float horizon=pow(max(0.0,1.0-d.y),3.1);
 	vec3 base=mix(zenith_color,horizon_color,horizon);
 	if(d.y>0.0){
-		vec2 p=d.xz/max(0.06,d.y)*0.66+vec2(cloud_time*0.003,0);
-		float mass=fbm(p*0.48);
-		float detail=fbm(p*2.6+vec2(2.0,8.0));
-		float threshold=0.56+smoothstep(0.60,0.97,d.y)*0.09;
-		float coverage=smoothstep(threshold-0.04,threshold+0.013,mass+detail*0.11);
-		float sculpt=smoothstep(0.28,0.72,detail+mass*0.2);
-		vec3 clouds=mix(cloud_shadow,cloud_color,sculpt);
-		base=mix(base,clouds,coverage*smoothstep(0.0,0.04,d.y));
-		if(has_panorama){
+		if(has_panorama && panorama_strength>=0.999){
 			vec2 uv=vec2(atan(d.x,d.z)/6.2831853+0.5,acos(clamp(d.y,-1.0,1.0))/3.1415927);
-			vec3 painted=texture(cloud_panorama,uv).rgb;
-			base=mix(base,painted,panorama_strength);
+			base=texture(cloud_panorama,uv).rgb;
+		}else{
+			vec2 p=d.xz/max(0.06,d.y)*0.66+vec2(cloud_time*0.003,0);
+			float mass=fbm(p*0.48);
+			float detail=fbm(p*2.6+vec2(2.0,8.0));
+			float threshold=0.56+smoothstep(0.60,0.97,d.y)*0.09;
+			float coverage=smoothstep(threshold-0.04,threshold+0.013,mass+detail*0.11);
+			float sculpt=smoothstep(0.28,0.72,detail+mass*0.2);
+			vec3 clouds=mix(cloud_shadow,cloud_color,sculpt);
+			base=mix(base,clouds,coverage*smoothstep(0.0,0.04,d.y));
+			if(has_panorama){
+				vec2 uv=vec2(atan(d.x,d.z)/6.2831853+0.5,acos(clamp(d.y,-1.0,1.0))/3.1415927);
+				vec3 painted=texture(cloud_panorama,uv).rgb;
+				base=mix(base,painted,panorama_strength);
+			}
 		}
 	}
 	float sun=max(0.0,dot(d,normalize(vec3(-0.5,0.72,0.38))));

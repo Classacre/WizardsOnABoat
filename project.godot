@@ -15,7 +15,7 @@ window/size/viewport_width=1536
 window/size/viewport_height=1024
 window/size/window_width_override=1280
 window/size/window_height_override=854
-window/stretch/mode="canvas_items"
+window/stretch/mode="disabled"
 
 [rendering]
 renderer/rendering_method="forward_plus"
@@ -26,7 +26,7 @@ environment/defaults/default_clear_color=Color(0.12,0.42,0.67,1)
 
 [physics]
 common/physics_ticks_per_second=60
-3d/physics_engine="GodotPhysics3D"
+3d/physics_engine="Jolt Physics"
 
 [audio]
 driver/enable_input=false

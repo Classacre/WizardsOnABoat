@@ -3,6 +3,7 @@ extends RefCounted
 
 const Catalog = preload("res://scripts/data/game_catalog.gd")
 const VERSION := 1
+const CURRENT_GENERATOR_VERSION := 2
 const MAX_PLAYERS := 18
 const MAX_SHIPS := 6
 const MAX_CREW := 4
@@ -12,6 +13,7 @@ const STARTER_POSITION := [0.0, 2.0, 0.0]
 
 var world_id := "harbour"
 var seed_value := 72841
+var generator_version := CURRENT_GENERATOR_VERSION
 var players: Dictionary = {}
 var crews: Dictionary = {}
 var ships: Dictionary = {}
@@ -21,9 +23,10 @@ var mobs: Dictionary = {}
 var next_id := 1
 var revision := 0
 
-func _init(id: String = "harbour", world_seed: int = 72841) -> void:
+func _init(id: String = "harbour", world_seed: int = 72841, generation: int = CURRENT_GENERATOR_VERSION) -> void:
 	world_id = id
 	seed_value = world_seed
+	generator_version = generation
 
 func _id(prefix: String) -> String:
 	var result := "%s_%d" % [prefix, next_id]
@@ -518,7 +521,7 @@ func save_spell(player_id: String, spell_name: String, recipe: Array) -> Diction
 	return _ok()
 
 func snapshot() -> Dictionary:
-	return {"version": VERSION, "world_id": world_id, "seed": seed_value, "players": players.duplicate(true), "crews": crews.duplicate(true), "ships": ships.duplicate(true), "loot": loot.duplicate(true), "items": items.duplicate(true), "mobs": mobs.duplicate(true), "next_id": next_id, "revision": revision}
+	return {"version": VERSION, "world_id": world_id, "seed": seed_value, "generator_version": generator_version, "players": players.duplicate(true), "crews": crews.duplicate(true), "ships": ships.duplicate(true), "loot": loot.duplicate(true), "items": items.duplicate(true), "mobs": mobs.duplicate(true), "next_id": next_id, "revision": revision}
 
 func save_to(path: String) -> Error:
 	var data := snapshot()
@@ -539,12 +542,20 @@ func save_to(path: String) -> Error:
 	# Keep the previous complete file if the write or rename fails.
 	return DirAccess.rename_absolute(path + ".tmp", path)
 
-func load_from(path: String) -> Dictionary:
+func load_from(path: String, expected_seed: Variant = null) -> Dictionary:
 	if not FileAccess.file_exists(path):
 		return _fail("No saved world at this path.")
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not parsed is Dictionary or parsed.get("version", -1) != VERSION or parsed.get("world_id", "") != world_id:
 		return _fail("Unsupported save version or different world identity.")
+	var saved_seed: Variant = parsed.get("seed")
+	if not (saved_seed is int or saved_seed is float) or not is_finite(float(saved_seed)) or float(saved_seed) != float(int(saved_seed)):
+		return _fail("Save has an invalid world seed.")
+	if expected_seed != null and int(saved_seed) != int(expected_seed):
+		return _fail("This save slot uses seed %d, but seed %d was entered. Enter %d to continue it, or choose a new world name for a different seed." % [int(saved_seed),int(expected_seed),int(saved_seed)])
+	var saved_generation: int = int(parsed.get("generator_version",1))
+	if saved_generation < 1 or saved_generation > CURRENT_GENERATOR_VERSION:
+		return _fail("Unsupported world generator version %d." % saved_generation)
 	for key in ["players", "crews", "ships", "loot"]:
 		if not parsed.get(key) is Dictionary:
 			return _fail("Save is missing its %s table." % key)
@@ -552,7 +563,7 @@ func load_from(path: String) -> Dictionary:
 	if not shape_error.is_empty():
 		return _fail("Invalid save: " + shape_error)
 	# Loading into a temporary model avoids partial replacement on invalid references.
-	var candidate = get_script().new(world_id, int(parsed.get("seed", seed_value)))
+	var candidate = get_script().new(world_id, int(saved_seed), saved_generation)
 	candidate.players = parsed.players
 	candidate.crews = parsed.crews
 	candidate.ships = parsed.ships
@@ -571,6 +582,7 @@ func load_from(path: String) -> Dictionary:
 	mobs = candidate.mobs
 	next_id = candidate.next_id
 	seed_value = candidate.seed_value
+	generator_version = candidate.generator_version
 	for player in players.values():
 		player.online = false
 	for ship in ships.values():

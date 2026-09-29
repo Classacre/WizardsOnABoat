@@ -25,6 +25,7 @@ var hosting := false
 var display_name := "Wizard"
 var identity_profile := "default"
 var save_enabled := true
+var save_directory := "user://worlds"
 var _identity_token := ""
 var _peer: ENetMultiplayerPeer
 var _save_path := ""
@@ -60,7 +61,29 @@ func _ensure_identity() -> void:
 		config.save(path)
 	local_player_id = _identity_token.sha256_text().substr(0, 24)
 
-func start_host(world_id: String = "harbour", world_seed: int = 72841, port: int = DEFAULT_PORT) -> Error:
+func saved_worlds() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	var directory := DirAccess.open(save_directory)
+	if directory == null:
+		return result
+	for filename in directory.get_files():
+		if not filename.ends_with(".json"):
+			continue
+		var record: Variant = JSON.parse_string(FileAccess.get_file_as_string(save_directory.path_join(filename)))
+		if not record is Dictionary or record.get("version",-1) != WorldModel.VERSION:
+			continue
+		var world_name := str(record.get("world_id",""))
+		var seed: Variant = record.get("seed")
+		if world_name.is_empty() or not (seed is int or seed is float) or filename != world_name.sha256_text().substr(0,24) + ".json":
+			continue
+		result.append({"name":world_name,"seed":int(seed),"generator_version":int(record.get("generator_version",1))})
+	result.sort_custom(func(a: Dictionary,b: Dictionary): return str(a.name).naturalnocasecmp_to(str(b.name)) < 0)
+	return result
+
+func start_host(world_id: String = "harbour", world_seed: int = 72841, port: int = DEFAULT_PORT, generator_version: int = WorldModel.CURRENT_GENERATOR_VERSION) -> Error:
+	if generator_version < 1 or generator_version > WorldModel.CURRENT_GENERATOR_VERSION:
+		connection_status.emit("Unsupported world generator version %d." % generator_version)
+		return ERR_INVALID_PARAMETER
 	stop_session()
 	_ensure_identity()
 	_peer = ENetMultiplayerPeer.new()
@@ -70,10 +93,10 @@ func start_host(world_id: String = "harbour", world_seed: int = 72841, port: int
 		return error
 	multiplayer.multiplayer_peer = _peer
 	hosting = true
-	world = WorldModel.new(world_id, world_seed)
-	_save_path = "user://worlds/%s.json" % world_id.sha256_text().substr(0, 24)
+	world = WorldModel.new(world_id, world_seed, generator_version)
+	_save_path = save_directory.path_join("%s.json" % world_id.sha256_text().substr(0, 24))
 	if save_enabled and FileAccess.file_exists(_save_path):
-		var loaded: Dictionary = world.load_from(_save_path)
+		var loaded: Dictionary = world.load_from(_save_path, world_seed)
 		if not loaded.ok:
 			var message := "Save was not loaded: " + str(loaded.error)
 			# Never replace a damaged or incompatible save with a fresh empty world.
@@ -89,7 +112,7 @@ func start_host(world_id: String = "harbour", world_seed: int = 72841, port: int
 	peer_player_ids[1] = local_player_id
 	player_joined.emit(local_player_id, 1)
 	publish_state()
-	connection_status.emit("Hosting %s on UDP %d · up to 18 wizards / 6 ships" % [world_id, port])
+	connection_status.emit("Hosting %s · seed %d · generator v%d · UDP %d · up to 18 wizards / 6 ships" % [world_id,world.seed_value,world.generator_version,port])
 	return OK
 
 func join_host(address: String, port: int = DEFAULT_PORT) -> Error:
